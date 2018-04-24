@@ -16,7 +16,11 @@
     "url": "https://github.com/ZYinMD/QiMing-Inspiration/issues"
   },
   "homepage": "https://github.com/ZYinMD/QiMing-Inspiration#readme",
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongodb": "^3.0.7"
+  },
   "devDependencies": {
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",
