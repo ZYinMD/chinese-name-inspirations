@@ -5,7 +5,7 @@ module.exports = function (app, db) {
 
 async function eval(req, res) {
   try {
-    let r = await db.collection('characters').aggregate(   { $sample: { size: 1 } }).toArray();
+    let r = await db.collection('characters').findOne();
     if (r) res.json(r)
     else res.status(410).send('All characters have been evaluated. Unbelievable!');
   }
