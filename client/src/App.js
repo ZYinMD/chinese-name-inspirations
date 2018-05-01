@@ -2,6 +2,31 @@ import React, { Component } from 'react';
 import './App.css';
 import Char from './Components/Char';
 import Choice from './Components/Choice';
+import axios from 'axios';
+var queue = [];
+var pointer = 0;
+/*
+on load:
+  replenish
+on submit:
+  pointer++;
+  set state.char to queue[pointer];
+  set state.chosen to new Set([]);
+  update db
+  replenish;
+replenish:
+  let remaining = queue.length - pointer;
+  if (remaining <= 15 && remaining % 5 == 0) {
+    grab another 30;
+    queue.concat(res);
+    set state.char to queue[pointer];
+  }
+undo:
+  pointer--;
+  set state.char to queue[pointer];
+  set state.chosen to new Set([]);
+*/
+
 class App extends Component {
   state = {
       char: {},
@@ -9,8 +34,56 @@ class App extends Component {
     };
 
   componentDidMount() {
-    this.newChar();
     document.addEventListener("keydown", this.onKeyDownNative); // a native event listener to handle keyboard event
+    this.replenish();
+  }
+
+  undo = () => {
+    pointer--;
+    this.setState({
+      char: queue[pointer],
+      chosen: new Set([])
+    });
+
+  }
+  submit = () => {
+    this.submitEval();
+    pointer++;
+    this.setState({
+      char: queue[pointer],
+      chosen: new Set([])
+    });
+    this.replenish();
+  }
+
+  submitEval = async () => {
+    let _id = this.state.char._id;
+    let labels = [...this.state.chosen];
+    try {
+      let res = await axios.post('/api/char', {_id, labels});
+      console.log('res: ', res);
+    }
+    catch(error) {
+      console.error(error);
+    }
+  }
+  replenish = async () => {
+    let remaining = queue.length - pointer;
+    if (remaining > 15 || remaining % 5 != 0) return; // if remaining <= 15 and divisible by 5,  then get more
+    try {
+      var res = await fetch('/api/char/eval');
+      var additions = await res.json();
+      if (res.status !== 200) throw Error(res.message);
+      queue = queue.concat(additions);
+      console.log('this.state1: ', this.state);
+      console.log('queue: ', queue);
+      console.log('pointer: ', pointer);
+      this.setState({char: queue[pointer]});
+      console.log('this.state2: ', this.state);
+    }
+    catch(error) {
+      console.error(error);
+    }
   }
 
   onKeyDownNative = event => {
@@ -64,18 +137,7 @@ class App extends Component {
     }
   }
 
-  newChar = async () => {
-    try {
-      var res = await fetch('/api/char/eval');
-      var char = await res.json();
-      if (res.status !== 200) throw Error(char.message);
-      this.setState({char});
-    }
-    catch(error) {
-      console.error(error);
-    }
-  }
-  toggleClick = event => { // this function changes a label's color on click
+  handleClick = event => { // this function fires when a label is clicked
     this.toggleLabel(event.target.innerText); // this is the text of the choice clicked
    }
 
@@ -86,36 +148,33 @@ class App extends Component {
     this.setState({chosen: _chosen});
   }
 
-  submit = () => {
-    console.log(this.state);
-
-  }
-
   render () {
     return (
       <div>
         <Char char={this.state.char}/>
         <div className="choices" >
+          <h3><button onClick={this.undo}>撤销</button></h3>
           <h3>否决</h3>
           <ul>
-            <Choice onClick={this.toggleClick} chosen={this.state.chosen.has('生僻')}>生僻</Choice>
-            <Choice onClick={this.toggleClick} chosen={this.state.chosen.has('多音字')}>多音字</Choice>
-            <Choice onClick={this.toggleClick} chosen={this.state.chosen.has('不适用于人名')}>不适用于人名</Choice>
+            <Choice onClick={this.handleClick} chosen={this.state.chosen.has('生僻')}>生僻</Choice>
+            <Choice onClick={this.handleClick} chosen={this.state.chosen.has('多音字')}>多音字</Choice>
+            <Choice onClick={this.handleClick} chosen={this.state.chosen.has('不适用于人名')}>不适用于人名</Choice>
           </ul>
           <h3>标签</h3>
           <ul>
-            <Choice onClick={this.toggleClick} chosen={this.state.chosen.has('很土')}>很土</Choice>
-            <Choice onClick={this.toggleClick} chosen={this.state.chosen.has('很俗')}>很俗</Choice>
-            <Choice onClick={this.toggleClick} chosen={this.state.chosen.has('很怪')}>很怪</Choice>
-            <Choice onClick={this.toggleClick} chosen={this.state.chosen.has('略土')}>略土</Choice>
-            <Choice onClick={this.toggleClick} chosen={this.state.chosen.has('略俗')}>略俗</Choice>
-            <Choice onClick={this.toggleClick} chosen={this.state.chosen.has('略怪')}>略怪</Choice>
-            <Choice onClick={this.toggleClick} chosen={this.state.chosen.has('略生僻')}>略生僻</Choice>
-            <Choice onClick={this.toggleClick} chosen={this.state.chosen.has('女孩用')}>女孩用</Choice>
-            <Choice onClick={this.toggleClick} chosen={this.state.chosen.has('禁用')}>禁用</Choice>
-            <Choice onClick={this.toggleClick} chosen={this.state.chosen.has('优先')}>优先</Choice>
-            <Choice onClick={this.toggleClick} chosen={this.state.chosen.has('正常')}>正常</Choice>
+            <Choice onClick={this.handleClick} chosen={this.state.chosen.has('很土')}>很土</Choice>
+            <Choice onClick={this.handleClick} chosen={this.state.chosen.has('很俗')}>很俗</Choice>
+            <Choice onClick={this.handleClick} chosen={this.state.chosen.has('很怪')}>很怪</Choice>
+            <Choice onClick={this.handleClick} chosen={this.state.chosen.has('略土')}>略土</Choice>
+            <Choice onClick={this.handleClick} chosen={this.state.chosen.has('略俗')}>略俗</Choice>
+            <Choice onClick={this.handleClick} chosen={this.state.chosen.has('略怪')}>略怪</Choice>
+            <Choice onClick={this.handleClick} chosen={this.state.chosen.has('略生僻')}>略生僻</Choice>
+            <Choice onClick={this.handleClick} chosen={this.state.chosen.has('女孩用')}>女孩用</Choice>
+            <Choice onClick={this.handleClick} chosen={this.state.chosen.has('禁用')}>禁用</Choice>
+            <Choice onClick={this.handleClick} chosen={this.state.chosen.has('优先')}>优先</Choice>
+            <Choice onClick={this.handleClick} chosen={this.state.chosen.has('正常')}>正常</Choice>
           </ul>
+          <h3><button onClick={this.submit}>提交</button></h3>
         </div>
       </div>
     );
