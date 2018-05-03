@@ -1,5 +1,4 @@
 const dbConnection = require('../db/db-connection.js');
-const dbName = 'qiMingInspiration';
 const assert = require('assert');
 module.exports = function (app) {
   app.get('/api/char/eval', eval);
@@ -10,8 +9,8 @@ module.exports = function (app) {
 async function eval(req, res) {
   try {
     let connection = await dbConnection;
-    let db = await connection.db(dbName);
-    let r = await db.collection('characters').aggregate([{$match: {evaluated: false}}, {$sample: {size: 30}}]).toArray();
+    let collection = await connection.db().collection('characters');
+    let r = await collection.aggregate([{$match: {evaluated: false}}, {$sample: {size: 3}}]).toArray();
     if (r) res.json(r)
     else res.status(410).send('All characters have been evaluated. Unbelievable!');
   }
@@ -22,7 +21,14 @@ async function eval(req, res) {
 
 async function updateChar(req, res) {
   try {
-    res.json({'This was the req.body you sent': req.body})
+    // res.json({'This was the req.body you sent': req.body})
+    let connection = await dbConnection;
+    let collection = await connection.db().collection('characters');
+    let r = await collection.updateOne({_id: req.body._id}, {$set: {evaluated: true, labels: req.body.labels}});
+    assert.equal(1, r.matchedCount);
+    // assert.equal(1, r.modifiedCount);
+    res.status(200).send(`${req.body.char} updated`);
+
   }
   catch(error) {
     console.error(error);

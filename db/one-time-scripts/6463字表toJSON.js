@@ -1,15 +1,17 @@
-// this file converts the character list into JSON for MongoDB to import
+// convert from:
+const input = '../one-time-data/6463字表及音调.txt'
+// convert to:
+const output = '../db-seeds/6463-chars-pre-eval.json';
 
-const output = '../dbSeeds/characters.json';
 const fs = require('fs');
 const dataStorage = [];
-var charList = fs.readFileSync('./一二级字及音调.txt', 'utf-8').split('\n');
+var charList = fs.readFileSync(input, 'utf-8').split('\n');
 charList.pop(); // remove the last line which is empty
 charList.forEach((line, index) => {
-  let id = String(++index).padStart(4, '0');
+  let _id = ++index;
   let [char, tone] = line.split('');
   let evaluated = false;
-  let document = {id, char, tone, evaluated};
+  let document = {_id, char, tone, evaluated};
   dataStorage.push(document);
 })
 fs.writeFileSync(output, JSON.stringify(dataStorage, null, 2));
