@@ -1,5 +1,5 @@
 [
-{ "_id" : 1001, "char" : "苛", "tone" : "1", "evaluated" : true, "labels" : [ "无趣" ] },
+{ "_id" : 1001, "char" : "苛", "tone" : "1", "evaluated" : true, "labels" : [ "不适用于人名" ] },
 { "_id" : 1002, "char" : "若", "tone" : "4", "evaluated" : true, "labels" : [ "普通", "有意思" ] },
 { "_id" : 1003, "char" : "茂", "tone" : "4", "evaluated" : true, "labels" : [ "很土", "普通", "男孩用" ] },
 { "_id" : 1004, "char" : "苹", "tone" : "2", "evaluated" : true, "labels" : [ "女孩用", "普通", "无趣" ] },
@@ -77,7 +77,7 @@
 { "_id" : 5, "char" : "丁", "tone" : "1", "evaluated" : true, "labels" : [ "不适用于人名" ] },
 { "_id" : 6, "char" : "厂", "tone" : "3", "evaluated" : true, "labels" : [ "很怪", "无趣" ] },
 { "_id" : 2008, "char" : "鸵", "tone" : "2", "evaluated" : true, "labels" : [ "不适用于人名" ] },
-{ "_id" : 7, "char" : "七", "tone" : "1", "evaluated" : true, "labels" : [ "略土" ] },
+{ "_id" : 7, "char" : "七", "tone" : "1", "evaluated" : true, "labels" : [ "普通" ] },
 { "_id" : 2009, "char" : "留", "tone" : "2", "evaluated" : true, "labels" : [ "普通" ] },
 { "_id" : 8, "char" : "卜", "tone" : "0", "evaluated" : true, "labels" : [ "很怪" ] },
 { "_id" : 2010, "char" : "鸳", "tone" : "1", "evaluated" : true, "labels" : [ "不适用于人名" ] },
