@@ -23,7 +23,7 @@ npm manifest:
       "test": "echo \"Error: no test specified\" && exit 1",
       "client": "cd client && yarn start",
       "server": "nodemon server.js",
-      "dev": "concurrently \"yarn server\" \"yarn client\""
+      "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
     },
     "repository": {
       "type": "git",
@@ -39,13 +39,6 @@ npm manifest:
       "body-parser": "^1.18.2",
       "express": "^4.16.3",
       "mongodb": "^3.0.7"
-    },
-    "devDependencies": {
-      "eslint": "^4.9.0",
-      "eslint-config-airbnb": "^16.1.0",
-      "eslint-plugin-import": "^2.7.0",
-      "eslint-plugin-jsx-a11y": "^6.0.2",
-      "eslint-plugin-react": "^7.4.0"
     }
   }
 
@@ -59,7 +52,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: C:\WINDOWS\system32\cmd.exe
-  Arguments: /d /s /c concurrently "yarn server" "yarn client"
+  Arguments: /d /s /c concurrently --kill-others-on-fail "yarn server" "yarn client"
   Directory: D:\Dropbox\Coding\Repos\QiMing-Inspiration
   Output:
   
