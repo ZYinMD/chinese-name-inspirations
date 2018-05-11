@@ -5,15 +5,11 @@ body {
   font-family: Helvetica, Arial, "微软雅黑", "Heiti SC", "Pingfang SC", "Droid Sans Fallback", SimHei, Hei, STHeiti, "宋体", SimSun, STSong, "Arial Unicode MS";
 }
 
-.app {
-  height: 99vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-}
-
 #root {
   max-width: 414px;
   margin: 0 auto;
+}
+
+.theme {
+  color: #2bb;
 }

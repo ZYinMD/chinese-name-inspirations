@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
-import Header from './Components/Header';
-import Name from './Components/Name';
-import Choices from './Components/Choices';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from './Pages/Home/'
+import Menu from './Pages/Menu/'
+import Settings from './Pages/Settings/'
 
 class App extends Component {
-  state = {
-    };
 
   componentDidMount() {
   }
@@ -69,13 +68,15 @@ class App extends Component {
     this.setState({chosen: _chosen});
   */}
 
-  render () {
+  render() {
     return (
-      <div className="app">
-        <Header/>
-        <Name/>
-        <Choices/>
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/settings" component={Settings} />
+          <Route path="/menu" component={Menu} />
+        </Switch>
+      </BrowserRouter>
     );
   }
 }

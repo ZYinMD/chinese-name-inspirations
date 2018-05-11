@@ -7,19 +7,19 @@ import Meh from 'react-icons/lib/md/sentiment-neutral';
 const Choices = () => (
   <ol className='choices'>
     <li className='choice'>
-      <i><Cross /></i>
+      <i className='theme'><Cross /></i>
       <p>正常人都不会喜欢</p>
     </li>
     <li className='choice'>
-      <i className='face-icon'><Meh /></i>
+      <i className='face-icon theme'><Meh /></i>
       <p>我不喜欢, 别人或许<br/>有一定概率喜欢</p>
     </li>
     <li className='choice'>
-      <i><Bulb /></i>
+      <i className='theme'><Bulb /></i>
       <p>还行, 提供了<br/>一点灵感</p>
     </li>
     <li className='choice'>
-      <i className='heart'><Heart /></i>
+      <i className='heart theme'><Heart /></i>
       <p>好名字, 备选</p>
     </li>
   </ol>
