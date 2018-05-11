@@ -2,6 +2,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 4.5vh;
   padding: 2vw;
   background-color: white;
   /*box-shadow: 0 1px 10px silver;*/
@@ -21,4 +22,8 @@ header h1 {
   color: #555;
   font-size:6vw;
   padding: 0 0.6vw;
+}
+
+.placeholder {
+  opacity: 0;
 }

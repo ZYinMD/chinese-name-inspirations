@@ -1,0 +1,29 @@
+ol {
+  padding: 0;
+}
+
+section {
+  margin:2rem 0;
+  background-color: white;
+  border-top:1px solid #e5e5e5;
+  border-bottom:1px solid #e5e5e5;
+}
+
+li {
+  margin-left: 5vw;
+  padding: 0.5rem 2.3vw 0.45rem 0;
+  list-style: none;
+  font-size: 18px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+li:last-child {
+  border: none;
+  padding-bottom: 0.5rem;
+
+}

@@ -72,9 +72,9 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/" component={Home} />
           <Route path="/settings" component={Settings} />
           <Route path="/menu" component={Menu} />
+          <Route path="/" component={Home} />
         </Switch>
       </BrowserRouter>
     );
