@@ -5,7 +5,6 @@ import Header from './Components/Header';
 import Name from './Components/Name';
 import Choices from './Components/Choices';
 
-
 class App extends Component {
   state = {
     };
@@ -72,7 +71,7 @@ class App extends Component {
 
   render () {
     return (
-      <div>
+      <div className="app">
         <Header/>
         <Name/>
         <Choices/>
