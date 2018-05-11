@@ -1,0 +1,19 @@
+ol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 2vw;
+}
+
+li {
+  list-style: none;
+  width: 40vw;
+  height: 40vw;
+  border: 1px solid silver;
+  margin: 3vw;
+}
+
+li i {
+  font-size: 4em;
+}
+
