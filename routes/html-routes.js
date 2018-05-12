@@ -1,4 +1,4 @@
 module.exports = function (app) {
-    app.get('/', (req, res) => res.sendFile('./public-test/index.html'));
+    app.get('/', (req, res) => res.sendFile('../client/build/index.html'));
 };
 
