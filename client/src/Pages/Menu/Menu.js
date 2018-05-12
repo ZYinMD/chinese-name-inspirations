@@ -25,9 +25,10 @@ class Menu extends Component {
             <Li><span>已标 <Heart style={{paddingBottom: '1.5px'}}/> 的名字</span><Expand /></Li>
           </ListSection>
           <ListSection>
-            <Li>hello</Li>
-            <Li>world</Li>
-            <Li>foobar</Li>
+            <Li><span>典籍</span><Expand /></Li>
+          </ListSection>
+          <ListSection>
+            <Li><span>关于本App</span><Expand /></Li>
           </ListSection>
         </List>
       </div>

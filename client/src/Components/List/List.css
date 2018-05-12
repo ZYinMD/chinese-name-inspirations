@@ -3,7 +3,7 @@ ol {
 }
 
 section {
-  margin:2rem 0;
+  margin:1.8rem 0;
   background-color: white;
   border-top:1px solid #e5e5e5;
   border-bottom:1px solid #e5e5e5;
@@ -11,7 +11,7 @@ section {
 
 li {
   margin-left: 5vw;
-  padding: 0.5rem 2.3vw 0.45rem 0;
+  padding: 0.5rem 3.3vw 0.45rem 0;
   list-style: none;
   font-size: 18px;
   border-bottom: 1px solid #eee;
@@ -19,11 +19,9 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
 
 li:last-child {
   border: none;
   padding-bottom: 0.5rem;
-
 }
