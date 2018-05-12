@@ -1,4 +1,3 @@
-const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
@@ -10,10 +9,5 @@ app.use(express.static('client/build'));
 
 require('./routes/api-routes.js')(app);
 require('./routes/html-routes.js')(app);
-
-// app.get("*", function(req, res) {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
-
 
 app.listen(PORT, () => console.log('App listening on PORT ' + PORT));
