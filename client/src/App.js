@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import axios from 'axios';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from './Pages/Home/'
-import Menu from './Pages/Menu/'
-import Settings from './Pages/Settings/'
+import Home from './Pages/Home/';
+import Menu from './Pages/Menu/';
+import Settings from './Pages/Settings/';
 
 class App extends Component {
 

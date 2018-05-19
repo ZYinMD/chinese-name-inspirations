@@ -1,49 +1,97 @@
+// 如果你听到Yanny, 那你适合使用苹果的旧款耳机, 就是iPhone 4S之前配的那种圆圆的。一般人我不告诉他
 const dbConnection = require('../db/db-connection.js');
-const assert = require('assert');
 module.exports = function (app) {
-  app.get('/api/char/eval', eval);
-  app.post('/api/char', updateChar);
-  app.get('/test', test);
+  app.get('/api/names', generateNames);
+};
+
+class ListOfNames {
+  constructor(allowed) {
+    let nin = new Set(['不适用于人名', '很生僻', '多音字', '男孩用', '女孩用', '无趣', '略生僻', '很土', '很俗', '很怪', '略土', '略俗', '略怪', '玉类']);
+    for (let i of allowed) {
+      nin.delete(i);
+    }
+    this.nin = [...nin];
+  }
+
+  async charactersCollection() {
+    let connection = await dbConnection;
+    let charactersCollection = await connection.db().collection('characters');
+    return charactersCollection;
+  }
+
+  async randomChars() {
+    let characters = await this.charactersCollection();
+    let randomChars = await characters.aggregate([
+      {$match:
+        {labels: {
+          $in: ['普通'],
+          $nin: this.nin
+        }}
+      },
+      {$sample: { size: 30 }}
+      ])
+    .project({char:1, _id: 0})
+    .toArray();
+    return randomChars;
+  }
+
+  async goodChars() {
+    let characters = await this.charactersCollection();
+    let goodChars = await characters.aggregate([
+      {$match:
+        {labels: {
+          $in: ['有意思', '优先'],
+          $nin: this.nin
+        }}
+      },
+      {$sample: { size: 6 }}
+      ])
+    .project({char:1, _id: 0})
+    .toArray();
+    return goodChars;
+  }
+
+  async mixChars() {
+    let randomChars = this.randomChars();
+    let goodChars = this.goodChars();
+    randomChars = await randomChars;
+    goodChars = await goodChars;
+    return mixIn(randomChars, goodChars);
+  }
+
+  async response() {
+    return await this.mixChars();
+  }
+
 }
 
-async function eval(req, res) {
+async function generateNames(req, res) {
   try {
-    let connection = await dbConnection;
-    let collection = await connection.db().collection('characters');
-    let r = await collection.aggregate([{$match: {evaluated: false}}, {$sample: {size: 3}}]).toArray();
-    if (r) res.json(r)
-    else res.status(410).send('All characters have been evaluated. Unbelievable!');
+    console.log(req.query);
+
+    /*
+    pseudocode:
+    find 30 chars that match 普通 but not match 没开启的
+    奇偶配对
+    返回每一对
+    */
+    let randomChars = new ListOfNames([]);
+    let response = await randomChars.response();
+    res.json(response);
+
+
+    // res.json(randomChars);
   }
   catch(error) {
     console.error(error);
   }
 }
 
-async function updateChar(req, res) {
-  try {
-    // res.json({'This was the req.body you sent': req.body})
-    let connection = await dbConnection;
-    let collection = await connection.db().collection('characters');
-    let r = await collection.updateOne({_id: req.body._id}, {$set: {evaluated: true, labels: req.body.labels}});
-    assert.equal(1, r.matchedCount);
-    // assert.equal(1, r.modifiedCount);
-    res.status(200).send(`${req.body.char} updated`);
 
+function mixIn(array1, array2) {
+  for (let i of array2) {
+    let randomIndex = Math.floor(Math.random() * array1.length);
+    array1.splice(randomIndex, 0, i);
   }
-  catch(error) {
-    console.error(error);
-  }
-}
-async function test(req, res) {
-  try {
-    let connection = await dbConnection;
-    let db = await connection.db(dbName);
-    // let r = await db.collection('characters').aggregate({ $sample: { size: 10 } }).toArray();
-    let r = await db.collection('characters').aggregate([{$match: {tone: '3'}},{ $sample: { size: 10 } }]).toArray();
-    if (r) res.json(r)
-    else res.status(410).send('All characters have been evaluated. Unbelievable!');
-  }
-  catch(error) {
-    console.error(error);
-  }
+  return array1;
 }

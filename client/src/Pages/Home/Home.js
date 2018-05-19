@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './Home.css';
 import { Link } from "react-router-dom";
 import Gear from 'react-icons/lib/go/gear';
@@ -13,6 +14,20 @@ var pointer = 0;
 class Home extends Component {
   state = {
     name: demo[pointer]
+  }
+
+  componentDidMount() {
+    this.replenish();
+  }
+
+  replenish = async () => {
+    try {
+      let names = await axios.get('/api/names');
+      console.log(names);
+    }
+    catch(error) {
+      console.error(error);
+    }
   }
 
   handleClick = () => {
