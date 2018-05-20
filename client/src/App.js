@@ -4,76 +4,75 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from './Pages/Home/';
 import Menu from './Pages/Menu/';
 import Settings from './Pages/Settings/';
-
+const queue = [];
+var pointer = 0;
+/*
+pseudocode:
+on load:
+  replenish;
+  load settings from localStorage
+updateDisplay:
+  set state.display to queue[pointer];
+on submit:
+  pointer++;
+  updateDisplay();
+  POST db;
+  replenish;
+replenish:
+  let remaining = queue.length - pointer;
+  if (remaining <= 15 && remaining % 5 == 0) {
+    grab another bunch;
+    queue.concat(res);
+    updateDisplay();
+  }
+undo:
+  pointer--;
+  updateDisplay();
+*/
 class App extends Component {
-
-  componentDidMount() {
+/*
+  state = {
+    display: '加载中...',
+    // settings: {};
   }
 
-  undo = () => {/*
-    console.log('undo');
-    pointer--;
-    this.setState({
-      char: queue[pointer],
-      chosen: new Set([])
-    });
-  */}
-  submit = () => {/*
-    this.submitEval();
-    pointer++;
-    this.setState({
-      char: queue[pointer],
-      chosen: new Set([])
-    });
+  componentDidMount() {
     this.replenish();
-  */}
+    // load settings from localStorage into this.state.settings;
+  }
 
-  submitEval = async () => {/*
-    let _id = this.state.char._id;
-    let char = this.state.char.char;
-    let labels = [...this.state.chosen];
-    try {
-      let res = await axios.post('/api/char', {_id, labels, char});
-      console.log(`${res.data}, Queue ${pointer}/${queue.length}`);
+  updateDisplay() {
+    this.setState({display: queue[pointer]});
+  }
+
+  submit() {
+    pointer++;
+    this.updateDisplay();
+    // POST db;
+    this.replenish();
+  }
+
+  replenish() {
+    var remaining = queue.length - pointer;
+    if (remaining <= 15 && remaining % 5 == 0) {
+      // grab another bunch;
+      // queue.concat(res);
+      this.updateDisplay();
     }
-    catch(error) {
-      console.error(error);
-    }
-  */}
 
-  replenish = async () => {/*
-    let remaining = queue.length - pointer;
-    if (remaining > 4 || remaining % 2 !== 0) return; // if remaining <= 15 and divisible by 5,  then get more
-    try {
-      var res = await fetch('/api/char/eval');
-      var additions = await res.json();
-      if (res.status !== 200) throw Error(res.message);
-      queue = queue.concat(additions);
-      this.setState({char: queue[pointer]});
-    }
-    catch(error) {
-      console.error(error);
-    }
-  */}
+  undo() {
+    pointer--;
+    this.updateDisplay();
+  }
 
-  handleClick = event => {/* // this function fires when a label is clicked
-    this.toggleLabel(event.target.innerText); // this is the text of the choice clicked
-   */}
-
-  toggleLabel = label => {/* // this function changes a label's color
-    var _chosen = new Set(this.state.chosen); // make a copy of current state
-    if (_chosen.has(label)) _chosen.delete(label);
-    else _chosen.add(label);
-    this.setState({chosen: _chosen});
-  */}
-
+*/
   render() {
     return (
       <BrowserRouter>
         <Switch>
           <Route path="/settings" component={Settings} />
           <Route path="/menu" component={Menu} />
-          <Route path="/" component={Home} />
+          <Route path="/" render={()=><Home name={'风起'}/>}/>
         </Switch>
       </BrowserRouter>
     );
