@@ -1,5 +1,6 @@
 const constructNames = require('./http-request-handlers.js').constructNames;
 const getNames = require('./http-request-handlers.js').getNames;
+const mixArray = require('./http-request-handlers.js').mixArray;
 
 module.exports = function (app) {
   app.get('/api/names', async (req, res) => {

@@ -1,5 +1,5 @@
-const dbConnection = require('../db/db-connection.js');
-module.exports = {constructNames, getNames};
+const db = require('../db/db-connection.js');
+module.exports = {constructNames, getNames, mixArray};
 
 async function getNames(allowedLabels, number) {
   var nin = new Set(['不适用于人名', '很生僻', '多音字', '男孩用', '女孩用', '无趣', '略生僻', '很土', '很俗', '很怪', '略土', '略俗', '略怪', '玉类']);
@@ -9,14 +9,8 @@ async function getNames(allowedLabels, number) {
   nin = [...nin];
   return findNames(number);
 
-  async function namesCollection() {
-    var connection = await dbConnection;
-    var namesCollection = await connection.db().collection('names');
-    return namesCollection;
-  }
-
   async function findNames(number) {
-    var collection = await namesCollection();
+    var collection = await db.names;
     var names = await collection.aggregate([
       {$match:
         {labels: {
@@ -26,6 +20,7 @@ async function getNames(allowedLabels, number) {
       },
       {$sample: { size: number }}
       ])
+    .project({_id: 0, name:1, ref: 1, looseRef: 1})
     .toArray();
     return names;
   }
@@ -46,7 +41,8 @@ async function constructNames(allowedLabels, num普通chars, num有意思chars, 
     chars.forEach((char, index, chars) => {
       if (index % 2 == 1) return;
       var name = [char.char, chars[index + 1].char];
-      names.push(name.sort().join(''));
+      name = name.sort().join('');
+      names.push({name});
     });
     return names;
   }
@@ -62,7 +58,7 @@ async function constructNames(allowedLabels, num普通chars, num有意思chars, 
   }
 
   async function getChars(type, number) {
-    var collection = await charactersCollection();
+    var collection = await db.chars;
     var chars = await collection.aggregate([
       {$match:
         {labels: {
@@ -75,12 +71,6 @@ async function constructNames(allowedLabels, num普通chars, num有意思chars, 
     .project({char:1, _id: 0})
     .toArray();
     return chars;
-  }
-
-  async function charactersCollection() {
-    var connection = await dbConnection;
-    var charactersCollection = await connection.db().collection('characters');
-    return charactersCollection;
   }
 }
 
