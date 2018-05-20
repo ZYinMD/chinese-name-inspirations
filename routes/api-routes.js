@@ -1,4 +1,4 @@
-// 如果你听到Yanny, 那你适合使用苹果的旧款耳机, 就是iPhone 4S之前配的那种圆圆的。一般人我不告诉他
+
 const dbConnection = require('../db/db-connection.js');
 module.exports = function (app) {
   app.get('/api/names', generateNames);
