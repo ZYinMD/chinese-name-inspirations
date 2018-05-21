@@ -1,5 +1,5 @@
 const input = require('../one-time-data/古文.json');
-const output = ('../one-time-data/names-with-references.json');
+const output = ('../one-time-data/names-with-refs.json');
 const fs = require('fs');
 const dataStorage = {};
 

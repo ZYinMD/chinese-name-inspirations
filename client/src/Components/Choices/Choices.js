@@ -8,6 +8,7 @@ import Meh from 'react-icons/lib/md/sentiment-neutral';
 const Choices = ({name, submit}) => {
 
   function handleClick(rating) {
+    if (!name) return; // when name isn't ready (shown as 加载中...)
     axios.post('/api/names', {name, rating});
     submit();
   }
@@ -15,8 +16,8 @@ const Choices = ({name, submit}) => {
   return (
     <ol className='choices'>
       <li className='choice' onClick={() => {handleClick(1)}}>
-        <i className='theme'><Cross /></i>
-        <p>正常人都不会喜欢</p>
+        <i className='cross theme'><Cross /></i>
+        <p>正常人不可能<br/>起这个名字</p>
       </li>
       <li className='choice' onClick={() => {handleClick(2)}}>
         <i className='face-icon theme'><Meh /></i>

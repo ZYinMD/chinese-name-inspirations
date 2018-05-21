@@ -34,8 +34,7 @@ undo:
 */
 class App extends Component {
   state = {
-    nameObj: {name: '加载中...'}
-    // settings: {姓: '尹'}
+    nameObj: {}
   }
 
   submit = () => {
@@ -50,14 +49,15 @@ class App extends Component {
 
   replenish = async () => {
     let remaining = queue.length - pointer;
-    if (remaining <= 15 && remaining % 5 == 0) {
+    if (remaining <= 15 && remaining % 5 === 0) {
       var newBunch = await axios.get('/api/names');
       queue.push(...newBunch.data);
-      console.log('queue: ', queue);
+      this.updateDisplay();
     }
   }
 
   undo = () => {
+    if (pointer < 1) return;
     pointer--;
     this.updateDisplay();
   }
@@ -73,7 +73,7 @@ class App extends Component {
         <Switch>
           <Route path="/settings" component={Settings} />
           <Route path="/menu" component={Menu} />
-          <Route path="/" render={()=><Home submit={this.submit} nameObj={this.state.nameObj}/>}/>
+          <Route path="/" render={()=><Home submit={this.submit} nameObj={this.state.nameObj} undo={this.undo}/>}/>
         </Switch>
       </BrowserRouter>
     );

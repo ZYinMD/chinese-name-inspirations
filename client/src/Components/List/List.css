@@ -25,3 +25,7 @@ li:last-child {
   border: none;
   padding-bottom: 0.5rem;
 }
+
+.menu li:active {
+  color: silver;
+}

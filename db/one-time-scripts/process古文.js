@@ -46,7 +46,7 @@ function keepAuthorAndTitle(book, bookName) {
     }
 
     let entry = {};
-    entry.title = (i.author? i.author : bookName) + ':' + i.title;
+    entry.title = (i.author? i.author : bookName) + ' 《' + i.title + '》';
     entry.body = i.content;
     dataStorage.push(entry);
   }
@@ -64,7 +64,7 @@ function keepBookAndTitle(book, bookName) {
     }
 
     let entry = {};
-    entry.title = bookName + '·' + i.title;
+    entry.title = '《' + bookName + '·' + i.title + '》';
     entry.body = i.content;
     dataStorage.push(entry);
   }

@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 0 2vw;
+  margin: 0 auto;
 }
 
 .choice {
@@ -34,11 +35,18 @@
   padding: 4px 0;
   text-align: center;
 }
+
 .face-icon {
   padding-top: 5px;
 }
 
 .heart {
   position: relative;
+  top: 1px;
+}
+
+.cross {
+  position: relative;
   top: 2px;
 }
+

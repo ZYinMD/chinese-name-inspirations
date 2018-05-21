@@ -10,7 +10,7 @@ import Bulb from 'react-icons/lib/io/android-bulb';
 class Menu extends Component {
   render() {
     return (
-      <div>
+      <div className='menu'>
         <Header>
           <Link to='./'><Back className='icon'/></Link>
           <h1>关于起名的种种</h1>
