@@ -5,11 +5,11 @@ import Cross from 'react-icons/lib/md/clear';
 import Heart from 'react-icons/lib/io/android-favorite-outline';
 import Bulb from 'react-icons/lib/io/android-bulb';
 import Meh from 'react-icons/lib/md/sentiment-neutral';
-const Choices = props =>{
+const Choices = ({name, submit}) => {
 
   function handleClick(rating) {
-    axios.post('/api/names', {a:1, b:2});
-    console.log('rating: ', rating);
+    axios.post('/api/names', {name, rating});
+    submit();
   }
 
   return (

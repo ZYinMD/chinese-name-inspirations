@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from './Pages/Home/';
@@ -6,13 +7,15 @@ import Menu from './Pages/Menu/';
 import Settings from './Pages/Settings/';
 const queue = [];
 var pointer = 0;
+window.settings = {姓: '尹'};
+
 /*
 pseudocode:
 on load:
   replenish;
   load settings from localStorage
 updateDisplay:
-  set state.display to queue[pointer];
+  set state.name to queue[pointer];
 on submit:
   pointer++;
   updateDisplay();
@@ -30,10 +33,33 @@ undo:
   updateDisplay();
 */
 class App extends Component {
-/*
   state = {
-    display: '加载中...',
-    // settings: {};
+    nameObj: {name: '加载中...'}
+    // settings: {姓: '尹'}
+  }
+
+  submit = () => {
+    pointer++;
+    this.updateDisplay();
+    this.replenish();
+  }
+
+  updateDisplay = () => {
+    this.setState({nameObj: queue[pointer]});
+  }
+
+  replenish = async () => {
+    let remaining = queue.length - pointer;
+    if (remaining <= 15 && remaining % 5 == 0) {
+      var newBunch = await axios.get('/api/names');
+      queue.push(...newBunch.data);
+      console.log('queue: ', queue);
+    }
+  }
+
+  undo = () => {
+    pointer--;
+    this.updateDisplay();
   }
 
   componentDidMount() {
@@ -41,38 +67,13 @@ class App extends Component {
     // load settings from localStorage into this.state.settings;
   }
 
-  updateDisplay() {
-    this.setState({display: queue[pointer]});
-  }
-
-  submit() {
-    pointer++;
-    this.updateDisplay();
-    // POST db;
-    this.replenish();
-  }
-
-  replenish() {
-    var remaining = queue.length - pointer;
-    if (remaining <= 15 && remaining % 5 == 0) {
-      // grab another bunch;
-      // queue.concat(res);
-      this.updateDisplay();
-    }
-
-  undo() {
-    pointer--;
-    this.updateDisplay();
-  }
-
-*/
   render() {
     return (
       <BrowserRouter>
         <Switch>
           <Route path="/settings" component={Settings} />
           <Route path="/menu" component={Menu} />
-          <Route path="/" render={()=><Home name={'风起'}/>}/>
+          <Route path="/" render={()=><Home submit={this.submit} nameObj={this.state.nameObj}/>}/>
         </Switch>
       </BrowserRouter>
     );
