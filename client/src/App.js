@@ -34,7 +34,8 @@ undo:
 */
 class App extends Component {
   state = {
-    nameObj: {}
+    nameObj: {},
+    showRef: false
   }
 
   submit = () => {
@@ -61,6 +62,7 @@ class App extends Component {
     pointer--;
     this.updateDisplay();
   }
+
 
   componentDidMount() {
     this.replenish();

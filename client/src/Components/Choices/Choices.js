@@ -5,9 +5,10 @@ import Cross from 'react-icons/lib/md/clear';
 import Heart from 'react-icons/lib/io/android-favorite-outline';
 import Bulb from 'react-icons/lib/io/android-bulb';
 import Meh from 'react-icons/lib/md/sentiment-neutral';
-const Choices = ({name, submit}) => {
+const Choices = ({name, submit, collapseRef}) => {
 
   function handleClick(rating) {
+    collapseRef();
     if (!name) return; // when name isn't ready (shown as 加载中...)
     axios.post('/api/names', {name, rating});
     submit();

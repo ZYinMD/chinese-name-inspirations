@@ -5,21 +5,20 @@ import Undo from 'react-icons/lib/md/undo';
 import Expand from 'react-icons/lib/md/keyboard-arrow-down';
 import Collapse from 'react-icons/lib/md/keyboard-arrow-up';
 
-const Expander = props => {
-  var style = {};
-  if (!props.nameObj.ref && !props.nameObj.looseRef) {
-    style = {color: 'silver'};
+
+class Expander extends Component {
+  render() {
+    var style = {};
+    if (!this.props.nameObj.ref && !this.props.nameObj.looseRef) {
+      style = {color: 'silver'};
+    }
+    return (
+      <span onClick={this.props.onClick} style={style}>{this.props.isRefShown ? <Collapse/> : <Expand/>}</span>
+    );
   }
-  return (
-    <span onClick={props.onClick} style={style}>{props.showRef ? <Collapse/> : <Expand/>}</span>
-  );
-};
+}
 
 class Name extends Component {
-
-  state = {
-    showRef: false
-  }
 
   displayName = () => {
     let 名1 = this.props.nameObj.name;
@@ -27,28 +26,24 @@ class Name extends Component {
     return window.settings.姓 + 名1 + ' / ' + window.settings.姓 + 名2;
   }
 
-  toggleRef = () => {
-    this.setState({showRef: !this.state.showRef});
-  }
-
   renderRef = () => {
     var refs = [];
     if (this.props.nameObj.ref) {
-      refs.push(...Object.entries(this.props.nameObj.ref))
+      refs.push(...Object.entries(this.props.nameObj.ref));
     }
     if (this.props.nameObj.looseRef) {
-      refs.push(...Object.entries(this.props.nameObj.looseRef))
+      refs.push(...Object.entries(this.props.nameObj.looseRef));
     }
-    refs = refs.map(i => i.join(': '));
+    if (refs.length) {
+      refs = refs.map(i => i.join(': '));
+      refs.unshift('可能相关的出处:');
+    }
     var char1 = this.props.nameObj.name[0];
     var char2 = this.props.nameObj.name[1];
     refs.push('可能采用的小名:');
     refs.push(`阿${char1}, 阿${char2}, 小${char1}, 小${char2}, ${char1}${char1}, ${char2}${char2}`);
     refs.push('如果只喊名: ');
     refs.push(`${char1}${char2} / ${char2}${char1}`);
-
-    // var 小名 = `阿${char1}, 阿${char2}, 小${char1}, 小${char2}, ${char1}${char1}, ${char2}${char2}`;
-    // var 只喊名 = `${char1}${char2} / ${char2}${char1}`;
 
     return (
       <div className='ref'>
@@ -63,9 +58,9 @@ class Name extends Component {
         <div className='name-display'>
           <Undo onClick={this.props.undo}/>
           <h2>{this.props.nameObj.name ? this.displayName() : '加载中...'}</h2>
-          <Expander nameObj={this.props.nameObj} showRef={this.state.showRef} onClick={this.toggleRef}/>
+          <Expander nameObj={this.props.nameObj} isRefShown={this.props.isRefShown} onClick={this.props.toggleRef}/>
         </div>
-        {this.state.showRef ? this.renderRef() : null}
+        {this.props.isRefShown ? this.renderRef() : null}
       </div>
     );
   }
