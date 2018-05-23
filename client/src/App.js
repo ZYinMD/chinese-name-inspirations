@@ -17,14 +17,16 @@ class App extends Component {
     showRef: false
   }
 
-  componentDidMount() {
+  UNSAFE_componentWillMount() {
     if (localStorage.chineseNameGeneratorSettgins) {
       window.settings = JSON.parse(localStorage.getItem('chineseNameGeneratorSettgins'));
     } else {
-      console.log('noLS');
-      window.settings = {姓: '尹', allowed: ['多音字']};
+      window.settings = {姓: '尹', allowed: ['多音字'], mandate出处: false};
       window.updateLocalStorage();
     }
+  }
+
+  componentDidMount() {
     this.replenish();
   }
 

@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import Header from '../../Components/Header';
-import {List, ListSection, Li} from '../../Components/List'
+import {List, ListSection, Li} from '../../Components/List';
 import Toggle from '../../Components/Toggle';
 import Back from 'react-icons/lib/md/navigate-before';
 import Expand from 'react-icons/lib/md/navigate-next';
+import Article from '../../Components/Article/Article.js';
+import 很土的字 from '../../Articles/很土的字.js';
 
 class Settings extends Component {
   render() {
@@ -45,6 +47,7 @@ class Settings extends Component {
             <Li>允许多音字<Toggle checked={window.settings.allowed.includes('多音字')} label={'多音字'}/></Li>
           </ListSection>
         </List>
+      <Article parent={'/settings'} title={'很土的字'} content={<很土的字/>}/>
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import Header from '../../Components/Header';
-import {List, ListSection, Li} from '../../Components/List'
+import {List, ListSection, Li} from '../../Components/List';
 import Back from 'react-icons/lib/md/navigate-before';
 import Expand from 'react-icons/lib/md/navigate-next';
 import Heart from 'react-icons/lib/io/android-favorite-outline';
