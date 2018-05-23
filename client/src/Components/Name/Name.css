@@ -26,7 +26,8 @@
 
 .ref {
   border-top:1px solid #d5d5d5;
-  font-size: 3vw;
+  font-size: 3.3vw;
+  margin: 0;
   text-align: left;
   padding: 2vw 4vw;
 }
@@ -35,8 +36,14 @@
   margin: 2px;
 }
 
-hr {
-  border: 0;
-  height: 1px;
-  background: #333;
+dl {
+  margin: 1vh 0;
+}
+
+dd {
+  margin-left: 3vw;
+}
+
+.expander {
+  font-size: 1.2em;
 }

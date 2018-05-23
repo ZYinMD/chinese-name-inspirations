@@ -7,31 +7,11 @@ import Menu from './Pages/Menu/';
 import Settings from './Pages/Settings/';
 const queue = [];
 var pointer = 0;
-window.settings = {姓: '尹'};
+window.settings = {
+  姓: '尹',
+  allowed: new Set([])
+};
 
-/*
-pseudocode:
-on load:
-  replenish;
-  load settings from localStorage
-updateDisplay:
-  set state.name to queue[pointer];
-on submit:
-  pointer++;
-  updateDisplay();
-  POST db;
-  replenish;
-replenish:
-  let remaining = queue.length - pointer;
-  if (remaining <= 15 && remaining % 5 == 0) {
-    grab another bunch;
-    queue.concat(res);
-    updateDisplay();
-  }
-undo:
-  pointer--;
-  updateDisplay();
-*/
 class App extends Component {
   state = {
     nameObj: {},
@@ -51,7 +31,12 @@ class App extends Component {
   replenish = async () => {
     let remaining = queue.length - pointer;
     if (remaining <= 15 && remaining % 5 === 0) {
-      var newBunch = await axios.get('/api/names');
+      var newBunch = await axios.get('/api/names', {
+        params: {
+          allowed: [...window.settings.allowed],
+          mandate出处: window.settings.mandate出处,
+        }
+      });
       queue.push(...newBunch.data);
       this.updateDisplay();
     }
@@ -66,7 +51,18 @@ class App extends Component {
 
   componentDidMount() {
     this.replenish();
-    // load settings from localStorage into this.state.settings;
+    /*
+    load settings from localStorage into this.state.settings, pseudocode:
+    if LS has chineseNameGeneratorSettgins
+      window.setting = LS
+    else
+      window.setting = {姓: '尹', allowed: new Set([])};
+
+    onToggle:
+      change window.setting
+      update LS
+    */
+
   }
 
   render() {

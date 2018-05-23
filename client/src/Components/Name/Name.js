@@ -9,11 +9,15 @@ import Collapse from 'react-icons/lib/md/keyboard-arrow-up';
 class Expander extends Component {
   render() {
     var style = {};
-    if (!this.props.nameObj.ref && !this.props.nameObj.looseRef) {
+    if (this.props.nameObj.ref) {
+      style = {color: '#2bb'};
+    } else if (this.props.nameObj.looseRef) {
+      style = {color: 'black'};
+    } else {
       style = {color: 'silver'};
     }
     return (
-      <span onClick={this.props.onClick} style={style}>{this.props.isRefShown ? <Collapse/> : <Expand/>}</span>
+      <span className='expander' onClick={this.props.onClick} style={style}>{this.props.isRefShown ? <Collapse/> : <Expand/>}</span>
     );
   }
 }

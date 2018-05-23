@@ -11,7 +11,7 @@ module.exports = function (app) {
   });
 
   app.get('/api/names', async (req, res) => {
-    console.log(req.query);
+    console.log('req.query: ', req.query);
     try {
       var 现成names = await getNames([], 10);
       res.json(现成names);
