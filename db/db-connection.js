@@ -1,13 +1,9 @@
 const MongoClient = require('mongodb').MongoClient;
-const url = process.env.MONGODB_URI || 'mongodb://localhost:27017';
-
-console.log('process.env.MONGODB_URI: ', process.env.MONGODB_URI);
-
-const dbName = process.env.MONGODB_URI ? 'heroku_tp1ql3d8' : 'chinese-name-generator';
+const localDBName='chinese-name-generator';
+const URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/' + localDBName;
 
 const connect = async function() {
-  var connect = await MongoClient.connect(url);
-  // var connect = await MongoClient.connect(url + '/' + dbName);
+  var connect = await MongoClient.connect(URI);
   return connect;
 };
 
