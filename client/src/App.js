@@ -7,15 +7,25 @@ import Menu from './Pages/Menu/';
 import Settings from './Pages/Settings/';
 const queue = [];
 var pointer = 0;
-window.settings = {
-  姓: '尹',
-  allowed: new Set([])
+window.updateLocalStorage = () => {
+  localStorage.setItem('chineseNameGeneratorSettgins', JSON.stringify(window.settings));
 };
 
 class App extends Component {
   state = {
     nameObj: {},
     showRef: false
+  }
+
+  componentDidMount() {
+    if (localStorage.chineseNameGeneratorSettgins) {
+      window.settings = JSON.parse(localStorage.getItem('chineseNameGeneratorSettgins'));
+    } else {
+      console.log('noLS');
+      window.settings = {姓: '尹', allowed: ['多音字']};
+      window.updateLocalStorage();
+    }
+    this.replenish();
   }
 
   submit = () => {
@@ -33,7 +43,7 @@ class App extends Component {
     if (remaining <= 15 && remaining % 5 === 0) {
       var newBunch = await axios.get('/api/names', {
         params: {
-          allowed: [...window.settings.allowed],
+          allowed: window.settings.allowed,
           mandate出处: window.settings.mandate出处,
         }
       });
@@ -46,23 +56,6 @@ class App extends Component {
     if (pointer < 1) return;
     pointer--;
     this.updateDisplay();
-  }
-
-
-  componentDidMount() {
-    this.replenish();
-    /*
-    load settings from localStorage into this.state.settings, pseudocode:
-    if LS has chineseNameGeneratorSettgins
-      window.setting = LS
-    else
-      window.setting = {姓: '尹', allowed: new Set([])};
-
-    onToggle:
-      change window.setting
-      update LS
-    */
-
   }
 
   render() {
