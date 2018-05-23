@@ -1,8 +1,7 @@
-// this file exports a promise which resolves on the connection with the db, see index.js
 const MongoClient = require('mongodb').MongoClient;
-const url = 'mongodb://localhost:27017';
-const dbName = 'chinese-name-generator';
-// module.exports = MongoClient.connect(url + '/' + dbName);
+const url = process.env.MONGODB_URI || 'mongodb://localhost:27017';
+const dbName = process.env.MONGODB_URI ? 'heroku_tp1ql3d8' : 'chinese-name-generator';
+
 const connect = async function() {
   var connect = await MongoClient.connect(url + '/' + dbName);
   return connect;
