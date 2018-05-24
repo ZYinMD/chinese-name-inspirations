@@ -17,6 +17,7 @@ const reactToggle = props => {
     className='toggle'
     defaultChecked={props.checked}
     icons={false}
+    disabled={props.disabled}
     onChange={handleToggle} />
   );
 };

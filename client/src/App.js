@@ -5,13 +5,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from './Pages/Home/';
 import Menu from './Pages/Menu/';
 import Settings from './Pages/Settings/';
-import 很土的字 from './Articles/很土的字.js';
-import 略土的字 from './Articles/略土的字.js';
-import 很俗的字 from './Articles/很俗的字.js';
-import 略俗的字 from './Articles/略俗的字.js';
-import 无趣的字 from './Articles/无趣的字.js';
-import 略生僻的字 from './Articles/略生僻的字.js';
-import 难搭配的字 from './Articles/难搭配的字.js';
+import ExplainLabels from './Components/Articles/ExplainLabels.js';
+
 
 const queue = [];
 var pointer = 0;
@@ -72,13 +67,18 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/settings/很土的字" component={很土的字}/>
-          <Route path="/settings/略土的字" component={略土的字}/>
-          <Route path="/settings/很俗的字" component={很俗的字}/>
-          <Route path="/settings/略俗的字" component={略俗的字}/>
-          <Route path="/settings/无趣的字" component={无趣的字}/>
-          <Route path="/settings/略生僻的字" component={略生僻的字}/>
-          <Route path="/settings/难搭配的字" component={难搭配的字}/>
+          <Route path="/settings/只适合女孩的字" render={()=><ExplainLabels title='只适合女孩的字' displayLabel='只适合女孩用' dbLabel='女孩用'/>}/>
+          <Route path="/settings/只适合男孩的字" render={()=><ExplainLabels title='只适合男孩的字' displayLabel='只适合男孩用' dbLabel='男孩用'/>}/>
+          <Route path="/settings/很土的字" render={()=><ExplainLabels title='很土的字' displayLabel='很土' dbLabel='很土'/>}/>
+          <Route path="/settings/略土的字" render={()=><ExplainLabels title='略土的字' displayLabel='略土' dbLabel='略土'/>}/>
+          <Route path="/settings/很俗的字" render={()=><ExplainLabels title='很俗的字' displayLabel='很俗' dbLabel='很俗'/>}/>
+          <Route path="/settings/略俗的字" render={()=><ExplainLabels title='略俗的字' displayLabel='略俗' dbLabel='略俗'/>}/>
+          <Route path="/settings/无趣的字" render={()=><ExplainLabels title='无趣的字' displayLabel='可用于人名, 但很无趣' dbLabel='无趣'/>}/>
+          <Route path="/settings/略生僻的字" render={()=><ExplainLabels title='略生僻的字' displayLabel='可以用, 但有些生僻' dbLabel='略生僻'/>}/>
+          <Route path="/settings/难搭配的字" render={()=><ExplainLabels title='难搭配的字' displayLabel='人脑可以驾驭, 电脑不行' dbLabel='略怪'/>}/>
+          <Route path="/settings/非常难搭配的字" render={()=><ExplainLabels title='非常难搭配的字' displayLabel='某些特殊寓意的名字才会用' dbLabel='很怪'/>}/>
+          <Route path="/settings/多音字" render={()=><ExplainLabels title='多音字' displayLabel='多音字' dbLabel='多音字'/>}/>
+          <Route path="/settings/不适用于人名的字" render={()=><ExplainLabels title='不适用于人名的字' displayLabel='不适用于人名' dbLabel='不适用于人名'/>}/>
           <Route exact path="/settings" component={Settings} />
           <Route exact path="/menu" component={Menu} />
           <Route path="/" render={()=><Home submit={this.submit} nameObj={this.state.nameObj} undo={this.undo}/>}/>

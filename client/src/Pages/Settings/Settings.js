@@ -7,6 +7,7 @@ import Toggle from '../../Components/Toggle';
 import Back from 'react-icons/lib/md/navigate-before';
 import Expand from 'react-icons/lib/md/navigate-next';
 
+
 class Settings extends Component {
   render() {
     return (
@@ -27,8 +28,14 @@ class Settings extends Component {
             <Li>只使用有出处的名字<Toggle checked={window.settings.mandate出处} setting={'mandate出处'}/></Li>
           </ListSection>
           <ListSection>
-            <Li>允许只适合女孩的字<Toggle checked={window.settings.allowed.includes('女孩用')} label={'女孩用'}/></Li>
-            <Li>允许只适合男孩的字<Toggle checked={window.settings.allowed.includes('男孩用')} label={'男孩用'}/></Li>
+            <Li>
+              <span>允许<Link to='./settings/只适合女孩的字'>只适合女孩的字</Link></span>
+              <Toggle checked={window.settings.allowed.includes('女孩用')} label={'女孩用'}/>
+            </Li>
+            <Li>
+              <span>允许<Link to='./settings/只适合男孩的字'>只适合男孩的字</Link></span>
+              <Toggle checked={window.settings.allowed.includes('男孩用')} label={'男孩用'}/>
+            </Li>
           </ListSection>
           <ListSection>
             <Li>
@@ -66,6 +73,10 @@ class Settings extends Component {
             <Li>
               <span>允许<Link to='./settings/多音字'>多音字</Link></span>
               <Toggle checked={window.settings.allowed.includes('多音字')} label={'多音字'}/>
+            </Li>
+            <Li>
+              <span>允许<Link to='./settings/不适用于人名的字'>不适用于人名的字</Link></span>
+              <Toggle checked={window.settings.allowed.includes('不适用于人名')} label={'不适用于人名'}/>
             </Li>
           </ListSection>
         </List>

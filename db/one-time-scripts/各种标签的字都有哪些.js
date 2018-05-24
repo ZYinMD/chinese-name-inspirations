@@ -1,5 +1,5 @@
 const chars = require('../one-time-data/just-chars-with-labels.json');
-const output = ('../one-time-data/各种标签的字都有哪些.json');
+const output = ('../../client/src/Components/Articles/各种标签的字都有哪些.json');
 const dataStorage = {
   男孩用: '',
   女孩用: '',
