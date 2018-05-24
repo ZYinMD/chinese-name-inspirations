@@ -6,7 +6,6 @@ import {List, ListSection, Li} from '../../Components/List';
 import Toggle from '../../Components/Toggle';
 import Back from 'react-icons/lib/md/navigate-before';
 import Expand from 'react-icons/lib/md/navigate-next';
-import 很土的字 from '../../Articles/很土的字.js';
 
 class Settings extends Component {
   render() {
@@ -57,7 +56,7 @@ class Settings extends Component {
               <Toggle checked={window.settings.allowed.includes('略生僻')} label={'略生僻'}/>
             </Li>
             <Li>
-              <span>允许<Link to='./settings/比较难搭配的字'>比较难搭配的字</Link></span>
+              <span>允许<Link to='./settings/难搭配的字'>比较难搭配的字</Link></span>
               <Toggle checked={window.settings.allowed.includes('略怪')} label={'略怪'}/>
             </Li>
             <Li>

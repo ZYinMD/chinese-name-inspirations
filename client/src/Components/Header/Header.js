@@ -10,20 +10,22 @@ const Header = ({leftIcon, leftLink, title, headingLevel, rightIcon, rightLink})
         return <h1>{title}</h1>;
       case 2:
         return <h2>{title}</h2>;
-      case 3:
+      default:
         return <h3>{title}</h3>;
     }
   }
 
   return (
-    <header>
-      <Link to={leftLink}><i className='icon'>{leftIcon}</i></Link>
-      {renderTitle()}
-
-      {rightIcon ?
-        <Link to={rightLink}><i className='icon'>{rightIcon}</i></Link> :
-        <span className='placeholder'>foo</span>}
-    </header>
+    <div>
+      <header>
+        <Link to={leftLink}><i className='icon'>{leftIcon}</i></Link>
+        {renderTitle()}
+        {rightIcon ?
+          <Link to={rightLink}><i className='icon'>{rightIcon}</i></Link> :
+          <span className='placeholder'>foo</span>}
+      </header>
+      <div className='fake-header'></div>
+    </div>
   );
 };
 

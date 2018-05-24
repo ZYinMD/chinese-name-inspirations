@@ -1,12 +1,16 @@
 header {
+  position: fixed;
+  top:0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4.5vh;
+  height: 7vh;
+  width: 100%;
   padding: 2vw;
   background-color: white;
-  /*box-shadow: 0 1px 10px silver;*/
+  z-index: 1;
   border-bottom: 1px solid #d5d5d5;
+  box-sizing: border-box;
 }
 
 header * {
@@ -30,7 +34,7 @@ header h2 {
 
 header h3 {
   font-size:4.5vw;
-  font-weight: 100;
+  font-weight: 300;
   color:black;
 }
 
@@ -44,4 +48,9 @@ header h3 {
 
 .placeholder {
   opacity: 0;
+}
+
+.fake-header {
+  display: block;
+  height: 7vh;
 }
