@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import Header from '../../Components/Header';
 import {List, ListSection, Li} from '../../Components/List';
 import Back from 'react-icons/lib/md/navigate-before';
@@ -11,11 +10,7 @@ class Menu extends Component {
   render() {
     return (
       <div className='menu'>
-        <Header>
-          <Link to='./'><Back className='icon'/></Link>
-          <h1>关于起名的种种</h1>
-          <span className='placeholder'>foo</span>
-        </Header>
+        <Header leftIcon={<Back/>} leftLink='./' title='关于起名的种种' headingLevel={2}/>
         <List>
           <ListSection>
             <Li>给宝宝起名的7个原则<Expand /></Li>

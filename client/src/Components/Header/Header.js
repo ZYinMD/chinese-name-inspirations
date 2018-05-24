@@ -1,11 +1,31 @@
 import React from 'react';
 import './Header.css';
+import { Link } from "react-router-dom";
 
-const Header = props => (
-  <header>
-    {props.children}
-  </header>
-);
+const Header = ({leftIcon, leftLink, title, headingLevel, rightIcon, rightLink}) => {
+
+  function renderTitle() {
+    switch (headingLevel) {
+      case 1:
+        return <h1>{title}</h1>;
+      case 2:
+        return <h2>{title}</h2>;
+      case 3:
+        return <h3>{title}</h3>;
+    }
+  }
+
+  return (
+    <header>
+      <Link to={leftLink}><i className='icon'>{leftIcon}</i></Link>
+      {renderTitle()}
+
+      {rightIcon ?
+        <Link to={rightLink}><i className='icon'>{rightIcon}</i></Link> :
+        <span className='placeholder'>foo</span>}
+    </header>
+  );
+};
 
 export default Header;
 

@@ -5,6 +5,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from './Pages/Home/';
 import Menu from './Pages/Menu/';
 import Settings from './Pages/Settings/';
+import 很土的字 from './Articles/很土的字.js';
+
 const queue = [];
 var pointer = 0;
 window.updateLocalStorage = () => {
@@ -64,8 +66,9 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/settings" component={Settings} />
-          <Route path="/menu" component={Menu} />
+          <Route path="/settings/很土的字" component={很土的字}/>
+          <Route exact path="/settings" component={Settings} />
+          <Route exact path="/menu" component={Menu} />
           <Route path="/" render={()=><Home submit={this.submit} nameObj={this.state.nameObj} undo={this.undo}/>}/>
         </Switch>
       </BrowserRouter>
