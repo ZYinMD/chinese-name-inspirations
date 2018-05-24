@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Li = props => (
-  <li>
+  <li className={props.disabled ? 'disabled' : null}>
     {props.children}
   </li>
 );

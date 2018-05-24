@@ -24,3 +24,7 @@ a {
   font-size: 4.45vw;
   font-weight: 300;
 }
+
+.disabled * {
+  color: silver;
+}

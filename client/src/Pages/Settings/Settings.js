@@ -74,9 +74,29 @@ class Settings extends Component {
               <span>允许<Link to='./settings/多音字'>多音字</Link></span>
               <Toggle checked={window.settings.allowed.includes('多音字')} label={'多音字'}/>
             </Li>
-            <Li>
+            <Li disabled>
+              <span>允许<Link to='./settings/正常的字'>正常的字</Link></span>
+              <Toggle disabled checked/>
+            </Li>
+            <Li disabled>
+              <span>允许<Link to='./settings/清奇的字'>清奇的字</Link></span>
+              <Toggle disabled checked/>
+            </Li>
+            <Li disabled>
+              <span>允许<Link to='./settings/作者喜欢的字'>作者喜欢的字</Link></span>
+              <Toggle disabled checked/>
+            </Li>
+            <Li disabled>
               <span>允许<Link to='./settings/不适用于人名的字'>不适用于人名的字</Link></span>
-              <Toggle checked={window.settings.allowed.includes('不适用于人名')} label={'不适用于人名'}/>
+              <Toggle disabled checked={window.settings.allowed.includes('不适用于人名')} label={'不适用于人名'}/>
+            </Li>
+            <Li disabled>
+              <span>允许<Link to='./settings/很生僻的字'>很生僻的字</Link></span>
+              <Toggle disabled checked={window.settings.allowed.includes('很生僻')} label={'很生僻'}/>
+            </Li>
+            <Li disabled>
+              <span>允许<Link to='./settings/第三级字表的字'>第三级字表的字</Link></span>
+              <Toggle disabled checked={window.settings.allowed.includes('第三级字表')} label={'第三级字表'}/>
             </Li>
           </ListSection>
         </List>
@@ -84,4 +104,5 @@ class Settings extends Component {
     );
   }
 }
+
 export default Settings;

@@ -78,7 +78,12 @@ class App extends Component {
           <Route path="/settings/难搭配的字" render={()=><ExplainLabels title='难搭配的字' displayLabel='人脑可以驾驭, 电脑不行' dbLabel='略怪'/>}/>
           <Route path="/settings/非常难搭配的字" render={()=><ExplainLabels title='非常难搭配的字' displayLabel='某些特殊寓意的名字才会用' dbLabel='很怪'/>}/>
           <Route path="/settings/多音字" render={()=><ExplainLabels title='多音字' displayLabel='多音字' dbLabel='多音字'/>}/>
+          <Route path="/settings/正常的字" render={()=><ExplainLabels title='正常的字' displayLabel='正常' dbLabel='普通'/>}/>
+          <Route path="/settings/清奇的字" render={()=><ExplainLabels title='清奇的字' displayLabel='清奇' dbLabel='有意思'/>}/>
+          <Route path="/settings/作者喜欢的字" render={()=><ExplainLabels title='作者喜欢的字' displayLabel='作者喜欢' dbLabel='优先'/>}/>
           <Route path="/settings/不适用于人名的字" render={()=><ExplainLabels title='不适用于人名的字' displayLabel='不适用于人名' dbLabel='不适用于人名'/>}/>
+          <Route path="/settings/很生僻的字" render={()=><ExplainLabels title='很生僻的字' displayLabel='很生僻' dbLabel='很生僻'/>}/>
+          <Route path="/settings/第三级字表的字" render={()=><ExplainLabels title='第三级字表的字' displayLabel='第三级字表' dbLabel='第三级字表'/>}/>
           <Route exact path="/settings" component={Settings} />
           <Route exact path="/menu" component={Menu} />
           <Route path="/" render={()=><Home submit={this.submit} nameObj={this.state.nameObj} undo={this.undo}/>}/>
