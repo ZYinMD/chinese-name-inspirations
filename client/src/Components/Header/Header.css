@@ -18,7 +18,7 @@ header * {
   margin: 0;
 }
 
-header *:active {
+header i:active {
   color: grey;
 }
 
@@ -34,7 +34,7 @@ header h2 {
 
 header h3 {
   font-size:4.5vw;
-  font-weight: 300;
+  font-weight: 400;
   color:black;
 }
 

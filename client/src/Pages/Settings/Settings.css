@@ -1,10 +1,7 @@
-a {
-  color: black;
+.label a {
+  text-decoration: underline;
 }
-
 .article-page {
-  min-height: 100vh;
-  background-color: white;
   text-align: left;
 }
 
@@ -13,7 +10,7 @@ a {
 }
 
 .article-page h4 {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 4.45vw;
   margin-bottom: 2vw;
 }
@@ -22,7 +19,7 @@ a {
   letter-spacing: 0.5em;
   line-height: 1.5em;
   font-size: 4.45vw;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .disabled * {

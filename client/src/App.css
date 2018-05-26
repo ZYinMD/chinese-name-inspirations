@@ -1,7 +1,7 @@
 body {
-  background-color: #f5f5f5;
   text-align: center;
   margin: 0;
+  background-color: #f5f5f5;
   font-family: Helvetica, Arial, "微软雅黑", "Heiti SC", "Pingfang SC", "Droid Sans Fallback", SimHei, Hei, STHeiti, "宋体", SimSun, STSong, "Arial Unicode MS";
 }
 
@@ -13,4 +13,12 @@ body {
 .theme {
   color: #2bb;
 }
+
+.home,
+.menu,
+.settings {
+  min-height: 100vh;
+}
+
+
 

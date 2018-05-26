@@ -18,6 +18,7 @@ const dataStorage = {
   不适用于人名: '',
   很生僻: '',
   第三级字表: '',
+  玉类: '',
 };
 
 const labels = Object.keys(dataStorage);

@@ -6,7 +6,8 @@ import Home from './Pages/Home/';
 import Menu from './Pages/Menu/';
 import Settings from './Pages/Settings/';
 import ExplainLabels from './Components/Articles/ExplainLabels.js';
-
+import ScrollToTop from './ScrollToTop.js';
+import EditFamilyName from './Components/Forms/EditFamilyName.js';
 
 const queue = [];
 var pointer = 0;
@@ -65,8 +66,9 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter><ScrollToTop>
         <Switch>
+          <Route path="/settings/修改姓" component={EditFamilyName} />
           <Route path="/settings/只适合女孩的字" render={()=><ExplainLabels title='只适合女孩的字' displayLabel='只适合女孩用' dbLabel='女孩用'/>}/>
           <Route path="/settings/只适合男孩的字" render={()=><ExplainLabels title='只适合男孩的字' displayLabel='只适合男孩用' dbLabel='男孩用'/>}/>
           <Route path="/settings/很土的字" render={()=><ExplainLabels title='很土的字' displayLabel='很土' dbLabel='很土'/>}/>
@@ -74,6 +76,7 @@ class App extends Component {
           <Route path="/settings/很俗的字" render={()=><ExplainLabels title='很俗的字' displayLabel='很俗' dbLabel='很俗'/>}/>
           <Route path="/settings/略俗的字" render={()=><ExplainLabels title='略俗的字' displayLabel='略俗' dbLabel='略俗'/>}/>
           <Route path="/settings/无趣的字" render={()=><ExplainLabels title='无趣的字' displayLabel='可用于人名, 但很无趣' dbLabel='无趣'/>}/>
+          <Route path="/settings/玉类" render={()=><ExplainLabels title='玉类' displayLabel='玉类' dbLabel='玉类'/>}/>
           <Route path="/settings/略生僻的字" render={()=><ExplainLabels title='略生僻的字' displayLabel='可以用, 但有些生僻' dbLabel='略生僻'/>}/>
           <Route path="/settings/难搭配的字" render={()=><ExplainLabels title='难搭配的字' displayLabel='人脑可以驾驭, 电脑不行' dbLabel='略怪'/>}/>
           <Route path="/settings/非常难搭配的字" render={()=><ExplainLabels title='非常难搭配的字' displayLabel='某些特殊寓意的名字才会用' dbLabel='很怪'/>}/>
@@ -88,7 +91,7 @@ class App extends Component {
           <Route exact path="/menu" component={Menu} />
           <Route path="/" render={()=><Home submit={this.submit} nameObj={this.state.nameObj} undo={this.undo}/>}/>
         </Switch>
-      </BrowserRouter>
+      </ScrollToTop></BrowserRouter>
     );
   }
 }
