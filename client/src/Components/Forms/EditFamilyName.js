@@ -8,10 +8,6 @@ class EditFamilyName extends Component {
     当前姓: window.settings.姓,
   }
 
-  // UNSAFE_componentWillMount() {
-  //   this.setState({当前姓: window.settings.姓});
-  // }
-
   handleInputChange = event => {
     const { value } = event.target;
     this.setState({当前姓: value.slice(-1)});

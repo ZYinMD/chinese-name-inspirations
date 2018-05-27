@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../Header/';
 import Back from 'react-icons/lib/md/navigate-before';
 import source from './各种标签的字都有哪些.json';
+import './Articles.css';
 
 const ExplainLabels = ({title, displayLabel, dbLabel}) => {
 

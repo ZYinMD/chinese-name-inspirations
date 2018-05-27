@@ -16,13 +16,10 @@ class Settings extends Component {
         <List>
           <ListSection>
             <Link to='./settings/修改姓'><Li>修改宝宝的姓<Expand/></Li></Link>
-            <Li>隐藏姓, 只显示名<Toggle /></Li>
+            <Li>修改我的昵称<Expand/></Li>
           </ListSection>
           <ListSection>
-            <Li>固定一字<Toggle /></Li>
-          </ListSection>
-          <ListSection>
-            <Li>修改我的用户名<Expand /></Li>
+            <Link to='./settings/固定一字'><Li>固定一字<Expand/></Li></Link>
           </ListSection>
           <ListSection>
             <Li>优先展示有出处的名字<Toggle checked={window.settings.mandate出处} setting={'mandate出处'}/></Li>

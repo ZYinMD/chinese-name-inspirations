@@ -1,0 +1,22 @@
+.article-page {
+  text-align: left;
+  background-color: white;
+  min-height: 100vh;
+}
+
+.article-page article {
+  margin-left: 4vw;
+}
+
+.article-page h4 {
+  font-weight: 400;
+  font-size: 4.45vw;
+  margin: 4vw 5vw 0 0;
+}
+
+.article-page p {
+  letter-spacing: 0.5em;
+  line-height: 1.5em;
+  font-size: 4.45vw;
+  font-weight: 400;
+}

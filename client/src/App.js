@@ -8,6 +8,7 @@ import Settings from './Pages/Settings/';
 import ExplainLabels from './Components/Articles/ExplainLabels.js';
 import ScrollToTop from './ScrollToTop.js';
 import EditFamilyName from './Components/Forms/EditFamilyName.js';
+import FixOneChar from './Components/Forms/FixOneChar.js';
 
 const queue = [];
 var pointer = 0;
@@ -69,6 +70,7 @@ class App extends Component {
       <BrowserRouter><ScrollToTop>
         <Switch>
           <Route path="/settings/修改姓" component={EditFamilyName} />
+          <Route path="/settings/固定一字" component={FixOneChar} />
           <Route path="/settings/只适合女孩的字" render={()=><ExplainLabels title='只适合女孩的字' displayLabel='只适合女孩用' dbLabel='女孩用'/>}/>
           <Route path="/settings/只适合男孩的字" render={()=><ExplainLabels title='只适合男孩的字' displayLabel='只适合男孩用' dbLabel='男孩用'/>}/>
           <Route path="/settings/很土的字" render={()=><ExplainLabels title='很土的字' displayLabel='很土' dbLabel='很土'/>}/>
