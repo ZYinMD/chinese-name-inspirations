@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import './Choices.css';
 import Cross from 'react-icons/lib/md/clear';
 import Heart from 'react-icons/lib/io/android-favorite-outline';
@@ -10,8 +9,12 @@ const Choices = ({name, submit, collapseRef}) => {
   function handleClick(rating) {
     collapseRef();
     if (!name) return; // when name isn't ready (shown as 加载中...)
-    axios.post('/api/names', {name, rating});
     submit();
+    window.opinions.push({
+      name,
+      rating,
+      username: window.settings.username,
+    })
   }
 
   return (

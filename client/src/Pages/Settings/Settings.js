@@ -16,7 +16,7 @@ class Settings extends Component {
         <List>
           <ListSection>
             <Link to='./settings/修改姓'><Li>修改宝宝的姓<Expand/></Li></Link>
-            <Li>修改我的昵称<Expand/></Li>
+            <Link to='./settings/修改我是谁'><Li>修改我是谁<Expand/></Li></Link>
           </ListSection>
           <ListSection>
             <Link to='./settings/固定一字'><Li>固定一字<Expand/></Li></Link>

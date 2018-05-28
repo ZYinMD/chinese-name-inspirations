@@ -10,6 +10,12 @@ h4 {
   font-weight: 300;
   margin: 2vh 3vw 1vh;
 }
+
+h4 svg {
+  padding: 0 0.5vw;
+  position: relative;
+  bottom: 0.2em;
+}
 form input {
   font-size: 4vw;
   outline: none;

@@ -1,10 +1,12 @@
 const db = require('../db/db-connection.js');
-module.exports = {constructNames, getNames, mixArray};
+module.exports = {constructNames, getNames, getOpinions, mixArray};
 
 async function getNames(allowedLabels, number) {
   var nin = new Set(['不适用于人名', '很生僻', '多音字', '男孩用', '女孩用', '无趣', '略生僻', '很土', '很俗', '很怪', '略土', '略俗', '略怪', '玉类']);
-  for (let i of allowedLabels) {
-    nin.delete(i);
+  if (allowedLabels) {
+    for (let i of allowedLabels) {
+      nin.delete(i);
+    }
   }
   nin = [...nin];
   return findNames(number);
@@ -24,7 +26,13 @@ async function getNames(allowedLabels, number) {
     .toArray();
     return names;
   }
+}
 
+async function getOpinions(req, res) {
+  console.log('GET req.query: ', req.query);
+  var collection = await db.opinions;
+  let r = await collection.find({rating: Number(req.query.rating)}).toArray(); // req.query.rating is either 3 or 4. 3 is bulb, 4 is heart
+  res.json(r);
 }
 
 async function constructNames(allowedLabels, num普通chars, num有意思chars, num优先chars) {

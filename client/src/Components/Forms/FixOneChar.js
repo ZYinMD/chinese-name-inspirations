@@ -19,7 +19,7 @@ class FixOneChar extends Component {
     return (
       <div className='fix-one-char'>
         <Header leftIcon={<Back/>} leftLink={'/settings'} title={'固定一字'} headingLevel={3}/>
-        <h4>在名的二字中固定一字 (例如{姓}天算, {姓}天赐, {姓}天意), 请输入指定的字:   </h4>
+        <h4>若要在名的二字中固定一个 (例如{姓}天算, {姓}天赐, {姓}天意), 在此指定要固定的字:   </h4>
         <form><input type="text" autoFocus value = {this.state.固定字} onChange={this.handleInputChange} /></form>
         <h4>留空则不启用 </h4>
       </div>

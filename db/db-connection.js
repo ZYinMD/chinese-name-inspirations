@@ -17,8 +17,14 @@ const charsCollection = async function() {
   return await connection.db().collection('characters');
 };
 
+const opinionsCollection = async function() {
+  var connection = await connect();
+  return await connection.db().collection('opinions');
+};
+
 module.exports = {
   names: namesCollection(),
-  chars: charsCollection()
+  chars: charsCollection(),
+  opinions: opinionsCollection(),
 };
 

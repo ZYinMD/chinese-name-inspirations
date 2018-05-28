@@ -9,9 +9,11 @@ import ExplainLabels from './Components/Articles/ExplainLabels.js';
 import ScrollToTop from './ScrollToTop.js';
 import EditFamilyName from './Components/Forms/EditFamilyName.js';
 import FixOneChar from './Components/Forms/FixOneChar.js';
+import EditUsername from './Components/Forms/EditUsername.js';
 
 const queue = [];
 var pointer = 0;
+window.opinions = [];
 window.updateLocalStorage = () => {
   localStorage.setItem('chineseNameGeneratorSettgins', JSON.stringify(window.settings));
 };
@@ -33,12 +35,19 @@ class App extends Component {
 
   componentDidMount() {
     this.replenish();
+    setInterval(this.postOpinions, 15000);
   }
 
   submit = () => {
     pointer++;
     this.updateDisplay();
     this.replenish();
+  }
+
+  postOpinions = () => {
+    if (window.opinions.length === 0) return;
+    axios.post('/api/names', window.opinions);
+    window.opinions = [];
   }
 
   updateDisplay = () => {
@@ -63,6 +72,7 @@ class App extends Component {
     if (pointer < 1) return;
     pointer--;
     this.updateDisplay();
+    window.opinions.pop();
   }
 
   render() {
@@ -70,6 +80,7 @@ class App extends Component {
       <BrowserRouter><ScrollToTop>
         <Switch>
           <Route path="/settings/修改姓" component={EditFamilyName} />
+          <Route path="/settings/修改我是谁" component={EditUsername} />
           <Route path="/settings/固定一字" component={FixOneChar} />
           <Route path="/settings/只适合女孩的字" render={()=><ExplainLabels title='只适合女孩的字' displayLabel='只适合女孩用' dbLabel='女孩用'/>}/>
           <Route path="/settings/只适合男孩的字" render={()=><ExplainLabels title='只适合男孩的字' displayLabel='只适合男孩用' dbLabel='男孩用'/>}/>

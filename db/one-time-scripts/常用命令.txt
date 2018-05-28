@@ -1,0 +1,7 @@
+修改了一些字的标签之后:
+1. export到'../db-exports/6463-chars-v1.0.json',  可以考虑改版本号
+2. 进入create-just-chars-with-labels.js,  修改input的版本号
+3.
+node create-just-chars-with-labels.js
+&&
+
