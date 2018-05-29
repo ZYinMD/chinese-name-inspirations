@@ -1,22 +1,53 @@
-.article-page {
+.labeled-chars {
   text-align: left;
   background-color: white;
   min-height: 100vh;
 }
 
-.article-page article {
+.labeled-chars article {
   margin-left: 4vw;
 }
 
-.article-page h4 {
+.labeled-chars h4 {
   font-weight: 400;
   font-size: 4.45vw;
   margin: 4vw 5vw 0 0;
 }
 
-.article-page p {
+.labeled-chars p {
   letter-spacing: 0.5em;
   line-height: 1.5em;
   font-size: 4.45vw;
   font-weight: 400;
+}
+
+.rated-names {
+  box-sizing: border-box;
+  background-color: white;
+  min-height: 100vh;
+}
+
+.rated-names table {
+  font-size: 4vw;
+  width: 85%;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+.rated-names th {
+  height: 6vh;
+}
+
+.rated-names td {
+  height: 2em;
+  background: white;
+  border-top: 1px solid #e5e5e5;
+}
+
+.rated-names td:first-child {
+  width: 39%;
+}
+
+.rated-names td:last-child {
+  width: 28%;
 }

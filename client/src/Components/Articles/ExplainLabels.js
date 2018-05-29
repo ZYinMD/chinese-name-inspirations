@@ -20,7 +20,7 @@ const ExplainLabels = ({title, displayLabel, dbLabel}) => {
   }
 
   return (
-    <div className='article-page'>
+    <div className='labeled-chars'>
       <Header leftIcon={<Back/>} leftLink={'/settings'} title={title} headingLevel={3}/>
       <article>
         {handle三级字表()}

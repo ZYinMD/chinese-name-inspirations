@@ -29,10 +29,15 @@ async function getNames(allowedLabels, number) {
 }
 
 async function getOpinions(req, res) {
-  console.log('GET req.query: ', req.query);
-  var collection = await db.opinions;
-  let r = await collection.find({rating: Number(req.query.rating)}).toArray(); // req.query.rating is either 3 or 4. 3 is bulb, 4 is heart
-  res.json(r);
+  try {
+    console.log('GET req.query: ', req.query);
+    var collection = await db.opinions;
+    let r = await collection.find({rating: Number(req.query.rating)}).project({rating: 0}).toArray(); // req.query.rating is either 3 or 4. 3 is bulb, 4 is heart
+    res.json(r);
+  }
+  catch(error) {
+    console.error(error);
+  }
 }
 
 async function constructNames(allowedLabels, num普通chars, num有意思chars, num优先chars) {

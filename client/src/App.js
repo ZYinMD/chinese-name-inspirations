@@ -10,6 +10,8 @@ import ScrollToTop from './ScrollToTop.js';
 import EditFamilyName from './Components/Forms/EditFamilyName.js';
 import FixOneChar from './Components/Forms/FixOneChar.js';
 import EditUsername from './Components/Forms/EditUsername.js';
+import RatedNames from './Components/Articles/RatedNames.js';
+
 
 const queue = [];
 var pointer = 0;
@@ -79,6 +81,8 @@ class App extends Component {
     return (
       <BrowserRouter><ScrollToTop>
         <Switch>
+          <Route path='/settings/inspiring' render={() => <RatedNames rating={3} />} />
+          <Route path='/settings/favorites' render={() => <RatedNames rating={4} />} />
           <Route path="/settings/修改姓" component={EditFamilyName} />
           <Route path="/settings/修改我是谁" component={EditUsername} />
           <Route path="/settings/固定一字" component={FixOneChar} />

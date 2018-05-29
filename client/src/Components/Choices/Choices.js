@@ -10,11 +10,13 @@ const Choices = ({name, submit, collapseRef}) => {
     collapseRef();
     if (!name) return; // when name isn't ready (shown as 加载中...)
     submit();
+    if (rating === 2) return; // rating 2 doesn't need to be logged
     window.opinions.push({
       name,
       rating,
       username: window.settings.username,
-    })
+      familyName: window.settings.姓
+    });
   }
 
   return (
