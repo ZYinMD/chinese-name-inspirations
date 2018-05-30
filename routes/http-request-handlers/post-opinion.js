@@ -6,7 +6,6 @@ module.exports = postOpinion;
 
 async function postOpinion(req, res) {
   try {
-    console.log('POST req.body: ', req.body);
     var collection = await db.opinions;
     let r = await collection.insertMany(req.body);
     assert.equal(req.body.length, r.insertedCount);
