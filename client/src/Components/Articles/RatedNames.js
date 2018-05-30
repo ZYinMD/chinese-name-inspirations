@@ -34,7 +34,7 @@ class RatedNames extends Component {
   }
 
   parseDateFromMongo_id = _id => {
-    var date = new Date(parseInt(_id.substring(0, 8), 16) * 1000);
+    var date = new Date(parseInt(_id.substring(0, 8), 16) * 1000); // this line was copied from other people's code.
     var year = date.getFullYear();
     var month = date.getMonth() + 1;
     var day =date.getDate();
@@ -59,7 +59,7 @@ class RatedNames extends Component {
                   <td>{this.parseDateFromMongo_id(element._id)}</td>
                 </tr>
               ))
-              : null}
+              : this.state.message}
         </table>
       </div>
     );

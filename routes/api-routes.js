@@ -1,25 +1,15 @@
 const constructNames = require('./http-request-handlers.js').constructNames;
 const getNames = require('./http-request-handlers.js').getNames;
 const mixArray = require('./http-request-handlers.js').mixArray;
-const getOpinions = require('./http-request-handlers.js').getOpinions;
+const retrieveOpinions = require('./http-request-handlers/retrieve-opinions.js');
+const postOpinion = require('./http-request-handlers/post-opinion.js');
 const assert = require('assert');
 const db = require('../db/db-connection.js');
 
 
 module.exports = function (app) {
 
-  app.post('/api/names', async (req, res) => {
-    try {
-      console.log('POST req.body: ', req.body);
-      var collection = await db.opinions;
-      let r = await collection.insertMany(req.body);
-      assert.equal(req.body.length, r.insertedCount);
-      res.status(200).end();
-    }
-    catch(error) {
-      console.error(error);
-    }
-  });
+  app.post('/api/names', postOpinion);
 
   app.get('/api/names', async (req, res) => {
     console.log('GET req.query: ', req.query);
@@ -34,6 +24,6 @@ module.exports = function (app) {
     }
   });
 
-  app.get('/api/opinions/', getOpinions);
+  app.get('/api/opinions/', retrieveOpinions);
 };
 

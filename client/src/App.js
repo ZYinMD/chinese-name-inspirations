@@ -30,7 +30,7 @@ class App extends Component {
     if (localStorage.chineseNameGeneratorSettgins) {
       window.settings = JSON.parse(localStorage.getItem('chineseNameGeneratorSettgins'));
     } else {
-      window.settings = {姓: '尹', allowed: ['多音字'], mandate出处: false};
+      window.settings = {姓: '尹', allowed: ['多音字'], mandate出处: false, username: '游客'};
       window.updateLocalStorage();
     }
   }
