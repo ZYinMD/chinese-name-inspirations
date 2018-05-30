@@ -9,8 +9,8 @@ const Ref = props => {
   }
   var char1 = props.nameObj.name[0];
   var char2 = props.nameObj.name[1];
-  var 小名 = `阿${char1}, 阿${char2}, 小${char1}, 小${char2}, ${char1}${char1}, ${char2}${char2}`
-  var 只喊名 = `${char1}${char2} / ${char2}${char1}`
+  var 小名 = `阿${char1}, 阿${char2}, 小${char1}, 小${char2}, ${char1}${char1}, ${char2}${char2}`;
+  var 只喊名 = `${char1}${char2} / ${char2}${char1}`;
 
   return (
     <div className='ref'>
@@ -27,7 +27,7 @@ const Ref = props => {
         </dl>
         : null}
       <dl>
-        <dt>如果省略姓, 只喊名: </dt>
+        <dt>如果别人省略你的姓, 只喊你的名: </dt>
         <dd>{只喊名}</dd>
       </dl>
       <dl>

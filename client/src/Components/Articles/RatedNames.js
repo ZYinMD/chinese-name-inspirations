@@ -13,12 +13,10 @@ class RatedNames extends Component {
   }
 
   componentDidMount() {
-    console.log('this.props.rating: ', this.props.rating);
     axios.get('../api/opinions', {
       params: {rating: this.props.rating}
     }).then(res => {
       this.setState({content: res.data});
-      console.log('res.data: ', res.data);
     }).catch(error => {
       this.setState({message: '加载失败: ' + error});
     });
@@ -46,11 +44,14 @@ class RatedNames extends Component {
       <div className='rated-names'>
         <Header leftIcon={<Back/>} leftLink={'/Menu'} title={this.title()} headingLevel={3}/>
         <table>
-          <tr>
-            <th>名</th>
-            <th>执行人</th>
-            <th>执行时间</th>
-          </tr>
+          <thead>
+            <tr>
+              <th>名</th>
+              <th>执行人</th>
+              <th>执行时间</th>
+            </tr>
+          </thead>
+          <tbody>
             {this.state.content ?
               this.state.content.map((element, index) => (
                 <tr key={index}>
@@ -59,7 +60,8 @@ class RatedNames extends Component {
                   <td>{this.parseDateFromMongo_id(element._id)}</td>
                 </tr>
               ))
-              : this.state.message}
+              : <tr><td>{this.state.message}</td></tr>}
+          </tbody>
         </table>
       </div>
     );
