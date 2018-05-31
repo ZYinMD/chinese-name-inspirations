@@ -24,18 +24,12 @@ class Expander extends Component {
 
 class Name extends Component {
 
-  displayName = () => {
-    let 名1 = this.props.nameObj.name;
-    let 名2 = 名1[1] + 名1[0];
-    return window.settings.姓 + 名1 + ' / ' + window.settings.姓 + 名2;
-  }
-
   render() {
     return (
       <div className='name'>
         <div className='name-display'>
           <Undo onClick={this.props.undo}/>
-          <h2>{this.props.nameObj.name ? this.displayName() : '加载中...'}</h2>
+          <h2>{this.props.displayName}</h2>
           <Expander nameObj={this.props.nameObj} isRefShown={this.props.isRefShown} onClick={this.props.toggleRef}/>
         </div>
         {this.props.isRefShown ? <Ref nameObj={this.props.nameObj}/> : null}

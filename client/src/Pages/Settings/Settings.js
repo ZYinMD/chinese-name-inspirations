@@ -19,10 +19,13 @@ class Settings extends Component {
             <Link to='./settings/修改我是谁'><Li>修改我是谁<Expand/></Li></Link>
           </ListSection>
           <ListSection>
-            <Link to='./settings/固定一字'><Li>固定一字<Expand/></Li></Link>
+            <Link to='./settings/固定一字'><Li>固定一字 (本功能未完成) <Expand/></Li></Link>
           </ListSection>
           <ListSection>
-            <Li>优先展示有出处的名字<Toggle checked={window.settings.mandate出处} setting={'mandate出处'}/></Li>
+            <Li>
+              <span className='label'>优先展示有出处的名字<Link to='./settings/不推荐出处'>(不推荐)</Link></span>
+              <Toggle checked={window.settings.mandate出处} setting={'mandate出处'}/>
+            </Li>
           </ListSection>
           <ListSection>
             <Li>

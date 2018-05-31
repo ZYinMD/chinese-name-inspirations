@@ -14,7 +14,7 @@ class Menu extends Component {
         <Header leftIcon={<Back/>} leftLink='./' title='' headingLevel={2}/>
         <List>
           <ListSection>
-            <Li>给宝宝起名的7个原则<Expand /></Li>
+            <Li>给宝宝起名的7个原则 (本功能未完成)<Expand /></Li>
           </ListSection>
           <ListSection>
             <Link to='./settings/inspiring'>
@@ -25,10 +25,10 @@ class Menu extends Component {
             </Link>
           </ListSection>
           <ListSection>
-            <Li><span>参考典籍</span><Expand /></Li>
+            <Li><span>参考典籍 (本功能未完成)</span><Expand /></Li>
           </ListSection>
           <ListSection>
-            <Li><span>关于本App</span><Expand /></Li>
+            <Li><span>关于本App (本功能未完成)</span><Expand /></Li>
           </ListSection>
         </List>
       </div>

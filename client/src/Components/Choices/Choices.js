@@ -4,15 +4,18 @@ import Cross from 'react-icons/lib/md/clear';
 import Heart from 'react-icons/lib/io/android-favorite-outline';
 import Bulb from 'react-icons/lib/io/android-bulb';
 import Meh from 'react-icons/lib/md/sentiment-neutral';
-const Choices = ({name, submit, collapseRef}) => {
+const Choices = ({nameObj, submit, collapseRef, updateLastRating}) => {
 
   function handleClick(rating) {
     collapseRef();
-    if (!name) return; // when name isn't ready (shown as 加载中...)
+    if (!nameObj.name) return; // when name isn't ready (shown as 加载中...)
+    let 名1 = nameObj.name;
+    let 名2 = 名1[1] + 名1[0];
+    updateLastRating(rating, 名1 + ' / ' + 名2);
     submit();
     if (rating === 2) return; // rating 2 doesn't need to be logged
     window.opinions.push({
-      name,
+      name: nameObj.name,
       rating,
       username: window.settings.username,
       familyName: window.settings.姓
@@ -39,5 +42,5 @@ const Choices = ({name, submit, collapseRef}) => {
       </li>
     </ol>
   );
-}
+};
 export default Choices;

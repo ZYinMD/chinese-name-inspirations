@@ -11,6 +11,7 @@ import EditFamilyName from './Components/Forms/EditFamilyName.js';
 import FixOneChar from './Components/Forms/FixOneChar.js';
 import EditUsername from './Components/Forms/EditUsername.js';
 import RatedNames from './Components/Articles/RatedNames.js';
+import DiscourageSource from './Components/Articles/DiscourageSource.js';
 
 
 const queue = [];
@@ -18,6 +19,22 @@ var pointer = 0;
 window.opinions = [];
 window.updateLocalStorage = () => {
   localStorage.setItem('chineseNameGeneratorSettgins', JSON.stringify(window.settings));
+};
+window.settingChange = async () => {
+  var newBunchNames = await window.newBunchNames();
+  let remaining = queue.length - pointer - 1;
+  queue.splice(-remaining);
+  queue.push(...newBunchNames);
+};
+
+window.newBunchNames = async () => {
+  var newBunchNames = await axios.get('/api/names', {
+    params: {
+      allowed: window.settings.allowed,
+      mandate出处: window.settings.mandate出处,
+    }
+  });
+  return newBunchNames.data;
 };
 
 class App extends Component {
@@ -30,7 +47,13 @@ class App extends Component {
     if (localStorage.chineseNameGeneratorSettgins) {
       window.settings = JSON.parse(localStorage.getItem('chineseNameGeneratorSettgins'));
     } else {
-      window.settings = {姓: '尹', allowed: ['多音字'], mandate出处: false, username: '游客'};
+      window.settings = {
+        姓: '尹',
+        allowed: ['多音字'],
+        mandate出处: false,
+        username: '游客',
+        verbose: true
+      };
       window.updateLocalStorage();
     }
   }
@@ -59,13 +82,8 @@ class App extends Component {
   replenish = async () => {
     let remaining = queue.length - pointer;
     if (remaining <= 15 && remaining % 5 === 0) {
-      var newBunch = await axios.get('/api/names', {
-        params: {
-          allowed: window.settings.allowed,
-          mandate出处: window.settings.mandate出处,
-        }
-      });
-      queue.push(...newBunch.data);
+      var newBunchNames = await window.newBunchNames();
+      queue.push(...newBunchNames);
       this.updateDisplay();
     }
   }
@@ -86,6 +104,7 @@ class App extends Component {
           <Route path="/settings/修改姓" component={EditFamilyName} />
           <Route path="/settings/修改我是谁" component={EditUsername} />
           <Route path="/settings/固定一字" component={FixOneChar} />
+          <Route path="/settings/不推荐出处" component={DiscourageSource} />
           <Route path="/settings/只适合女孩的字" render={()=><ExplainLabels title='只适合女孩的字' displayLabel='只适合女孩用' dbLabel='女孩用'/>}/>
           <Route path="/settings/只适合男孩的字" render={()=><ExplainLabels title='只适合男孩的字' displayLabel='只适合男孩用' dbLabel='男孩用'/>}/>
           <Route path="/settings/很土的字" render={()=><ExplainLabels title='很土的字' displayLabel='很土' dbLabel='很土'/>}/>

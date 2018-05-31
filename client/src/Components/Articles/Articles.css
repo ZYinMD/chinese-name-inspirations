@@ -51,3 +51,21 @@
 .rated-names td:last-child {
   width: 28%;
 }
+
+.discourage-source {
+  text-align: left;
+  background-color: white;
+  min-height: 100vh;
+}
+
+.discourage-source article {
+  margin: 5vw;
+}
+
+.discourage-source li {
+  margin: 5px 0;
+  padding: 0;
+  border: none;
+  display: block;
+  font-size: 16px;
+}

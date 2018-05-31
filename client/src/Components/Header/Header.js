@@ -10,8 +10,10 @@ const Header = ({leftIcon, leftLink, title, headingLevel, rightIcon, rightLink})
         return <h1>{title}</h1>;
       case 2:
         return <h2>{title}</h2>;
-      default:
+      case 3:
         return <h3>{title}</h3>;
+      default:
+        return <div>{title}</div>;
     }
   }
 
