@@ -49,7 +49,7 @@ class App extends Component {
     } else {
       window.settings = {
         姓: '尹',
-        allowed: ['多音字'],
+        allowed: [],
         mandate出处: false,
         username: '游客',
         verbose: true

@@ -23,4 +23,8 @@ form input {
   width: 100%;
   padding: 1.6vw 3vw;
   box-sizing: border-box;
+  /*↓ to remove the weird input styling on mobile (different than chrome simulation)*/
+  -webkit-appearance: none;
+  -webkit-border-radius:0;
+  border-radius:0;
 }

@@ -1,14 +1,25 @@
 const db = require('../../db/db-connection.js');
 module.exports = generateNames;
 
+
+
+/*
+pseudocode:
+拿10个现成名字
+凑10个名字
+把20个混起来
+*/
+
+
+
+
 async function generateNames(req, res) {
   try {
     console.log('req.query: ', req.query);
-    var 现成names = getNames(req, 12);
-    var constructedNames = constructNames(req, 22, 3, 1);
-    现成names = await 现成names;
-    constructedNames = await constructedNames;
-    res.json(mixArray(现成names, constructedNames));
+    // var 现成names = await getNames(req, 10);
+    // res.json(现成names);
+    var constructedNames = await constructNames(req, 26, 3, 1);
+    res.json(constructedNames);
   }
   catch(error) {
     console.error(error);
@@ -88,29 +99,25 @@ async function constructNames(req, num普通chars, num有意思chars, num优先c
       name = name.sort().join('');
       constructedNames.push(name);
     });
+    console.log('constructedNames: ', constructedNames);
     constructedNames = await pruneGeneratedNames(constructedNames); // remove some of the constructedNames
     return constructedNames;
   }
 
   async function pruneGeneratedNames(constructedNames) {
     var namesCollection = await db.names;
-    var opinionsCollection = await db.opinions;
+    // var opinionsCollection = await db.opinions;
 
-    // prune names that are already in names collection
-    var existed = namesCollection.find({name: {$in: constructedNames}}).project({name: 1, _id: 0}).toArray();
-    // prune names that have been rated 1 before
-    var badlyRated = opinionsCollection.find({name: {$in: constructedNames}, rating: 1}).project({name: 1, _id: 0}).toArray();
-    existed = await existed;
-    badlyRated = await badlyRated;
+    var existedNames = namesCollection.find({name: {$in: constructedNames}}).project({name: 1, _id: 0}).toArray();
+    existedNames = await existedNames;
+
     constructedNames = new Set(constructedNames);
-    console.log('badlyRated: ', badlyRated);
-    for (let i of existed) {
-      constructedNames.delete(i.name);
+    for (let i of existedNames) {
+      constructedNames.delete(i);
     }
-    for (let i of badlyRated) {
-      constructedNames.delete(i.name);
-    }
-    return [...constructedNames];
+
+    console.log('existedNames after prune: ', existedNames);
+    return constructedNames;
   }
 
   async function mixChars() {
