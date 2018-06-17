@@ -11,7 +11,7 @@ const reactToggle = props => {
       window.settings[props.setting] = e.target.checked; // in very few cases, a toggle isn't a label, then the prop setting is used
     }
     window.updateLocalStorage();
-    window.settingChange();
+    window.settingsChange();
   }
   return (
   <Toggle

@@ -20,7 +20,7 @@ window.opinions = [];
 window.updateLocalStorage = () => {
   localStorage.setItem('chineseNameGeneratorSettgins', JSON.stringify(window.settings));
 };
-window.settingChange = async () => {
+window.settingsChange = async () => { // when some settings are changed, call this to get new bunch of names
   var newBunchNames = await window.newBunchNames();
   let remaining = queue.length - pointer - 1;
   queue.splice(-remaining);
@@ -31,6 +31,7 @@ window.newBunchNames = async () => {
   var newBunchNames = await axios.get('/api/names', {
     params: {
       allowed: window.settings.allowed,
+      fixedChar: window.settings.fixedChar,
       mandate出处: window.settings.mandate出处,
     }
   });
