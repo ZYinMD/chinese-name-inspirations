@@ -19,6 +19,7 @@ const dataStorage = {
   很生僻: '',
   第三级字表: '',
   玉类: '',
+  否定: '',
 };
 
 const labels = Object.keys(dataStorage);

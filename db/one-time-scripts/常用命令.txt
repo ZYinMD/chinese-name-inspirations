@@ -1,7 +1,17 @@
 修改了一些字的标签之后:
-1. export到'../db-exports/6463-chars-v1.0.json',  可以考虑改版本号
-2. 进入create-just-chars-with-labels.js,  修改input的版本号
-3.
+1. export characters collection to '../db-exports/characters.json'
+
+2. run:
 node create-just-chars-with-labels.js
 &&
+node add-label-to-real-names-and-names-with-refs.js
+&&
+node re-order-char-labels.js
+&&
+node 各种标签的字都有哪些.js
+
+3.
+import '../db-seeds/characters-labels-in-order.json' into characters
+import '../db-seeds/real-names-and-names-with-refs--labeled.json' into names
+
 

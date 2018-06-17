@@ -1,4 +1,4 @@
-const input = require('../db-exports/6463-chars-v1.0.json');
+const input = require('../db-exports/characters.json');
 const output = '../one-time-data/just-chars-with-labels.json';
 const fs = require('fs');
 const dataStorage = {};

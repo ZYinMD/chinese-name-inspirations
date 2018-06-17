@@ -1,5 +1,5 @@
 // convert from:
-const input = '../one-time-data/6463字表及音调.txt'
+const input = '../one-time-data/6463字表及音调.txt';
 // convert to:
 const output = '../db-seeds/6463-chars-pre-eval.json';
 
@@ -13,7 +13,7 @@ charList.forEach((line, index) => {
   let evaluated = false;
   let document = {_id, char, tone, evaluated};
   dataStorage.push(document);
-})
+});
 fs.writeFileSync(output, JSON.stringify(dataStorage, null, 2));
 
 
