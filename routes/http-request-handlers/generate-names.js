@@ -12,11 +12,18 @@ async function generateNames(req, res) {
 
   try {
     console.log('req.query: ', req.query);
+    // 如果固定一字:
     if (req.query.fixedChar) {
       let result = await getNamesWithFixedChar();
       res.json(result);
       return;
     }
+    // 如果只看有出处的名字:
+    if (req.query.mandate出处) {
+      res.json(await getNames(20));
+      return;
+    }
+    // 正常情况:
     var 现成names = getNames(10);
     var constructedNames = constructNames(22, 3, 1);
     现成names = await 现成names;
