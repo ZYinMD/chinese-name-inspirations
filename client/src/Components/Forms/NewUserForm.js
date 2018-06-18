@@ -61,9 +61,10 @@ class NewUserForm extends Component {
 
   handleInputChange姓 = event => {
     const { value } = event.target;
-    if (value.length > 1) {
-      this.setState({复姓提醒: true})
-    }
+    if (value.length > 1)
+      this.setState({复姓提醒: true});
+    else
+      this.setState({复姓提醒: false});
     this.setState({姓: value.slice(-1)});
   }
 
