@@ -19,7 +19,7 @@ var queue = [];
 var pointer = 0;
 window.opinions = [];
 window.updateLocalStorage = () => {
-  localStorage.setItem('chineseNameGeneratorSettgins', JSON.stringify(window.settings));
+  localStorage.setItem('chineseNameGeneratorSettings', JSON.stringify(window.settings));
 };
 window.settingsChange = async () => { // when some settings are changed, call this to get new bunch of names
   var newBunchNames = await window.newBunchNames();
@@ -34,6 +34,7 @@ window.checkForbiddenChars = arrayOfNames => { //检查一列名字是否包含�
     queue = window.checkForbiddenChars(queue); // 如果没有argument, 则处理一下queue
     return;
   }
+
   return arrayOfNames.filter(i => (
     (!window.settings.forbiddenChars.includes(i.name[0]) || i.name[0] === window.settings.fixedChar) // 如果一个forbiddenChar恰好是fixedChar, 则允许
     &&
@@ -59,8 +60,10 @@ class App extends Component {
   }
 
   UNSAFE_componentWillMount() {
-    if (localStorage.chineseNameGeneratorSettgins) {
-      window.settings = JSON.parse(localStorage.getItem('chineseNameGeneratorSettgins'));
+    if (localStorage.chineseNameGeneratorSettings) {
+      window.settings = JSON.parse(localStorage.getItem('chineseNameGeneratorSettings'));
+      if (!window.settings.forbiddenChars)
+        window.settings.forbiddenChars = ''; //历史遗留问题, 有些人的手机在我设定这个forbiddenChars之前已经打开过本页了
     } else {
       window.settings = {
         姓: '尹',
