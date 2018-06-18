@@ -144,6 +144,7 @@ class App extends Component {
           <Route path="/settings/略俗的字" render={()=><ExplainLabels title='略俗的字' displayLabel='略俗' dbLabel='略俗'/>}/>
           <Route path="/settings/无趣的字" render={()=><ExplainLabels title='无趣的字' displayLabel='可用于人名, 但很无趣' dbLabel='无趣'/>}/>
           <Route path="/settings/玉类" render={()=><ExplainLabels title='玉类' displayLabel='玉类' dbLabel='玉类'/>}/>
+          <Route path="/settings/否定" render={()=><ExplainLabels title='表否定意义的字' displayLabel='表示否定' dbLabel='否定'/>}/>
           <Route path="/settings/略生僻的字" render={()=><ExplainLabels title='略生僻的字' displayLabel='可以用, 但有些生僻' dbLabel='略生僻'/>}/>
           <Route path="/settings/难搭配的字" render={()=><ExplainLabels title='难搭配的字' displayLabel='人脑可以驾驭, 电脑不行' dbLabel='略怪'/>}/>
           <Route path="/settings/非常难搭配的字" render={()=><ExplainLabels title='非常难搭配的字' displayLabel='某些特殊寓意的名字才会用' dbLabel='很怪'/>}/>

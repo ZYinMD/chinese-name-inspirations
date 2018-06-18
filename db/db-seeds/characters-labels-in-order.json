@@ -590,7 +590,9 @@
     "char": "非",
     "tone": "1",
     "evaluated": true,
-    "labels": []
+    "labels": [
+      "否定"
+    ]
   },
   {
     "_id": "c1",
@@ -1000,7 +1002,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通"
+      "无趣"
     ]
   },
   {
@@ -1210,7 +1212,9 @@
     "char": "离",
     "tone": "2",
     "evaluated": true,
-    "labels": []
+    "labels": [
+      "否定"
+    ]
   },
   {
     "_id": "c33",
@@ -1652,7 +1656,7 @@
     "tone": "1",
     "evaluated": true,
     "labels": [
-      "普通"
+      "略怪"
     ]
   },
   {
@@ -2959,7 +2963,7 @@
     "tone": "3",
     "evaluated": true,
     "labels": [
-      "普通"
+      "略怪"
     ]
   },
   {
@@ -3096,7 +3100,9 @@
     "char": "无",
     "tone": "2",
     "evaluated": true,
-    "labels": []
+    "labels": [
+      "否定"
+    ]
   },
   {
     "_id": "c82",
@@ -3435,8 +3441,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通",
-      "禁用"
+      "普通"
     ]
   },
   {
@@ -4797,7 +4802,9 @@
     "char": "反",
     "tone": "3",
     "evaluated": true,
-    "labels": []
+    "labels": [
+      "否定"
+    ]
   },
   {
     "_id": "c140",
@@ -4912,7 +4919,9 @@
     "char": "勿",
     "tone": "4",
     "evaluated": true,
-    "labels": []
+    "labels": [
+      "否定"
+    ]
   },
   {
     "_id": "c153",
@@ -5278,7 +5287,9 @@
     "char": "未",
     "tone": "4",
     "evaluated": true,
-    "labels": []
+    "labels": [
+      "否定"
+    ]
   },
   {
     "_id": "c2193",
@@ -5543,7 +5554,6 @@
     "evaluated": true,
     "labels": [
       "无趣",
-      "禁用",
       "略俗"
     ]
   },
@@ -5667,8 +5677,7 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "很怪",
-      "禁用"
+      "很怪"
     ]
   },
   {
@@ -5851,7 +5860,7 @@
     "tone": "1",
     "evaluated": true,
     "labels": [
-      "普通"
+      "否定"
     ]
   },
   {
@@ -6245,7 +6254,7 @@
     "tone": "1",
     "evaluated": true,
     "labels": [
-      "普通"
+      "多音字"
     ]
   },
   {
@@ -6747,7 +6756,10 @@
     "char": "灭",
     "tone": "4",
     "evaluated": true,
-    "labels": []
+    "labels": [
+      "略怪",
+      "否定"
+    ]
   },
   {
     "_id": "c224",
@@ -7135,7 +7147,9 @@
     "char": "怯",
     "tone": "4",
     "evaluated": true,
-    "labels": []
+    "labels": [
+      "不适用于人名"
+    ]
   },
   {
     "_id": "c1267",
@@ -7197,7 +7211,7 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "普通"
+      "无趣"
     ]
   },
   {
@@ -8088,7 +8102,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通"
+      "略怪"
     ]
   },
   {
@@ -9150,7 +9164,6 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "禁用",
       "略土"
     ]
   },
@@ -9214,7 +9227,9 @@
     "char": "封",
     "tone": "1",
     "evaluated": true,
-    "labels": []
+    "labels": [
+      "略怪"
+    ]
   },
   {
     "_id": "c1367",
@@ -9351,7 +9366,7 @@
     "tone": "1",
     "evaluated": true,
     "labels": [
-      "普通"
+      "略怪"
     ]
   },
   {
@@ -9442,8 +9457,7 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "很土",
-      "禁用"
+      "很土"
     ]
   },
   {
@@ -9647,7 +9661,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通"
+      "略怪"
     ]
   },
   {
@@ -10085,7 +10099,9 @@
     "char": "停",
     "tone": "2",
     "evaluated": true,
-    "labels": []
+    "labels": [
+      "否定"
+    ]
   },
   {
     "_id": "c2334",
@@ -10743,7 +10759,9 @@
     "char": "断",
     "tone": "4",
     "evaluated": true,
-    "labels": []
+    "labels": [
+      "否定"
+    ]
   },
   {
     "_id": "c2406",
@@ -11193,7 +11211,7 @@
     "tone": "3",
     "evaluated": true,
     "labels": [
-      "普通"
+      "无趣"
     ]
   },
   {
@@ -11212,7 +11230,7 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "普通"
+      "无趣"
     ]
   },
   {
@@ -11374,8 +11392,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通",
-      "禁用"
+      "普通"
     ]
   },
   {
@@ -11523,8 +11540,7 @@
     "tone": "3",
     "evaluated": true,
     "labels": [
-      "很怪",
-      "禁用"
+      "很怪"
     ]
   },
   {
@@ -12149,8 +12165,7 @@
     "tone": "1",
     "evaluated": true,
     "labels": [
-      "普通",
-      "禁用"
+      "多音字"
     ]
   },
   {
@@ -12382,7 +12397,6 @@
     "evaluated": true,
     "labels": [
       "多音字",
-      "禁用",
       "略怪"
     ]
   },
@@ -12612,8 +12626,7 @@
     "tone": "3",
     "evaluated": true,
     "labels": [
-      "普通",
-      "禁用"
+      "普通"
     ]
   },
   {
@@ -12808,7 +12821,8 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "普通"
+      "普通",
+      "女孩用"
     ]
   },
   {
@@ -13187,7 +13201,7 @@
     "tone": "1",
     "evaluated": true,
     "labels": [
-      "普通"
+      "无趣"
     ]
   },
   {
@@ -13215,8 +13229,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通",
-      "有意思"
+      "普通"
     ]
   },
   {
@@ -13308,7 +13321,9 @@
     "char": "众",
     "tone": "4",
     "evaluated": true,
-    "labels": []
+    "labels": [
+      "无趣"
+    ]
   },
   {
     "_id": "c492",
@@ -14393,7 +14408,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通"
+      "多音字"
     ]
   },
   {
@@ -14706,7 +14721,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通"
+      "无趣"
     ]
   },
   {
@@ -14998,7 +15013,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通"
+      "略怪"
     ]
   },
   {
@@ -17642,7 +17657,9 @@
     "char": "坟",
     "tone": "2",
     "evaluated": true,
-    "labels": []
+    "labels": [
+      "不适用于人名"
+    ]
   },
   {
     "_id": "c645",
@@ -18012,7 +18029,6 @@
     "evaluated": true,
     "labels": [
       "女孩用",
-      "禁用",
       "略土"
     ]
   },
@@ -18378,7 +18394,7 @@
     "tone": "3",
     "evaluated": true,
     "labels": [
-      "普通"
+      "略怪"
     ]
   },
   {
@@ -19104,7 +19120,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通"
+      "略怪"
     ]
   },
   {
@@ -20323,8 +20339,7 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "普通",
-      "禁用"
+      "普通"
     ]
   },
   {
@@ -20482,7 +20497,7 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "普通"
+      "否定"
     ]
   },
   {
@@ -22392,8 +22407,8 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "普通",
-      "男孩用"
+      "男孩用",
+      "略怪"
     ]
   },
   {
@@ -23535,8 +23550,7 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "普通",
-      "禁用"
+      "普通"
     ]
   },
   {
@@ -24194,7 +24208,7 @@
     "tone": "1",
     "evaluated": true,
     "labels": [
-      "普通"
+      "多音字"
     ]
   },
   {
@@ -24760,7 +24774,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通"
+      "略怪"
     ]
   },
   {
@@ -25488,7 +25502,9 @@
     "char": "贿",
     "tone": "4",
     "evaluated": true,
-    "labels": []
+    "labels": [
+      "不适用于人名"
+    ]
   },
   {
     "_id": "c1926",
@@ -25560,8 +25576,7 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "普通",
-      "禁用"
+      "略土"
     ]
   },
   {
@@ -25688,8 +25703,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "无趣",
-      "禁用"
+      "无趣"
     ]
   },
   {
@@ -25863,7 +25877,7 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "普通"
+      "略怪"
     ]
   },
   {
@@ -25972,8 +25986,7 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "很怪",
-      "禁用"
+      "很怪"
     ]
   },
   {
@@ -26848,7 +26861,7 @@
     "tone": "3",
     "evaluated": true,
     "labels": [
-      "普通"
+      "略怪"
     ]
   },
   {
@@ -27091,7 +27104,7 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "普通"
+      "略怪"
     ]
   },
   {
@@ -27322,7 +27335,6 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "禁用",
       "略俗"
     ]
   },
@@ -29069,8 +29081,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通",
-      "禁用"
+      "普通"
     ]
   },
   {
@@ -29985,8 +29996,7 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "很土",
-      "禁用"
+      "很土"
     ]
   },
   {
@@ -30830,8 +30840,7 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "普通",
-      "禁用"
+      "普通"
     ]
   },
   {
@@ -31168,7 +31177,6 @@
     "evaluated": true,
     "labels": [
       "女孩用",
-      "禁用",
       "略土"
     ]
   },
@@ -32248,7 +32256,7 @@
     "tone": "1",
     "evaluated": true,
     "labels": [
-      "普通"
+      "略怪"
     ]
   },
   {
@@ -32302,8 +32310,7 @@
     "tone": "3",
     "evaluated": true,
     "labels": [
-      "很怪",
-      "禁用"
+      "很怪"
     ]
   },
   {
@@ -32467,7 +32474,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通"
+      "略怪"
     ]
   },
   {
@@ -33134,8 +33141,7 @@
     "evaluated": true,
     "labels": [
       "普通",
-      "略生僻",
-      "禁用"
+      "略生僻"
     ]
   },
   {
@@ -40712,8 +40718,7 @@
     "tone": "1",
     "evaluated": true,
     "labels": [
-      "很生僻",
-      "禁用"
+      "很生僻"
     ]
   },
   {
@@ -44423,7 +44428,6 @@
     "evaluated": true,
     "labels": [
       "女孩用",
-      "禁用",
       "略俗"
     ]
   },
@@ -52285,7 +52289,10 @@
     "char": "嘧",
     "tone": "4",
     "evaluated": true,
-    "labels": []
+    "labels": [
+      "不适用于人名",
+      "略生僻"
+    ]
   },
   {
     "_id": "c5715",

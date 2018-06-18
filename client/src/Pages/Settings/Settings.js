@@ -64,6 +64,10 @@ class Settings extends Component {
               <Toggle checked={window.settings.allowed.includes('玉类')} label={'玉类'}/>
             </Li>
             <Li>
+              <span className='label'>允许<Link to='./settings/否定'>表否定的字</Link></span>
+              <Toggle checked={window.settings.allowed.includes('否定')} label={'否定'}/>
+            </Li>
+            <Li>
               <span className='label'>允许<Link to='./settings/略生僻的字'>略生僻的字</Link></span>
               <Toggle checked={window.settings.allowed.includes('略生僻')} label={'略生僻'}/>
             </Li>
