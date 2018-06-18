@@ -14,4 +14,6 @@ node 各种标签的字都有哪些.js
 import '../db-seeds/characters-labels-in-order.json' into characters
 import '../db-seeds/real-names-and-names-with-refs--labeled.json' into names
 
+4. copy these 2 dbs into mlab
+
 

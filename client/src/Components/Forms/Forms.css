@@ -5,7 +5,7 @@ form {
 }
 
 h4 {
-  font-size: 3.5vw;
+  font-size: 1rem;
   text-align: left;
   font-weight: 300;
   margin: 2vh 3vw 1vh;
@@ -27,4 +27,15 @@ form input {
   -webkit-appearance: none;
   -webkit-border-radius:0;
   border-radius:0;
+}
+
+.welcome,
+.submit {
+  color: #2bb;
+  border: none;
+  background-color: transparent;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: left;
+  margin: 3vw;
 }

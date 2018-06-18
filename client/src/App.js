@@ -12,7 +12,7 @@ import FixOneChar from './Components/Forms/FixOneChar.js';
 import EditUsername from './Components/Forms/EditUsername.js';
 import RatedNames from './Components/Articles/RatedNames.js';
 import DiscourageSource from './Components/Articles/DiscourageSource.js';
-
+import NewUserForm from './Components/Forms/NewUserForm.js';
 
 const queue = [];
 var pointer = 0;
@@ -41,7 +41,7 @@ window.newBunchNames = async () => {
 class App extends Component {
   state = {
     nameObj: {},
-    showRef: false
+    showRef: false,
   }
 
   UNSAFE_componentWillMount() {
@@ -53,15 +53,18 @@ class App extends Component {
         allowed: [],
         mandate出处: false,
         username: '游客',
-        verbose: true
+        verbose: true,
+        newUser: true,
       };
       window.updateLocalStorage();
     }
+    this.setState({newUser: window.settings.newUser});
   }
 
   componentDidMount() {
     this.replenish();
     setInterval(this.postOpinions, 15000);
+    console.log('this.state.newUser: ', this.state.newUser);//看看will mount是否在state设定之前
   }
 
   submit = () => {
@@ -96,6 +99,17 @@ class App extends Component {
     window.opinions.pop();
   }
 
+  noLongerNewUser = () => {
+    this.setState({newUser: false});
+  }
+
+  renderHomePage = () => {
+    if (this.state.newUser)
+      return <NewUserForm noLongerNewUser={this.noLongerNewUser}/>;
+    else
+      return <Home submit={this.submit} nameObj={this.state.nameObj} undo={this.undo}/>;
+  }
+
   render() {
     return (
       <BrowserRouter><ScrollToTop>
@@ -103,7 +117,7 @@ class App extends Component {
           <Route path='/settings/inspiring' render={() => <RatedNames rating={3} />} />
           <Route path='/settings/favorites' render={() => <RatedNames rating={4} />} />
           <Route path="/settings/修改姓" component={EditFamilyName} />
-          <Route path="/settings/修改我是谁" component={EditUsername} />
+          <Route path="/settings/修改我的昵称" component={EditUsername} />
           <Route path="/settings/固定一字" component={FixOneChar} />
           <Route path="/settings/不推荐出处" component={DiscourageSource} />
           <Route path="/settings/只适合女孩的字" render={()=><ExplainLabels title='只适合女孩的字' displayLabel='只适合女孩用' dbLabel='女孩用'/>}/>
@@ -126,7 +140,7 @@ class App extends Component {
           <Route path="/settings/第三级字表的字" render={()=><ExplainLabels title='第三级字表的字' displayLabel='第三级字表' dbLabel='第三级字表'/>}/>
           <Route exact path="/settings" component={Settings} />
           <Route exact path="/menu" component={Menu} />
-          <Route path="/" render={()=><Home submit={this.submit} nameObj={this.state.nameObj} undo={this.undo}/>}/>
+          <Route path="/" render={this.renderHomePage}/>
         </Switch>
       </ScrollToTop></BrowserRouter>
     );

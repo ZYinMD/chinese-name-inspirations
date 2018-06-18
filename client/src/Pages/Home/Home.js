@@ -54,7 +54,7 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
-          <Header leftIcon={<Hamburger/>} leftLink='/menu' title={this.renderTitle()} rightIcon={<Gear />} rightLink='/settings' headingLevel={6}/>
+        <Header leftIcon={<Hamburger/>} leftLink='/menu' title={this.renderTitle()} rightIcon={<Gear />} rightLink='/settings' headingLevel={6}/>
         <Name nameObj={this.props.nameObj} displayName={this.props.nameObj.name? this.displayName() : '加载中...'} undo={this.props.undo} toggleRef={this.toggleRef} isRefShown={this.state.isRefShown}/>
         <Choices collapseRef={this.collapseRef} submit={this.props.submit} nameObj={this.props.nameObj} updateLastRating={this.updateLastRating}/>
       </div>
