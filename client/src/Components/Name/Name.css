@@ -10,6 +10,11 @@
   justify-content: space-around;
 }
 
+.fixed-char {
+  border-top: 1px solid #2bb;
+  padding-top: 2px;
+}
+
 .name-display {
   display: flex;
   justify-content: space-between;
@@ -46,4 +51,8 @@ dd {
 
 .expander {
   font-size: 1.2em;
+}
+
+.given-name-char:active {
+  color: silver;
 }

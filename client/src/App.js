@@ -9,12 +9,13 @@ import ExplainLabels from './Components/Articles/ExplainLabels.js';
 import ScrollToTop from './ScrollToTop.js';
 import EditFamilyName from './Components/Forms/EditFamilyName.js';
 import FixOneChar from './Components/Forms/FixOneChar.js';
+import ForbiddenChars from './Components/Forms/ForbiddenChars.js';
 import EditUsername from './Components/Forms/EditUsername.js';
 import RatedNames from './Components/Articles/RatedNames.js';
 import DiscourageSource from './Components/Articles/DiscourageSource.js';
 import NewUserForm from './Components/Forms/NewUserForm.js';
 
-const queue = [];
+var queue = [];
 var pointer = 0;
 window.opinions = [];
 window.updateLocalStorage = () => {
@@ -27,6 +28,19 @@ window.settingsChange = async () => { // when some settings are changed, call th
   queue.push(...newBunchNames);
 };
 
+window.checkForbiddenChars = arrayOfNames => { //检查一列名字是否包含有forbiddenChars, 如果包含, 则剔除
+  console.log('queue before filter: ', queue);
+  if (!arrayOfNames) {
+    queue = window.checkForbiddenChars(queue); // 如果没有argument, 则处理一下queue
+    return;
+  }
+  return arrayOfNames.filter(i => (
+    (!window.settings.forbiddenChars.includes(i.name[0]) || i.name[0] === window.settings.fixedChar) // 如果一个forbiddenChar恰好是fixedChar, 则允许
+    &&
+    (!window.settings.forbiddenChars.includes(i.name[1]) || i.name[1] === window.settings.fixedChar)
+  ));
+};
+
 window.newBunchNames = async () => {
   var newBunchNames = await axios.get('/api/names', {
     params: {
@@ -35,7 +49,7 @@ window.newBunchNames = async () => {
       mandate出处: window.settings.mandate出处,
     }
   });
-  return newBunchNames.data;
+  return await window.checkForbiddenChars(newBunchNames.data);
 };
 
 class App extends Component {
@@ -55,6 +69,7 @@ class App extends Component {
         username: '游客',
         verbose: true,
         newUser: true,
+        forbiddenChars: '',
       };
       window.updateLocalStorage();
     }
@@ -119,6 +134,7 @@ class App extends Component {
           <Route path="/settings/修改姓" component={EditFamilyName} />
           <Route path="/settings/修改我的昵称" component={EditUsername} />
           <Route path="/settings/固定一字" component={FixOneChar} />
+          <Route path="/settings/禁用字" component={ForbiddenChars} />
           <Route path="/settings/不推荐出处" component={DiscourageSource} />
           <Route path="/settings/只适合女孩的字" render={()=><ExplainLabels title='只适合女孩的字' displayLabel='只适合女孩用' dbLabel='女孩用'/>}/>
           <Route path="/settings/只适合男孩的字" render={()=><ExplainLabels title='只适合男孩的字' displayLabel='只适合男孩用' dbLabel='男孩用'/>}/>

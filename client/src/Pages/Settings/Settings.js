@@ -20,6 +20,7 @@ class Settings extends Component {
           </ListSection>
           <ListSection>
             <Link to='./settings/固定一字'><Li>固定一字<Expand/></Li></Link>
+            <Link to='./settings/禁用字'><Li>禁用字<Expand/></Li></Link>
           </ListSection>
           <ListSection>
             <Li>

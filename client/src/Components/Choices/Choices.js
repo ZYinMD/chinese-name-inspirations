@@ -4,10 +4,11 @@ import Cross from 'react-icons/lib/md/clear';
 import Heart from 'react-icons/lib/io/android-favorite-outline';
 import Bulb from 'react-icons/lib/io/android-bulb';
 import Meh from 'react-icons/lib/md/sentiment-neutral';
-const Choices = ({nameObj, submit, collapseRef, updateLastRating}) => {
+const Choices = ({nameObj, submit, collapseRef, updateLastRating, messageOff}) => {
 
   function handleClick(rating) {
     collapseRef();
+    messageOff();
     if (!nameObj.name) return; // when name isn't ready (shown as 加载中...)
     let 名1 = nameObj.name;
     let 名2 = 名1[1] + 名1[0];
