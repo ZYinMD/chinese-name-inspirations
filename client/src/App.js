@@ -29,7 +29,6 @@ window.settingsChange = async () => { // when some settings are changed, call th
 };
 
 window.checkForbiddenChars = arrayOfNames => { //检查一列名字是否包含有forbiddenChars, 如果包含, 则剔除
-  console.log('queue before filter: ', queue);
   if (!arrayOfNames) {
     queue = window.checkForbiddenChars(queue); // 如果没有argument, 则处理一下queue
     return;
@@ -83,7 +82,6 @@ class App extends Component {
   componentDidMount() {
     this.replenish();
     setInterval(this.postOpinions, 15000);
-    console.log('this.state.newUser: ', this.state.newUser);//看看will mount是否在state设定之前
   }
 
   submit = () => {
