@@ -48,6 +48,7 @@ window.newBunchNames = async () => {
       allowed: window.settings.allowed,
       fixedChar: window.settings.fixedChar,
       mandate出处: window.settings.mandate出处,
+      username: window.settings.username,
     }
   });
   return await window.checkForbiddenChars(newBunchNames.data);

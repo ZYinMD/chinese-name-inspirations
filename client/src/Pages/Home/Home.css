@@ -3,3 +3,9 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.message {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0;
+}

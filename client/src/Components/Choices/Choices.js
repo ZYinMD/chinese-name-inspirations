@@ -14,7 +14,6 @@ const Choices = ({nameObj, submit, collapseRef, updateLastRating, messageOff}) =
     let 名2 = 名1[1] + 名1[0];
     updateLastRating(rating, 名1 + ' / ' + 名2);
     submit();
-    if (rating === 2) return; // rating 2 doesn't need to be logged
     window.opinions.push({
       name: nameObj.name,
       rating,

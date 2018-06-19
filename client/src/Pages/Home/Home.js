@@ -60,7 +60,7 @@ class Home extends Component {
 
   renderTitle = () => {
     if (this.state.message && this.state.showMessage)
-      return <h4>{this.state.message}</h4>;
+      return <h4 className='message theme'>{this.state.message}</h4>;
     if (!this.state.verbose)
       return <h1>宝宝起名灵感发生器</h1>;
     if (this.state.lastRating === 1)

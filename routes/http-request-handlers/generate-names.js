@@ -91,7 +91,10 @@ async function generateNames(req, res) {
                           }
                         };
       pipeline.stage5 = {$match:
-                          {'opinion.0.rating': {$ne: 1}}
+                          {
+                            'opinion.0.username': {$ne: req.query.username},
+                            'opinion.0.rating': {$ne: 1},
+                          }
                         };
       pipeline.stage6 = {$sample: { size: number }};
 
@@ -131,36 +134,43 @@ async function generateNames(req, res) {
       return mixArray(mixArray(普通chars, 有意思chars), 优先chars);
     }
   }
-}
 
-async function decorateConstructedNames(constructedNames) {
-  var namesCollection = await db.names;
-  var opinionsCollection = await db.opinions;
+  async function decorateConstructedNames(constructedNames) {
+    var namesCollection = await db.names;
+    var opinionsCollection = await db.opinions;
 
-  // prune names that have been rated 1 before:
-  var badlyRated = opinionsCollection.find({name: {$in: constructedNames}, rating: 1}).project({name: 1, _id: 0}).toArray();
-  // add refs to names that are already in names collection:
-  var existed = namesCollection.find({name: {$in: constructedNames}}).project({_id: 0, name: 1, looseRef: 1, ref: 1}).toArray();
-  var result = [];
-  badlyRated = await badlyRated;
-  existed = await existed;
-  console.log('constructedNames: ', constructedNames);
+    // prune names that have been rated 1, or has been rated by same username before:
+    var badlyRated = opinionsCollection.find(
+      {
+        name: {$in: constructedNames},
+        $or: [{rating: 1}, {username: req.query.username}],
+      })
+    .project({name: 1, _id: 0})
+    .toArray();
+    // add refs to names that are already in names collection:
+    var existed = namesCollection.find({name: {$in: constructedNames}}).project({_id: 0, name: 1, looseRef: 1, ref: 1}).toArray();
+    var result = [];
+    badlyRated = await badlyRated;
+    existed = await existed;
+    console.log('constructedNames: ', constructedNames);
 
-  constructedNames.forEach(i => {
-    for (let j of badlyRated) {
-      if (j.name == i) return;
-    }
-    for (let j of existed) {
-      if (j.name == i) {
-        result.push(j);
-        return;
+    constructedNames.forEach(i => {
+      for (let j of badlyRated) {
+        if (j.name == i) return;
       }
-    }
-    result.push({name: i});
-  });
+      for (let j of existed) {
+        if (j.name == i) {
+          result.push(j);
+          return;
+        }
+      }
+      result.push({name: i});
+    });
 
-  return result;
+    return result;
+  }
 }
+
 
 function mixArray(array1, array2) {
   for (let i of array2) {
