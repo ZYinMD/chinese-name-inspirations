@@ -3377,7 +3377,8 @@
     "tone": "1",
     "evaluated": true,
     "labels": [
-      "普通"
+      "无趣",
+      "略怪"
     ]
   },
   {
@@ -3911,7 +3912,7 @@
     "tone": "1",
     "evaluated": true,
     "labels": [
-      "普通"
+      "略怪"
     ]
   },
   {
@@ -4866,7 +4867,7 @@
     "tone": "1",
     "evaluated": true,
     "labels": [
-      "普通"
+      "多音字"
     ]
   },
   {
@@ -9835,8 +9836,8 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "普通",
-      "有意思"
+      "有意思",
+      "女孩用"
     ]
   },
   {
@@ -11669,7 +11670,7 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "普通"
+      "无趣"
     ]
   },
   {
@@ -12542,7 +12543,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通"
+      "略怪"
     ]
   },
   {
@@ -13799,7 +13800,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通"
+      "无趣"
     ]
   },
   {
@@ -18902,7 +18903,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通"
+      "否定"
     ]
   },
   {
@@ -19284,7 +19285,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通"
+      "多音字"
     ]
   },
   {
@@ -21790,7 +21791,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通"
+      "女孩用"
     ]
   },
   {
@@ -25630,7 +25631,7 @@
     "tone": "1",
     "evaluated": true,
     "labels": [
-      "普通"
+      "不适用于人名"
     ]
   },
   {
@@ -27526,7 +27527,7 @@
     "tone": "2",
     "evaluated": true,
     "labels": [
-      "普通"
+      "女孩用"
     ]
   },
   {
@@ -27833,7 +27834,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通"
+      "略怪"
     ]
   },
   {
@@ -45758,7 +45759,7 @@
     "tone": "4",
     "evaluated": true,
     "labels": [
-      "普通"
+      "略生僻"
     ]
   },
   {
