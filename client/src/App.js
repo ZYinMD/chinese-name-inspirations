@@ -35,6 +35,8 @@ window.checkForbiddenChars = arrayOfNames => { //检查一列名字是否包含�
   }
 
   return arrayOfNames.filter(i => (
+    (i.name[0] !== i.name[1]) // remove if two chars are the same. It's not part of "check forbidden chars", but顺便check了
+    &&
     (!window.settings.forbiddenChars.includes(i.name[0]) || i.name[0] === window.settings.fixedChar) // 如果一个forbiddenChar恰好是fixedChar, 则允许
     &&
     (!window.settings.forbiddenChars.includes(i.name[1]) || i.name[1] === window.settings.fixedChar)
