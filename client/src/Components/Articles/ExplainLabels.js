@@ -15,7 +15,7 @@ const ExplainLabels = ({title, displayLabel, dbLabel}) => {
       case '第三级字表':
         return <h4>《通用规范汉字表 - 三级字表》规定了最不常用的1605个汉字:</h4>;
       default:
-        return <h4>以下字被标有[{displayLabel}]的标签:</h4>;
+        return <h4>以下字被标记为带有 [{displayLabel}] 的属性:</h4>;
     }
   }
 

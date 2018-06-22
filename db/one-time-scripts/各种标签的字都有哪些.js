@@ -1,7 +1,7 @@
 const chars = require('../one-time-data/just-chars-with-labels.json');
 const output = ('../../client/src/Components/Articles/各种标签的字都有哪些.json');
 const dataStorage = {
-  普通: '',
+  无标签: '',
   有意思: '',
   优先: '',
   男孩用: '',
@@ -12,18 +12,24 @@ const dataStorage = {
   略俗: '',
   无趣: '',
   略生僻: '',
-  略怪: '',
-  很怪: '',
+  难搭配: '',
+  很难搭配: '',
   多音字: '',
   不适用于人名: '',
   很生僻: '',
   第三级字表: '',
   玉类: '',
   否定: '',
+  不真实: '',
+  小气: '',
 };
 
 const labels = Object.keys(dataStorage);
 for (let char in chars) {
+  if (chars[char].length == 0) {
+    dataStorage.无标签 += char;
+    continue;
+  }
   for (let label of labels) {
     if (chars[char].includes(label)) {
       dataStorage[label] += char;

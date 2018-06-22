@@ -48,11 +48,11 @@ class Settings extends Component {
               <Toggle checked={window.settings.allowed.includes('略土')} label={'略土'}/>
             </Li>
             <Li>
-              <span className='label'>允许<Link to='./settings/很俗的字'>很俗的字</Link></span>
+              <span className='label'>允许<Link to='./settings/被用得太多的字'>被用得太多的字</Link></span>
               <Toggle checked={window.settings.allowed.includes('很俗')} label={'很俗'}/>
             </Li>
             <Li>
-              <span className='label'>允许<Link to='./settings/略俗的字'>略俗的字</Link></span>
+              <span className='label'>允许<Link to='./settings/被用得略多的字'>被用得略多的字</Link></span>
               <Toggle checked={window.settings.allowed.includes('略俗')} label={'略俗'}/>
             </Li>
             <Li>
@@ -64,7 +64,7 @@ class Settings extends Component {
               <Toggle checked={window.settings.allowed.includes('玉类')} label={'玉类'}/>
             </Li>
             <Li>
-              <span className='label'>允许<Link to='./settings/否定'>表否定的字</Link></span>
+              <span className='label'>允许<Link to='./settings/否定或反义'>表否定或反义的字</Link></span>
               <Toggle checked={window.settings.allowed.includes('否定')} label={'否定'}/>
             </Li>
             <Li>
@@ -72,19 +72,27 @@ class Settings extends Component {
               <Toggle checked={window.settings.allowed.includes('略生僻')} label={'略生僻'}/>
             </Li>
             <Li>
-              <span className='label'>允许<Link to='./settings/难搭配的字'>比较难搭配的字</Link></span>
-              <Toggle checked={window.settings.allowed.includes('略怪')} label={'略怪'}/>
+              <span className='label'>允许<Link to='./settings/不太好用的字'>不太好用的字</Link></span>
+              <Toggle checked={window.settings.allowed.includes('难搭配')} label={'难搭配'}/>
             </Li>
             <Li>
-              <span className='label'>允许<Link to='./settings/非常难搭配的字'>非常难搭配的字</Link></span>
-              <Toggle checked={window.settings.allowed.includes('很怪')} label={'很怪'}/>
+              <span className='label'>允许<Link to='./settings/很难用的字'>很难用的字</Link></span>
+              <Toggle checked={window.settings.allowed.includes('很难搭配')} label={'很难搭配'}/>
             </Li>
             <Li>
               <span className='label'>允许<Link to='./settings/多音字'>多音字</Link></span>
               <Toggle checked={window.settings.allowed.includes('多音字')} label={'多音字'}/>
             </Li>
+            <Li>
+              <span className='label'>允许<Link to='./settings/适用于虚构人名'>只适用于虚构人物的字</Link></span>
+              <Toggle checked={window.settings.allowed.includes('不真实')} label={'不真实'}/>
+            </Li>
+            <Li>
+              <span className='label'>允许<Link to='./settings/不大气'>不够大气的字</Link></span>
+              <Toggle checked={window.settings.allowed.includes('小气')} label={'小气'}/>
+            </Li>
             <Li disabled>
-              <span className='label'>允许<Link to='./settings/正常的字'>正常的字</Link></span>
+              <span className='label'>允许<Link to='./settings/无标签的字'>无标签的字</Link></span>
               <Toggle disabled checked/>
             </Li>
             <Li disabled>

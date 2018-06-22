@@ -144,16 +144,18 @@ class App extends Component {
           <Route path="/settings/只适合男孩的字" render={()=><ExplainLabels title='只适合男孩的字' displayLabel='只适合男孩用' dbLabel='男孩用'/>}/>
           <Route path="/settings/很土的字" render={()=><ExplainLabels title='很土的字' displayLabel='很土' dbLabel='很土'/>}/>
           <Route path="/settings/略土的字" render={()=><ExplainLabels title='略土的字' displayLabel='略土' dbLabel='略土'/>}/>
-          <Route path="/settings/很俗的字" render={()=><ExplainLabels title='很俗的字' displayLabel='很俗' dbLabel='很俗'/>}/>
-          <Route path="/settings/略俗的字" render={()=><ExplainLabels title='略俗的字' displayLabel='略俗' dbLabel='略俗'/>}/>
-          <Route path="/settings/无趣的字" render={()=><ExplainLabels title='无趣的字' displayLabel='可用于人名, 但很无趣' dbLabel='无趣'/>}/>
+          <Route path="/settings/被用得太多的字" render={()=><ExplainLabels title='被用得太多的字' displayLabel='被太多人用过' dbLabel='很俗'/>}/>
+          <Route path="/settings/被用得略多的字" render={()=><ExplainLabels title='被用得有点多的字' displayLabel='被相当多人用过' dbLabel='略俗'/>}/>
+          <Route path="/settings/无趣的字" render={()=><ExplainLabels title='无趣的字' displayLabel='适用于人名, 但作者觉得比较无趣' dbLabel='无趣'/>}/>
           <Route path="/settings/玉类" render={()=><ExplainLabels title='玉类' displayLabel='玉类' dbLabel='玉类'/>}/>
-          <Route path="/settings/否定" render={()=><ExplainLabels title='表否定意义的字' displayLabel='表示否定' dbLabel='否定'/>}/>
+          <Route path="/settings/否定或反义" render={()=><ExplainLabels title='表否定或反义的字' displayLabel='否定或反义' dbLabel='否定'/>}/>
           <Route path="/settings/略生僻的字" render={()=><ExplainLabels title='略生僻的字' displayLabel='可以用, 但有些生僻' dbLabel='略生僻'/>}/>
-          <Route path="/settings/难搭配的字" render={()=><ExplainLabels title='难搭配的字' displayLabel='人脑可以驾驭, 电脑不行' dbLabel='略怪'/>}/>
-          <Route path="/settings/非常难搭配的字" render={()=><ExplainLabels title='非常难搭配的字' displayLabel='某些特殊寓意的名字才会用' dbLabel='很怪'/>}/>
+          <Route path="/settings/不太好用的字" render={()=><ExplainLabels title='不太好用的字' displayLabel='人脑可以驾驭, 电脑不行' dbLabel='难搭配'/>}/>
+          <Route path="/settings/很难用的字" render={()=><ExplainLabels title='很难用的字' displayLabel='某些特殊寓意的名字才会用' dbLabel='很难搭配'/>}/>
           <Route path="/settings/多音字" render={()=><ExplainLabels title='多音字' displayLabel='多音字' dbLabel='多音字'/>}/>
-          <Route path="/settings/正常的字" render={()=><ExplainLabels title='正常的字' displayLabel='正常' dbLabel='普通'/>}/>
+          <Route path="/settings/适用于虚构人名" render={()=><ExplainLabels title='只适用于虚构人物的字' displayLabel='好听, 但似乎只适用于影视文学作品' dbLabel='不真实'/>}/>
+          <Route path="/settings/不大气" render={()=><ExplainLabels title='不够大气的字' displayLabel='好听, 但似乎像是小家碧玉, 或者小角色' dbLabel='小气'/>}/>
+          <Route path="/settings/无标签的字" render={()=><ExplainLabels title='无标签的字' displayLabel='没有任何标签' dbLabel='无标签'/>}/>
           <Route path="/settings/清奇的字" render={()=><ExplainLabels title='清奇的字' displayLabel='清奇' dbLabel='有意思'/>}/>
           <Route path="/settings/作者喜欢的字" render={()=><ExplainLabels title='作者喜欢的字' displayLabel='作者喜欢' dbLabel='优先'/>}/>
           <Route path="/settings/不适用于人名的字" render={()=><ExplainLabels title='不适用于人名的字' displayLabel='不适用于人名' dbLabel='不适用于人名'/>}/>
