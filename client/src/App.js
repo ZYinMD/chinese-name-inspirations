@@ -150,14 +150,14 @@ class App extends Component {
           <Route path="/settings/玉类" render={()=><ExplainLabels title='玉类' displayLabel='玉类' dbLabel='玉类'/>}/>
           <Route path="/settings/否定或反义" render={()=><ExplainLabels title='表否定或反义的字' displayLabel='否定或反义' dbLabel='否定'/>}/>
           <Route path="/settings/略生僻的字" render={()=><ExplainLabels title='略生僻的字' displayLabel='可以用, 但有些生僻' dbLabel='略生僻'/>}/>
-          <Route path="/settings/不太好用的字" render={()=><ExplainLabels title='不太好用的字' displayLabel='人脑可以驾驭, 电脑不行' dbLabel='难搭配'/>}/>
-          <Route path="/settings/很难用的字" render={()=><ExplainLabels title='很难用的字' displayLabel='某些特殊寓意的名字才会用' dbLabel='很难搭配'/>}/>
+          <Route path="/settings/不太好用的字" render={()=><ExplainLabels title='不太好用的字' displayLabel='手工起名可以驾驭, 电脑不行' dbLabel='难用'/>}/>
+          <Route path="/settings/很难用的字" render={()=><ExplainLabels title='很难用的字' displayLabel='很难搭配, 只有某些很特殊的名字才用得到' dbLabel='很难用'/>}/>
           <Route path="/settings/多音字" render={()=><ExplainLabels title='多音字' displayLabel='多音字' dbLabel='多音字'/>}/>
           <Route path="/settings/适用于虚构人名" render={()=><ExplainLabels title='只适用于虚构人物的字' displayLabel='好听, 但似乎只适用于影视文学作品' dbLabel='不真实'/>}/>
           <Route path="/settings/不大气" render={()=><ExplainLabels title='不够大气的字' displayLabel='好听, 但似乎像是小家碧玉, 或者小角色' dbLabel='小气'/>}/>
+          <Route path="/settings/宽泛的字" render={()=><ExplainLabels title='虚无宽泛的字' displayLabel='似乎百搭又好听, 却没什么具体意思' dbLabel='宽泛'/>}/>
           <Route path="/settings/无标签的字" render={()=><ExplainLabels title='无标签的字' displayLabel='没有任何标签' dbLabel='无标签'/>}/>
           <Route path="/settings/清奇的字" render={()=><ExplainLabels title='清奇的字' displayLabel='清奇' dbLabel='有意思'/>}/>
-          <Route path="/settings/作者喜欢的字" render={()=><ExplainLabels title='作者喜欢的字' displayLabel='作者喜欢' dbLabel='优先'/>}/>
           <Route path="/settings/不适用于人名的字" render={()=><ExplainLabels title='不适用于人名的字' displayLabel='不适用于人名' dbLabel='不适用于人名'/>}/>
           <Route path="/settings/很生僻的字" render={()=><ExplainLabels title='很生僻的字' displayLabel='很生僻' dbLabel='很生僻'/>}/>
           <Route path="/settings/第三级字表的字" render={()=><ExplainLabels title='第三级字表的字' displayLabel='第三级字表' dbLabel='第三级字表'/>}/>

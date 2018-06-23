@@ -12,8 +12,8 @@ const dataStorage = {
   略俗: '',
   无趣: '',
   略生僻: '',
-  难搭配: '',
-  很难搭配: '',
+  难用: '',
+  很难用: '',
   多音字: '',
   不适用于人名: '',
   很生僻: '',
@@ -22,6 +22,7 @@ const dataStorage = {
   否定: '',
   不真实: '',
   小气: '',
+  宽泛: '',
 };
 
 const labels = Object.keys(dataStorage);

@@ -2,7 +2,7 @@ const db = require('../../db/db-connection.js');
 module.exports = generateNames;
 
 async function generateNames(req, res) {
-  var nin = new Set(['不适用于人名', '很生僻', '多音字', '男孩用', '女孩用', '无趣', '略生僻', '很土', '很俗', '很难搭配', '略土', '略俗', '难搭配', '玉类', '否定', '不真实', '小气', ]);
+  var nin = new Set(['不适用于人名', '很生僻', '多音字', '男孩用', '女孩用', '无趣', '略生僻', '很土', '很俗', '很难用', '略土', '略俗', '难用', '玉类', '否定', '不真实', '小气', '宽泛']);
   if (req.query.allowed) {
     for (let i of req.query.allowed) {
       nin.delete(i);
@@ -25,7 +25,7 @@ async function generateNames(req, res) {
     }
     // 正常情况:
     var 现成names = getNames(10);
-    var constructedNames = constructNames(22, 3, 1);
+    var constructedNames = constructNames(22, 2);
     现成names = await 现成names;
     constructedNames = await constructedNames;
     res.json(mixArray(现成names, constructedNames));
@@ -108,7 +108,7 @@ async function generateNames(req, res) {
     }
   }
 
-  async function constructNames(num普通chars, num有意思chars, num优先chars) { // construct names from chars
+  async function constructNames(num普通chars, num有意思chars) { // construct names from chars
     return await charsToNames();
 
     async function charsToNames() {
@@ -127,11 +127,9 @@ async function generateNames(req, res) {
     async function mixChars() {
       var 普通chars = getChars(num普通chars);
       var 有意思chars = getChars(num有意思chars, '有意思');
-      var 优先chars = getChars(num优先chars, '优先');
       普通chars = await 普通chars;
       有意思chars = await 有意思chars;
-      优先chars = await 优先chars;
-      return mixArray(mixArray(普通chars, 有意思chars), 优先chars);
+      return mixArray(普通chars, 有意思chars);
     }
   }
 

@@ -2,7 +2,7 @@ const input = require('../one-time-data/real-names-and-names-with-refs.json');
 const labelSource = require('../one-time-data/just-chars-with-labels.json');
 const output = '../db-seeds/real-names-and-names-with-refs--labeled.json';
 const dataStorage = [];
-const correctLabelOrder = ['不适用于人名', '很生僻', '多音字', '男孩用', '女孩用', '无趣', '略生僻', '很土', '很俗', '很难搭配', '禁用', '略土', '略俗', '难搭配', '玉类', '否定', '不真实', '小气', '有意思', '优先', ];
+const correctLabelOrder = ['不适用于人名', '很生僻', '多音字', '男孩用', '女孩用', '无趣', '略生僻', '很土', '很俗', '很难用', '略土', '略俗', '难用', '玉类', '否定', '不真实', '小气', '有意思', '优先', '宽泛'];
 
 var counter = 1;
 
