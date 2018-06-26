@@ -25,7 +25,7 @@ async function generateNames(req, res) {
     }
     // 正常情况:
     var 现成names = getNames(10);
-    var constructedNames = constructNames(22, 2);
+    var constructedNames = constructNames(24);
     现成names = await 现成names;
     constructedNames = await constructedNames;
     res.json(mixArray(现成names, constructedNames));
@@ -39,17 +39,11 @@ async function generateNames(req, res) {
     return await decorateConstructedNames(chars.map(i => [req.query.fixedChar, i.char].sort().join('')));
   }
 
-  async function getChars(number, type) {
-    var labels = type ? {
-      $in: [type],
-      $nin: nin
-    } : {
-      $nin: nin
-    };
+  async function getChars(number) {
     var collection = await db.chars;
     var chars = await collection.aggregate([
         {$match:
-          {labels: labels}
+          {labels: {$nin: nin}}
         },
         {$sample:
           {size: number}
@@ -108,12 +102,12 @@ async function generateNames(req, res) {
     }
   }
 
-  async function constructNames(num普通chars, num有意思chars) { // construct names from chars
+  async function constructNames(numChars) { // construct names from chars
     return await charsToNames();
 
     async function charsToNames() {
       var constructedNames = [];
-      var chars = await mixChars();
+      var chars = await getChars(numChars);
       chars.forEach((char, index, chars) => {
         if (index % 2 == 1) return;
         var name = [char.char, chars[index + 1].char];
@@ -122,14 +116,6 @@ async function generateNames(req, res) {
       });
       constructedNames = await decorateConstructedNames(constructedNames); // remove some of the constructedNames
       return constructedNames;
-    }
-
-    async function mixChars() {
-      var 普通chars = getChars(num普通chars);
-      var 有意思chars = getChars(num有意思chars, '有意思');
-      普通chars = await 普通chars;
-      有意思chars = await 有意思chars;
-      return mixArray(普通chars, 有意思chars);
     }
   }
 

@@ -2,8 +2,6 @@ const chars = require('../one-time-data/just-chars-with-labels.json');
 const output = ('../../client/src/Components/Articles/各种标签的字都有哪些.json');
 const dataStorage = {
   无标签: '',
-  有意思: '',
-  优先: '',
   男孩用: '',
   女孩用: '',
   很土: '',
@@ -23,6 +21,7 @@ const dataStorage = {
   不真实: '',
   小气: '',
   宽泛: '',
+  不想用: '',
 };
 
 const labels = Object.keys(dataStorage);

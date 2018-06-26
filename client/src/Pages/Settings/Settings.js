@@ -100,10 +100,6 @@ class Settings extends Component {
               <Toggle disabled checked/>
             </Li>
             <Li disabled>
-              <span className='label'>允许<Link to='./settings/清奇的字'>清奇的字</Link></span>
-              <Toggle disabled checked/>
-            </Li>
-            <Li disabled>
               <span className='label'>允许<Link to='./settings/不适用于人名的字'>不适用于人名的字</Link></span>
               <Toggle disabled checked={window.settings.allowed.includes('不适用于人名')} label={'不适用于人名'}/>
             </Li>

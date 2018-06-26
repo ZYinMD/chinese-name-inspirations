@@ -157,7 +157,6 @@ class App extends Component {
           <Route path="/settings/不大气" render={()=><ExplainLabels title='不够大气的字' displayLabel='好听, 但似乎像是小家碧玉, 或者小角色' dbLabel='小气'/>}/>
           <Route path="/settings/宽泛的字" render={()=><ExplainLabels title='虚无宽泛的字' displayLabel='似乎百搭又好听, 却没什么具体意思' dbLabel='宽泛'/>}/>
           <Route path="/settings/无标签的字" render={()=><ExplainLabels title='无标签的字' displayLabel='没有任何标签' dbLabel='无标签'/>}/>
-          <Route path="/settings/清奇的字" render={()=><ExplainLabels title='清奇的字' displayLabel='清奇' dbLabel='有意思'/>}/>
           <Route path="/settings/不适用于人名的字" render={()=><ExplainLabels title='不适用于人名的字' displayLabel='不适用于人名' dbLabel='不适用于人名'/>}/>
           <Route path="/settings/很生僻的字" render={()=><ExplainLabels title='很生僻的字' displayLabel='很生僻' dbLabel='很生僻'/>}/>
           <Route path="/settings/第三级字表的字" render={()=><ExplainLabels title='第三级字表的字' displayLabel='第三级字表' dbLabel='第三级字表'/>}/>
