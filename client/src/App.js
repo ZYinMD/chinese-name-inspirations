@@ -13,6 +13,7 @@ import ForbiddenChars from './Components/Forms/ForbiddenChars.js';
 import EditUsername from './Components/Forms/EditUsername.js';
 import RatedNames from './Components/Articles/RatedNames.js';
 import DiscourageSource from './Components/Articles/DiscourageSource.js';
+import AutoMode from './Components/Articles/AutoMode.js';
 import NewUserForm from './Components/Forms/NewUserForm.js';
 
 var queue = [];
@@ -50,6 +51,7 @@ window.newBunchNames = async () => {
       fixedChar: window.settings.fixedChar,
       mandate出处: window.settings.mandate出处,
       username: window.settings.username,
+      autoMode: window.settings.autoMode,
     }
   });
   return await window.checkForbiddenChars(newBunchNames.data);
@@ -142,6 +144,7 @@ class App extends Component {
           <Route path="/settings/不推荐出处" component={DiscourageSource} />
           <Route path="/settings/只适合女孩的字" render={()=><ExplainLabels title='只适合女孩的字' displayLabel='只适合女孩用' dbLabel='女孩用'/>}/>
           <Route path="/settings/只适合男孩的字" render={()=><ExplainLabels title='只适合男孩的字' displayLabel='只适合男孩用' dbLabel='男孩用'/>}/>
+          <Route path="/settings/智能模式" component={AutoMode} />
           <Route path="/settings/很土的字" render={()=><ExplainLabels title='很土的字' displayLabel='很土' dbLabel='很土'/>}/>
           <Route path="/settings/略土的字" render={()=><ExplainLabels title='略土的字' displayLabel='略土' dbLabel='略土'/>}/>
           <Route path="/settings/被用得太多的字" render={()=><ExplainLabels title='被用得太多的字' displayLabel='被太多人用过' dbLabel='很俗'/>}/>

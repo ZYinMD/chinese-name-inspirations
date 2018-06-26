@@ -3,6 +3,8 @@ module.exports = generateNames;
 
 async function generateNames(req, res) {
   var nin = new Set(['不适用于人名', '很生僻', '多音字', '男孩用', '女孩用', '无趣', '略生僻', '很土', '很俗', '很难用', '略土', '略俗', '难用', '玉类', '否定', '不真实', '小气', '宽泛']);
+  if (req.query.autoMode)
+    nin.add('不想用');
   if (req.query.allowed) {
     for (let i of req.query.allowed) {
       nin.delete(i);
