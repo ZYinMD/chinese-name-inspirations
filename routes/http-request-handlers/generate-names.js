@@ -3,7 +3,7 @@ module.exports = generateNames;
 
 async function generateNames(req, res) {
   var nin = new Set(['不适用于人名', '很生僻', '多音字', '男孩用', '女孩用', '无趣', '略生僻', '很土', '很俗', '很难用', '略土', '略俗', '难用', '玉类', '否定', '不真实', '小气', '宽泛']);
-  if (req.query.autoMode)
+  if (req.query.autoMode == 'true')
     nin.add('不想用');
   if (req.query.allowed) {
     for (let i of req.query.allowed) {
@@ -14,18 +14,19 @@ async function generateNames(req, res) {
 
   try {
     // 如果固定一字:
+
     if (req.query.fixedChar) {
       let result = await getNamesWithFixedChar();
       res.json(result);
       return;
     }
     // 如果只看有出处的名字:
-    if (req.query.mandate出处) {
+    if (req.query.mandate出处 == 'true') {
       res.json(await getNames(20));
       return;
     }
     // 正常情况:
-    var 现成names = getNames(10);
+    var 现成names = getNames(8);
     var constructedNames = constructNames(24);
     现成names = await 现成names;
     constructedNames = await constructedNames;
@@ -150,7 +151,6 @@ async function generateNames(req, res) {
       }
       result.push({name: i});
     });
-
     return result;
   }
 }
