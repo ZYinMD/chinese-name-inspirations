@@ -9,7 +9,7 @@ const About = () => (
       <Header leftIcon={<Back/>} leftLink={'/menu'} title='关于本App' headingLevel={3}/>
       <article>
         <h4>为什么要写这个软件? </h4>
-        <p>作者是一名业余编程爱好者, 在给自己的小孩起名字的时候写给自己用的。</p>
+        <p>作者写给自己用的。</p>
         <h4>用什么写的? </h4>
         <p>React, Mongo, Node, Express, 纯手工CSS</p>
         <h4>为什么访问速度这么慢? </h4>

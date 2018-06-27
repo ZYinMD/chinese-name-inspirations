@@ -60,7 +60,7 @@
 
 .plain-article article {
   padding: 5vw;
-  font-size: 1rem;
+  font-size: 18px;
   line-height: 170%;
 }
 
@@ -70,6 +70,7 @@
 
 .plain-article article h4 {
   margin: 0.5rem 0;
+  font-size: 18px;
   font-weight: 500;
   text-decoration: underline;
 }

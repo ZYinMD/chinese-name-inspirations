@@ -5,6 +5,7 @@ import Heart from 'react-icons/lib/io/android-favorite-outline';
 import Bulb from 'react-icons/lib/io/android-bulb';
 import './Articles.css';
 import axios from 'axios';
+import parseDateFromMongo_id from '../Util/parseDateFromMongo_id.js';
 
 
 class RatedNames extends Component {
@@ -13,7 +14,7 @@ class RatedNames extends Component {
   }
 
   componentDidMount() {
-    axios.get('../api/opinions', {
+    axios.get('/api/opinions', {
       params: {rating: this.props.rating}
     }).then(res => {
       this.setState({content: res.data});
@@ -30,14 +31,6 @@ class RatedNames extends Component {
         return (<span>已标 <Heart style={{paddingBottom: '0.2em'}}/> 的名字</span>);
     }
   }
-
-  parseDateFromMongo_id = _id => {
-    var date = new Date(parseInt(_id.substring(0, 8), 16) * 1000); // this line was copied from other people's code.
-    var year = date.getFullYear();
-    var month = date.getMonth() + 1;
-    var day =date.getDate();
-    return `${year}-${month}-${day}`;
-  };
 
   render() {
     return (
@@ -57,7 +50,7 @@ class RatedNames extends Component {
                 <tr key={index}>
                   <td>{element.familyName + element.name} / {element.familyName + element.name[1] + element.name[0]}</td>
                   <td>{element.username}</td>
-                  <td>{this.parseDateFromMongo_id(element._id)}</td>
+                  <td>{parseDateFromMongo_id(element._id)}</td>
                 </tr>
               ))
               : <tr><td>{this.state.message}</td></tr>}

@@ -16,7 +16,8 @@ h4 svg {
   position: relative;
   bottom: 0.2em;
 }
-form input {
+form input,
+.wall textarea {
   font-size: 4vw;
   outline: none;
   border: 1px solid #eee;
@@ -38,4 +39,25 @@ form input {
   font-weight: 500;
   text-align: left;
   margin: 3vw;
+}
+
+.wall dl {
+  text-align: left;
+}
+
+.wall dt {
+  margin: 1.5vh 3vw 0.4vh;
+}
+
+.wall dd {
+  background-color: white;
+  border: 1px solid #eee;
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 1vh 3vw;
+  margin: 0;
+}
+
+.wall p + dl { /*the first message on the wall, needs to be farther from the submit button*/
+  margin-top: 6vw;
 }

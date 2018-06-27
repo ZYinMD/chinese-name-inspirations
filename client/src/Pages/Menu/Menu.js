@@ -19,7 +19,7 @@ class Menu extends Component {
             </Link>
           </ListSection>
           <ListSection>
-            <Li>给宝宝起名的原则与陷阱与禁忌<Expand /></Li>
+            <Li>给宝宝起名的原则与陷阱<Expand /></Li>
           </ListSection>
           <ListSection>
             <Link to='./menu/inspiring'>
@@ -37,6 +37,11 @@ class Menu extends Component {
           <ListSection>
             <Link to='./menu/关于'>
               <Li>关于本App<Expand/></Li>
+            </Link>
+          </ListSection>
+          <ListSection>
+            <Link to='./menu/wall'>
+              <Li>留言板<Expand/></Li>
             </Link>
           </ListSection>
         </List>

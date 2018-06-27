@@ -22,9 +22,15 @@ const opinionsCollection = async function() {
   return await connection.db().collection('opinions');
 };
 
+const wallCollection = async function() {
+  var connection = await connect();
+  return await connection.db().collection('wall');
+};
+
 module.exports = {
   names: namesCollection(),
   chars: charsCollection(),
   opinions: opinionsCollection(),
+  wall: wallCollection()
 };
 
