@@ -19,7 +19,9 @@ class Menu extends Component {
             </Link>
           </ListSection>
           <ListSection>
-            <Li>给宝宝起名的原则与陷阱<Expand /></Li>
+            <Link to='./menu/陷阱'>
+              <Li>给宝宝起名的10个陷阱<Expand/></Li>
+            </Link>
           </ListSection>
           <ListSection>
             <Link to='./menu/inspiring'>

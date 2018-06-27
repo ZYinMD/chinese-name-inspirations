@@ -7,7 +7,7 @@ import parseDateFromMongo_id from '../Util/parseDateFromMongo_id.js';
 
 class Wall extends Component {
   state = {
-    title: '留言板',
+    button: '提交',
     wall: [],
   }
 
@@ -17,10 +17,10 @@ class Wall extends Component {
       author: window.settings.username,
       message: messageBody.value.slice(0, 255)
     });
-    this.setState({title: '提交中...'});
+    this.setState({button: '提交中...'});
     res = await res;
     messageBody.value = '';
-    this.setState({title: '留言板'});
+    this.setState({button: '提交'});
     let wall = this.state.wall;
     wall.unshift(res.data);
     this.setState({wall});
@@ -37,11 +37,14 @@ class Wall extends Component {
   render() {
     return (
       <div className='wall'>
-        <Header leftIcon={<Back/>} leftLink={'/menu'} title={this.state.title} headingLevel={3}/>
+        <Header leftIcon={<Back/>} leftLink={'/menu'} title='留言板' headingLevel={3}/>
         <h4>留言上限255个字符: </h4>
         <textarea autoFocus cols="40" rows="7"></textarea>
-        <p className='submit' onClick={this.submit}>提交</p>
-        {this.state.wall.map((i, index) => (
+        <p className='submit' onClick={this.submit}>{this.state.button}</p>
+        {this.state.errorMessage?
+          this.state.errorMessage
+          :
+          this.state.wall.map((i, index) => (
           <dl key={index}>
             <dt>{parseDateFromMongo_id(i._id)} {i.author}:</dt>
             <dd>{i.message}</dd>

@@ -13,7 +13,6 @@ async function generateNames(req, res) {
   nin = [...nin];
 
   try {
-    console.log('req.query: ', req.query);
     // 如果固定一字:
     if (req.query.fixedChar) {
       let result = await getNamesWithFixedChar();
@@ -138,7 +137,6 @@ async function generateNames(req, res) {
     var result = [];
     badlyRated = await badlyRated;
     existed = await existed;
-    console.log('constructedNames: ', constructedNames);
 
     constructedNames.forEach(i => {
       for (let j of badlyRated) {

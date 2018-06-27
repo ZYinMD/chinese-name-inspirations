@@ -18,6 +18,7 @@ import NewUserForm from './Components/Forms/NewUserForm.js';
 import Help from './Components/Articles/Help.js';
 import About from './Components/Articles/About.js';
 import Reference from './Components/Articles/Reference.js';
+import Traps from './Components/Articles/Traps.js';
 import Wall from './Components/Forms/Wall.js';
 
 
@@ -143,6 +144,7 @@ class App extends Component {
           <Route path='/menu/inspiring' render={() => <RatedNames rating={3} />} />
           <Route path='/menu/favorites' render={() => <RatedNames rating={4} />} />
           <Route path="/menu/如何使用本软件" component={Help} />
+          <Route path="/menu/陷阱" component={Traps} />
           <Route path="/menu/典籍" component={Reference} />
           <Route path="/menu/Wall" component={Wall} />
           <Route path="/menu/关于" component={About} />
