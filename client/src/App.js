@@ -15,6 +15,10 @@ import RatedNames from './Components/Articles/RatedNames.js';
 import DiscourageSource from './Components/Articles/DiscourageSource.js';
 import AutoMode from './Components/Articles/AutoMode.js';
 import NewUserForm from './Components/Forms/NewUserForm.js';
+import Help from './Components/Articles/Help.js';
+import About from './Components/Articles/About.js';
+import Reference from './Components/Articles/Reference.js';
+
 
 var queue = [];
 var pointer = 0;
@@ -135,8 +139,11 @@ class App extends Component {
     return (
       <BrowserRouter><ScrollToTop>
         <Switch>
-          <Route path='/settings/inspiring' render={() => <RatedNames rating={3} />} />
-          <Route path='/settings/favorites' render={() => <RatedNames rating={4} />} />
+          <Route path='/menu/inspiring' render={() => <RatedNames rating={3} />} />
+          <Route path='/menu/favorites' render={() => <RatedNames rating={4} />} />
+          <Route path="/menu/如何使用本软件" component={Help} />
+          <Route path="/menu/关于" component={About} />
+          <Route path="/menu/典籍" component={Reference} />
           <Route path="/settings/修改姓" component={EditFamilyName} />
           <Route path="/settings/修改我的昵称" component={EditUsername} />
           <Route path="/settings/固定一字" component={FixOneChar} />
@@ -145,10 +152,10 @@ class App extends Component {
           <Route path="/settings/只适合女孩的字" render={()=><ExplainLabels title='只适合女孩的字' displayLabel='只适合女孩用' dbLabel='女孩用'/>}/>
           <Route path="/settings/只适合男孩的字" render={()=><ExplainLabels title='只适合男孩的字' displayLabel='只适合男孩用' dbLabel='男孩用'/>}/>
           <Route path="/settings/智能模式" component={AutoMode} />
-          <Route path="/settings/很土的字" render={()=><ExplainLabels title='很土的字' displayLabel='很土' dbLabel='很土'/>}/>
           <Route path="/settings/略土的字" render={()=><ExplainLabels title='略土的字' displayLabel='略土' dbLabel='略土'/>}/>
-          <Route path="/settings/被用得太多的字" render={()=><ExplainLabels title='被用得太多的字' displayLabel='被太多人用过' dbLabel='很俗'/>}/>
+          <Route path="/settings/很土的字" render={()=><ExplainLabels title='很土的字' displayLabel='很土' dbLabel='很土'/>}/>
           <Route path="/settings/被用得略多的字" render={()=><ExplainLabels title='被用得有点多的字' displayLabel='被相当多人用过' dbLabel='略俗'/>}/>
+          <Route path="/settings/被用得太多的字" render={()=><ExplainLabels title='被用得太多的字' displayLabel='被太多人用过' dbLabel='很俗'/>}/>
           <Route path="/settings/无趣的字" render={()=><ExplainLabels title='无趣的字' displayLabel='适用于人名, 但作者觉得比较无趣' dbLabel='无趣'/>}/>
           <Route path="/settings/玉类" render={()=><ExplainLabels title='玉类' displayLabel='玉类' dbLabel='玉类'/>}/>
           <Route path="/settings/否定或反义" render={()=><ExplainLabels title='表否定或反义的字' displayLabel='否定或反义' dbLabel='否定'/>}/>

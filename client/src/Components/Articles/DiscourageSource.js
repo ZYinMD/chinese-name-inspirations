@@ -4,7 +4,7 @@ import Back from 'react-icons/lib/md/navigate-before';
 import './Articles.css';
 
 const DiscourageSource = () => (
-    <div className='discourage-source'>
+    <div className='plain-article'>
       <Header leftIcon={<Back/>} leftLink={'/settings'} title='不推荐只看有出处的名字' headingLevel={3}/>
       <article>
         <p>原因一: </p>

@@ -14,21 +14,30 @@ class Menu extends Component {
         <Header leftIcon={<Back/>} leftLink='./' title='' headingLevel={2}/>
         <List>
           <ListSection>
-            <Li>给宝宝起名的7个原则 (本功能未完成)<Expand /></Li>
+            <Link to='./menu/如何使用本软件'>
+              <Li>如何使用本软件<Expand/></Li>
+            </Link>
           </ListSection>
           <ListSection>
-            <Link to='./settings/inspiring'>
+            <Li>给宝宝起名的原则与陷阱与禁忌<Expand /></Li>
+          </ListSection>
+          <ListSection>
+            <Link to='./menu/inspiring'>
               <Li><span>大家标 <Bulb style={{paddingBottom: '0.3em'}}/> 的名字</span><Expand/></Li>
             </Link>
-            <Link to='./settings/favorites'>
+            <Link to='./menu/favorites'>
               <Li><span>大家标 <Heart style={{paddingBottom: '0.2em'}}/> 的名字</span><Expand/></Li>
             </Link>
           </ListSection>
           <ListSection>
-            <Li><span>参考典籍 (本功能未完成)</span><Expand /></Li>
+            <Link to='./menu/典籍'>
+              <Li>典籍<Expand/></Li>
+            </Link>
           </ListSection>
           <ListSection>
-            <Li><span>关于本App (本功能未完成)</span><Expand /></Li>
+            <Link to='./menu/关于'>
+              <Li>关于本App<Expand/></Li>
+            </Link>
           </ListSection>
         </List>
       </div>

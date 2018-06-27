@@ -18,7 +18,7 @@
   letter-spacing: 0.5em;
   line-height: 1.5em;
   font-size: 4.45vw;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .rated-names {
@@ -52,18 +52,28 @@
   width: 28%;
 }
 
-.discourage-source {
+.plain-article {
   text-align: left;
   background-color: white;
   min-height: 100vh;
 }
 
-.discourage-source article {
+.plain-article article {
   padding: 5vw;
   font-size: 1rem;
   line-height: 170%;
 }
 
-.discourage-source article p {
+.plain-article article p {
   margin: 0.5rem 0;
+}
+
+.plain-article article h4 {
+  margin: 0.5rem 0;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.plain-article .icon {
+  padding-bottom: 1px;
 }

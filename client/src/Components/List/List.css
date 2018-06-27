@@ -31,6 +31,7 @@ a:not(:last-child) li {
 
 }
 .menu li:active {
+  background-color: transparent;
   color: silver;
 }
 
@@ -41,4 +42,5 @@ a {
 
 a:active {
   color: silver;
+  background-color: transparent;
 }
