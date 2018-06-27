@@ -26,8 +26,8 @@ async function generateNames(req, res) {
       return;
     }
     // 正常情况:
-    var 现成names = getNames(8);
-    var constructedNames = constructNames(24);
+    var 现成names = getNames(10);
+    var constructedNames = constructNames(20);
     现成names = await 现成names;
     constructedNames = await constructedNames;
     res.json(mixArray(现成names, constructedNames));
