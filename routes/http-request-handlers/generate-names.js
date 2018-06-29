@@ -95,7 +95,6 @@ async function generateNames(req, res) {
       pipeline.stage6 = {$sample: { size: number }};
 
       pipeline = Object.values(pipeline);
-
       var collection = await db.names;
       var names = await collection.aggregate(pipeline)
       .project({_id: 0, name:1, ref: 1, looseRef: 1})
@@ -117,6 +116,7 @@ async function generateNames(req, res) {
         constructedNames.push(name);
       });
       constructedNames = await decorateConstructedNames(constructedNames); // remove some of the constructedNames
+
       return constructedNames;
     }
   }
@@ -138,10 +138,12 @@ async function generateNames(req, res) {
     var result = [];
     badlyRated = await badlyRated;
     existed = await existed;
-
     constructedNames.forEach(i => {
       for (let j of badlyRated) {
-        if (j.name == i) return;
+        if (j.name == i) {
+          return;
+        }
+
       }
       for (let j of existed) {
         if (j.name == i) {
