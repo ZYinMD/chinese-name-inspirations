@@ -19,7 +19,7 @@ class Menu extends Component {
             </Link>
           </ListSection>
           <ListSection>
-            <Link to='./menu/陷阱'>
+            <Link to='./menu/traps'>
               <Li>给宝宝起名的10个陷阱<Expand/></Li>
             </Link>
           </ListSection>
