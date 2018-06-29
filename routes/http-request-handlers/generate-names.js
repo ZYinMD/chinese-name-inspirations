@@ -86,10 +86,10 @@ async function generateNames(req, res) {
                             as: 'opinion'
                           }
                         };
-      pipeline.stage5 = {$match:
+      pipeline.stage5 = {$match: // it's a shorthand of $elemMatch, see mongodb $elemMatch doc
                           {
-                            'opinion.0.username': {$ne: req.query.username},
-                            'opinion.0.rating': {$ne: 1},
+                            'opinion.username': {$ne: req.query.username},
+                            'opinion.rating': {$ne: 1},
                           }
                         };
       pipeline.stage6 = {$sample: { size: number }};
