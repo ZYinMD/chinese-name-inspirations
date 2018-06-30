@@ -8,6 +8,8 @@ const About = () => (
     <div className='plain-article'>
       <Header leftIcon={<Back/>} leftLink={'/menu'} title='关于本App' headingLevel={3}/>
       <article>
+        <h4>展示的名字会不会有重复的? 好像来来去去都见过了</h4>
+        <p></p>
         <h4>为什么要写这个软件? </h4>
         <p>作者写给自己用的。</p>
         <h4>用什么写的? </h4>

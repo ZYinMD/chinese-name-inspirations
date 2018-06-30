@@ -115,7 +115,20 @@ class App extends Component {
     if (remaining <= 15 && remaining % 5 === 0) {
       var newBunchNames = await window.newBunchNames();
       queue.push(...newBunchNames);
+      console.log('queue before removeDupe: ', queue);
+      removeDupe(); // sometimes the addition of newBunchNames will introduce some duplicates, remove them
+      console.log('queue after removeDupe: ', queue);
       this.updateDisplay();
+    }
+    function removeDupe() {
+      var justRated = pointer - 5;
+      if (justRated <= 0)
+        justRated = 0;
+      for (let i = justRated; i < queue.length - 1; i++) {
+        for (let j = queue.length - 1; j > i; j--)
+          if (queue[i].name === queue[j].name)
+            queue.splice(j, 1);
+      }
     }
   }
 
