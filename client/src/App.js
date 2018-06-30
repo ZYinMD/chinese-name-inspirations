@@ -16,7 +16,7 @@ import DiscourageSource from './Components/Articles/DiscourageSource.js';
 import AutoMode from './Components/Articles/AutoMode.js';
 import NewUserForm from './Components/Forms/NewUserForm.js';
 import Help from './Components/Articles/Help.js';
-import About from './Components/Articles/About.js';
+import Faq from './Components/Articles/Faq.js';
 import Reference from './Components/Articles/Reference.js';
 import Traps from './Components/Articles/Traps.js';
 import Wall from './Components/Forms/Wall.js';
@@ -115,9 +115,7 @@ class App extends Component {
     if (remaining <= 15 && remaining % 5 === 0) {
       var newBunchNames = await window.newBunchNames();
       queue.push(...newBunchNames);
-      console.log('queue before removeDupe: ', queue);
       removeDupe(); // sometimes the addition of newBunchNames will introduce some duplicates, remove them
-      console.log('queue after removeDupe: ', queue);
       this.updateDisplay();
     }
     function removeDupe() {
@@ -160,7 +158,7 @@ class App extends Component {
           <Route exact path="/menu/traps" component={Traps} />
           <Route path="/menu/典籍" component={Reference} />
           <Route path="/menu/Wall" component={Wall} />
-          <Route path="/menu/关于" component={About} />
+          <Route path="/menu/faq" component={Faq} />
           <Route path="/settings/修改姓" component={EditFamilyName} />
           <Route path="/settings/修改我的昵称" component={EditUsername} />
           <Route path="/settings/固定一字" component={FixOneChar} />

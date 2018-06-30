@@ -37,8 +37,8 @@ class Menu extends Component {
             </Link>
           </ListSection>
           <ListSection>
-            <Link to='./menu/关于'>
-              <Li>关于本App<Expand/></Li>
+            <Link to='./menu/faq'>
+              <Li>常见问题<Expand/></Li>
             </Link>
           </ListSection>
           <ListSection>
