@@ -26,7 +26,7 @@ async function generateNames(req, res) {
       return;
     }
     // 正常情况:
-    var 现成names = getNames(30);
+    var 现成names = getNames(30); // 似乎太多了heroku handle不了? 奇怪
     var constructedNames = constructNames(60);
     现成names = await 现成names;
     constructedNames = await constructedNames;
