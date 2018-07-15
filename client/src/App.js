@@ -21,7 +21,6 @@ import Reference from './Components/Articles/Reference.js';
 import Traps from './Components/Articles/Traps.js';
 import Wall from './Components/Forms/Wall.js';
 
-
 var queue = [];
 var pointer = 0;
 window.opinions = [];
