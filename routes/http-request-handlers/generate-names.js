@@ -22,12 +22,12 @@ async function generateNames(req, res) {
     }
     // 如果只看有出处的名字:
     if (req.query.mandate出处 == 'true') {
-      res.json(await getNames(20));
+      res.json(await getNames(30));
       return;
     }
     // 正常情况:
-    var 现成names = getNames(30); // 似乎太多了heroku handle不了? 奇怪
-    var constructedNames = constructNames(60);
+    var 现成names = getNames(15); // 似乎太多了heroku handle不了? 奇怪
+    var constructedNames = constructNames(30);
     现成names = await 现成names;
     constructedNames = await constructedNames;
     res.json(mixArray(现成names, constructedNames));
