@@ -77,7 +77,7 @@ class App extends Component {
     } else {
       window.settings = {
         姓: '尹',
-        allowed: [],
+        allowed: ['小气', '宽泛'],
         mandate出处: false,
         username: '游客' + Math.floor(1000 * Math.random()),
         verbose: true,
@@ -196,3 +196,5 @@ class App extends Component {
 
 
 export default App;
+
+

@@ -1,17 +1,17 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Zhi\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js dev
+  /usr/bin/node /mnt/c/Users/Zhi/AppData/Roaming/npm/node_modules/yarn/bin/yarn.js client
 
 PATH: 
-  C:\Users\Zhi\bin;D:\Dropbox\Portables\Git_Portable\mingw64\bin;D:\Dropbox\Portables\Git_Portable\usr\local\bin;D:\Dropbox\Portables\Git_Portable\usr\bin;D:\Dropbox\Portables\Git_Portable\usr\bin;D:\Dropbox\Portables\Git_Portable\mingw64\bin;D:\Dropbox\Portables\Git_Portable\usr\bin;C:\Users\Zhi\bin;D:\Dropbox\Portables\ConEmu Portable - PreviewVersion171109\ConEmu\Scripts;D:\Dropbox\Portables\ConEmu Portable - PreviewVersion171109;D:\Dropbox\Portables\ConEmu Portable - PreviewVersion171109\ConEmu;D:\Program Files (x86)\Python36-32\Scripts;D:\Program Files (x86)\Python36-32;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;D:\Program Files\Calibre2;D:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\WINDOWS\System32\OpenSSH;C:\Users\Zhi\AppData\Local\Microsoft\WindowsApps;D:\Program Files\Heroku\bin;C:\Users\Zhi\AppData\Local\atom\bin;C:\Users\Zhi\AppData\Roaming\npm;C:\Users\Zhi\AppData\Local\GitHubDesktop\bin;C:\Program Files\MongoDB\Server\3.6\bin;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;D:\Dropbox\Portables\Git_Portable\usr\bin\vendor_perl;D:\Dropbox\Portables\Git_Portable\usr\bin\core_perl
+  /mnt/d/Dropbox/Coding/chinese-name-generator/node_modules/.bin:/usr/local/share/.config/yarn/link/node_modules/.bin:/mnt/d/Dropbox/Coding/chinese-name-generator/node_modules/.bin:/usr/local/share/.config/yarn/link/node_modules/.bin:/usr/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/lib/node_modules/npm/bin/node-gyp-bin:/usr/bin/node_modules/npm/bin/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/d/Dropbox/Portables/ConEmu Portable - PreviewVersion171109/ConEmu/wsl:/mnt/d/Dropbox/Portables/ConEmu Portable - PreviewVersion171109/ConEmu/Scripts:/mnt/d/Dropbox/Portables/ConEmu Portable - PreviewVersion171109:/mnt/d/Dropbox/Portables/ConEmu Portable - PreviewVersion171109/ConEmu:/mnt/d/Program Files (x86)/Python36-32/Scripts:/mnt/d/Program Files (x86)/Python36-32:/mnt/c/ProgramData/Oracle/Java/javapath:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/d/Program Files/Calibre2:/mnt/d/Program Files/Git/cmd:/mnt/c/Program Files/nodejs:/mnt/c/Windows/System32/OpenSSH:/mnt/c/Users/Zhi/AppData/Local/Microsoft/WindowsApps:/mnt/d/Program Files/Heroku/bin:/mnt/c/Users/Zhi/AppData/Roaming/npm:/mnt/c/Users/Zhi/AppData/Local/GitHubDesktop/bin:/mnt/c/Program Files/MongoDB/Server/3.6/bin:/snap/bin
 
 Yarn version: 
   1.5.1
 
 Node version: 
-  8.9.3
+  8.10.0
 
 Platform: 
-  win32 x64
+  linux x64
 
 npm manifest: 
   {
@@ -51,14 +51,14 @@ Lockfile:
 Trace: 
   Error: Command failed.
   Exit code: 1
-  Command: C:\WINDOWS\system32\cmd.exe
-  Arguments: /d /s /c concurrently --kill-others-on-fail "yarn server" "yarn client"
-  Directory: D:\Dropbox\Coding\Repos\QiMing-Inspiration
+  Command: sh
+  Arguments: -c cd client && yarn start
+  Directory: /mnt/d/Dropbox/Coding/chinese-name-generator
   Output:
   
-      at ProcessTermError.MessageError (C:\Users\Zhi\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
-      at new ProcessTermError (C:\Users\Zhi\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:226:113)
-      at ChildProcess.<anonymous> (C:\Users\Zhi\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:30281:17)
+      at ProcessTermError.MessageError (/mnt/c/Users/Zhi/AppData/Roaming/npm/node_modules/yarn/lib/cli.js:186:110)
+      at new ProcessTermError (/mnt/c/Users/Zhi/AppData/Roaming/npm/node_modules/yarn/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/mnt/c/Users/Zhi/AppData/Roaming/npm/node_modules/yarn/lib/cli.js:30281:17)
       at emitTwo (events.js:126:13)
       at ChildProcess.emit (events.js:214:7)
       at maybeClose (internal/child_process.js:925:16)
