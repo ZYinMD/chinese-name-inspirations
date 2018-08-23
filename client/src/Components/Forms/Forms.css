@@ -5,24 +5,23 @@ form {
 }
 
 h4 {
-  font-size: 1rem;
   text-align: left;
   font-weight: 300;
-  margin: 2vh 3vw 1vh;
+  margin: 2vh 3rem 1vh;
 }
 
 h4 svg {
-  padding: 0 0.5vw;
+  padding: 0 0.5rem;
   position: relative;
   bottom: 0.2em;
 }
 form input,
 .wall textarea {
-  font-size: 4vw;
+  font-size: 4rem;
   outline: none;
   border: 1px solid #eee;
   width: 100%;
-  padding: 1.6vw 3vw;
+  padding: 1.6rem 3rem;
   box-sizing: border-box;
   /*↓ to remove the weird input styling on mobile (different than chrome simulation)*/
   -webkit-appearance: none;
@@ -35,10 +34,10 @@ form input,
   color: #2bb;
   border: none;
   background-color: transparent;
-  font-size: 1.3rem;
+  font-size: 5rem;
   font-weight: 500;
   text-align: left;
-  margin: 3vw;
+  margin: 3rem;
 }
 
 .wall dl {
@@ -46,18 +45,17 @@ form input,
 }
 
 .wall dt {
-  margin: 1.5vh 3vw 0.4vh;
+  margin: 3rem 3rem 1rem;
 }
 
 .wall dd {
   background-color: white;
   border: 1px solid #eee;
   box-sizing: border-box;
-  width: 100vw;
-  padding: 1vh 3vw;
+  padding: 1.5rem 3rem;
   margin: 0;
 }
 
 .wall p + dl { /*the first message on the wall, needs to be farther from the submit button*/
-  margin-top: 6vw;
+  margin-top: 6rem;
 }

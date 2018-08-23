@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 0 2vw;
+  padding: 0 2rem;
   margin: 0 auto;
 }
 
@@ -11,13 +11,13 @@
   list-style: none;
   padding: 0;
   padding-top: 10px;
-  width: 40vw;
-  height: 40vw;
-  margin: 3vw;
+  width: 40rem;
+  height: 40rem;
+  margin: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  font-size: 0.9em;
+  font-size: 3.5rem;
   background-color: white;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.15);
   border-radius: 5px;
@@ -28,7 +28,7 @@
 }
 
 .choice i {
-  font-size: 3.5em;
+  font-size: 12.4rem;
 }
 
 .choice p {
