@@ -1,6 +1,12 @@
 html {
   font-size: 1vw; /* form rem */
 }
+
+@media (min-width: 414px) {
+  html {
+    font-size: 4.14px;
+  }
+}
 body {
   text-align: center;
   font-size: 3.95rem;

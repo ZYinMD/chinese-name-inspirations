@@ -14,35 +14,35 @@ class Menu extends Component {
         <Header leftIcon={<Back/>} leftLink='./' title='' headingLevel={2}/>
         <List>
           <ListSection>
-            <Link to='./menu/如何使用本软件'>
+            <Link to='/menu/如何使用本软件'>
               <Li>如何使用本软件<Expand/></Li>
             </Link>
           </ListSection>
           <ListSection>
-            <Link to='./menu/traps'>
+            <Link to='/menu/traps'>
               <Li>给宝宝起名的10个陷阱<Expand/></Li>
             </Link>
           </ListSection>
           <ListSection>
-            <Link to='./menu/inspiring'>
+            <Link to='/menu/inspiring'>
               <Li><span>大家标 <Bulb style={{paddingBottom: '0.3em'}}/> 的名字</span><Expand/></Li>
             </Link>
-            <Link to='./menu/favorites'>
+            <Link to='/menu/favorites'>
               <Li><span>大家标 <Heart style={{paddingBottom: '0.2em'}}/> 的名字</span><Expand/></Li>
             </Link>
           </ListSection>
           <ListSection>
-            <Link to='./menu/典籍'>
+            <Link to='/menu/典籍'>
               <Li>典籍<Expand/></Li>
             </Link>
           </ListSection>
           <ListSection>
-            <Link to='./menu/faq'>
+            <Link to='/menu/faq'>
               <Li>常见问题<Expand/></Li>
             </Link>
           </ListSection>
           <ListSection>
-            <Link to='./menu/wall'>
+            <Link to='/menu/wall'>
               <Li>留言板<Expand/></Li>
             </Link>
           </ListSection>
