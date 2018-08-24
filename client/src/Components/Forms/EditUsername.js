@@ -21,7 +21,7 @@ class EditUsername extends Component {
     return (
       <div className='fix-one-char'>
         <Header leftIcon={<Back/>} leftLink={'/settings'} title={'修改我是谁'} headingLevel={3}/>
-        <h4>请设置一个昵称, 用于在标<Heart/>和标<Bulb/>时记录执行人</h4>
+        <h4>请设置你的用户名, 用于在标<Heart/>和标<Bulb/>时记录执行人</h4>
         <form><input type="text" autoFocus value = {this.state.username} onChange={this.handleInputChange} /></form>
       </div>
     );

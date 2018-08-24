@@ -4,7 +4,7 @@ html {
 
 @media (min-width: 70vh) { /*on wider screen, like desktop, fill the screen horizontally*/
   html {
-    font-size: 0.6vh;
+    font-size: 0.6vh; /* 0.6, not 0.7, to make it look slimmer on wide screens. Only necessary for this app, because of homescreen layout */
   }
 }
 /*
@@ -18,7 +18,7 @@ the most common mobile resolution:
 412/846=0.4870
 360/740=0.4865
 375/812=0.4618
-So, theoretically 0.564vh is enought, but browsers often have their own header, and the OS has a header too.
+So, theoretically min-width: 56.4vh is enough, but browsers often have their own headers, and the mobile OS has a header too.
 */
 
 

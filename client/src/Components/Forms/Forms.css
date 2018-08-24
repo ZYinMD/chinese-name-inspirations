@@ -59,3 +59,7 @@ form input,
 .wall p + dl { /*the first message on the wall, needs to be farther from the submit button*/
   margin-top: 6rem;
 }
+
+.new-user-form {
+  padding-top: 5rem;
+}

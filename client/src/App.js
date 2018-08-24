@@ -159,7 +159,7 @@ class App extends Component {
           <Route path="/menu/Wall" component={Wall} />
           <Route path="/menu/faq" component={Faq} />
           <Route path="/settings/修改姓" component={EditFamilyName} />
-          <Route path="/settings/修改我的昵称" component={EditUsername} />
+          <Route path="/settings/修改我的用户名" component={EditUsername} />
           <Route path="/settings/固定一字" component={FixOneChar} />
           <Route path="/settings/禁用字" component={ForbiddenChars} />
           <Route path="/settings/不推荐出处" component={DiscourageSource} />
