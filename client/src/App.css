@@ -2,9 +2,9 @@ html {
   font-size: 1vw; /* form rem */
 }
 
-@media (min-width: 63vh) { /*on wider screen, like desktop, fill the screen horizontally*/
+@media (min-width: 70vh) { /*on wider screen, like desktop, fill the screen horizontally*/
   html {
-    font-size: 0.63vh;
+    font-size: 0.7vh;
   }
 }
 /*
