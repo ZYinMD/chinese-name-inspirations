@@ -31,7 +31,7 @@ class Home extends Component {
   displayName = () => {
     let char1 = <span className='given-name-char' onClick={() => {this.handleFixChar(1)}}>{this.props.nameObj.name[0]}</span>;
     let char2 = <span className='given-name-char' onClick={() => {this.handleFixChar(2)}}>{this.props.nameObj.name[1]}</span>;
-    return <span>{window.settings.姓}{char1}{char2} / {window.settings.姓}{char2}{char1}</span>;
+    return <span>{window.settings.姓}{char1}{char2}</span>;
   }
 
   handleFixChar = which => {
