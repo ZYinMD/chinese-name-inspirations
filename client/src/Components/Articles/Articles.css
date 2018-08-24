@@ -10,12 +10,12 @@
 
 .labeled-chars h4 {
   font-weight: 400;
-  font-size: 4.45rem;
+  font-size: 20px;
   margin: 4rem 5rem 0 0;
 }
 
 .labeled-chars p {
-  font-size: 4.45rem;
+  font-size: 20px;
   font-weight: 300;
   letter-spacing: 0.5em;
   line-height: 1.5em;
@@ -28,7 +28,7 @@
 }
 
 .rated-names table {
-  font-size: 4rem;
+  font-size: 19px;
   width: 85%;
   margin: auto;
   border-collapse: collapse;
@@ -60,7 +60,7 @@
 
 .plain-article article {
   padding: 5rem;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 170%;
 }
 
@@ -70,7 +70,7 @@
 
 .plain-article article h4 {
   margin: 2rem 0;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 500;
   text-decoration: underline;
 }
