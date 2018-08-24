@@ -2,9 +2,9 @@ html {
   font-size: 1vw; /* form rem */
 }
 
-@media (min-width: 56.4vh) {
+@media (min-width: 60vh) {
   html {
-    font-size: 0.564vh;
+    font-size: 0.6vh;
   }
 }
 
@@ -25,7 +25,7 @@ the most common mobile resolution:
 body {
   text-align: center;
   background-color: #666;
-  font-size: 4rem;
+  font-size: 18px;
   font-weight: 300;
   margin: 0;
   font-family: Helvetica, Arial, "Microsoft YaHei", "Heiti SC", "Pingfang SC", "Droid Sans Fallback", SimHei, Hei, STHeiti, SimSun, STSong, "Arial Unicode MS";
