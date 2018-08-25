@@ -17,7 +17,7 @@ h4 svg {
 }
 form input,
 .wall textarea {
-  font-size: 4rem;
+  font-size: 18px;
   outline: none;
   border: 1px solid #eee;
   width: 100%;
