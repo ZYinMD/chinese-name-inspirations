@@ -4,7 +4,9 @@
   width: 70rem;
   margin: auto;
   /*box-sizing: border-box;*/
-  min-height: 14vh;
+  /*min-height: 14vh;*/
+  /* for demo */
+  min-height: 13vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -28,7 +30,6 @@
   padding: 0;
   margin: 0;
   font-weight: 600;
-
 }
 
 .ref {
