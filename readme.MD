@@ -1,3 +1,3 @@
-A small utility app I wrote for my family to use.
+Chinese Name Generator
 
-Don't worry about what it does if you don't know Chinese.
+A small utility app I wrote for my friends and family to use: https://chinese-name-generator.herokuapp.com
