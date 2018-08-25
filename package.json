@@ -1,5 +1,5 @@
 {
-  "name": "qiming-inspiration",
+  "name": "chinese-name-generator",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ZYinMD/QiMing-Inspiration.git"
+    "url": "git+https://github.com/ZYinMD/chinese-name-generator.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ZYinMD/QiMing-Inspiration/issues"
+    "url": "https://github.com/ZYinMD/chinese-name-generator/issues"
   },
-  "homepage": "https://github.com/ZYinMD/QiMing-Inspiration#readme",
+  "homepage": "https://github.com/ZYinMD/chinese-name-generator#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
