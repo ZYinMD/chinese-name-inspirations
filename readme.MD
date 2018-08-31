@@ -4,4 +4,4 @@ A tool I wrote for my friends and family to use: https://chinese-name-generator.
 
 Demo:
 
-[![Youtube Link](https://s8.postimg.cc/evlpu47ud/thumbnail_-_Chinese_Name_Generator.png)](https://youtu.be/vmRi8ePPPCc)
+[![Youtube Link](https://s19.postimg.cc/xyl1l2itv/thumbnail_-_Chinese_Name_Generator_1.png)](https://youtu.be/PX9tEqqlwQQ)
