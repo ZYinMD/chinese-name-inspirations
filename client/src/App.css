@@ -1,5 +1,6 @@
 html {
   font-size: 1vw; /* form rem */
+  -webkit-tap-highlight-color: transparent; /*no flashing when clicked on mobile*/
 }
 
 @media (min-width: 70vh) { /*on wider screen, like desktop, fill the screen horizontally*/
