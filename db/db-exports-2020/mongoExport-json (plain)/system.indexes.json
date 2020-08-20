@@ -1,0 +1,12 @@
+[
+{ "v" : 2, "key" : { "_id" : 1 }, "name" : "_id_", "ns" : "heroku_tp1ql3d8.characters" },
+{ "v" : 2, "key" : { "_id" : 1 }, "name" : "_id_", "ns" : "heroku_tp1ql3d8.names" },
+{ "v" : 2, "key" : { "labels" : 1 }, "name" : "labels_1", "ns" : "heroku_tp1ql3d8.characters", "background" : true },
+{ "v" : 2, "key" : { "name" : 1 }, "name" : "name_1", "ns" : "heroku_tp1ql3d8.names", "background" : true },
+{ "v" : 2, "key" : { "labels" : 1 }, "name" : "labels_1", "ns" : "heroku_tp1ql3d8.names", "background" : true },
+{ "v" : 2, "key" : { "_id" : 1 }, "name" : "_id_", "ns" : "heroku_tp1ql3d8.opinions" },
+{ "v" : 2, "key" : { "name" : 1 }, "name" : "name_1", "ns" : "heroku_tp1ql3d8.opinions", "background" : true },
+{ "v" : 2, "key" : { "rating" : 1 }, "name" : "rating_1", "ns" : "heroku_tp1ql3d8.opinions", "background" : true },
+{ "v" : 2, "key" : { "_id" : 1 }, "name" : "_id_", "ns" : "heroku_tp1ql3d8.wall" },
+{ "v" : 2, "key" : { "labels" : 1 }, "name" : "labels_1", "ns" : "heroku_tp1ql3d8.opinions", "background" : true }
+]

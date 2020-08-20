@@ -1,0 +1,5 @@
+这个project是2018年4-5月小孩出生的时候弄的, 随便deploy到了heroku, 主要是给自已用来起名字。之后就再也没有过code change. 当时自己的coding practice不太成熟, 虽然还算比较clean, 但documentation做得不好。现在反正也用完了, 不想再做改动了。
+
+这个docs folder是2020年8月才写的, 因为收到heroku的通知, 他们的mLab插件将要停用, 所以我准备把deployment从heroku转移到AWS. 为了把database导出, 不得不重新来看当时是怎么deploy的, 一边看懂一边就顺便记下来。
+
+mLab是一家提供mongoDB hosting的公司, 好像host了全世界半数的mongoDB, 就算我把deployment转到AWS, 也不是不能继续用mLab. 当然用AWS的DocumentDB也可以, 到时候还要先弄一个hello world试一下npm mongoDB的driver是不是好用。

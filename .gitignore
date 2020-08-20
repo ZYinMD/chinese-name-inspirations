@@ -1,3 +1,5 @@
 .DS_Store
 node_modules
 raw-data
+yarn.lock
+package-lock.json

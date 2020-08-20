@@ -1,0 +1,88 @@
+[
+{ 
+    "v" : NumberInt(2), 
+    "key" : {
+        "_id" : NumberInt(1)
+    }, 
+    "name" : "_id_", 
+    "ns" : "heroku_tp1ql3d8.characters"
+},
+{ 
+    "v" : NumberInt(2), 
+    "key" : {
+        "_id" : NumberInt(1)
+    }, 
+    "name" : "_id_", 
+    "ns" : "heroku_tp1ql3d8.names"
+},
+{ 
+    "v" : NumberInt(2), 
+    "key" : {
+        "labels" : NumberInt(1)
+    }, 
+    "name" : "labels_1", 
+    "ns" : "heroku_tp1ql3d8.characters", 
+    "background" : true
+},
+{ 
+    "v" : NumberInt(2), 
+    "key" : {
+        "name" : NumberInt(1)
+    }, 
+    "name" : "name_1", 
+    "ns" : "heroku_tp1ql3d8.names", 
+    "background" : true
+},
+{ 
+    "v" : NumberInt(2), 
+    "key" : {
+        "labels" : NumberInt(1)
+    }, 
+    "name" : "labels_1", 
+    "ns" : "heroku_tp1ql3d8.names", 
+    "background" : true
+},
+{ 
+    "v" : NumberInt(2), 
+    "key" : {
+        "_id" : NumberInt(1)
+    }, 
+    "name" : "_id_", 
+    "ns" : "heroku_tp1ql3d8.opinions"
+},
+{ 
+    "v" : NumberInt(2), 
+    "key" : {
+        "name" : NumberInt(1)
+    }, 
+    "name" : "name_1", 
+    "ns" : "heroku_tp1ql3d8.opinions", 
+    "background" : true
+},
+{ 
+    "v" : NumberInt(2), 
+    "key" : {
+        "rating" : NumberInt(1)
+    }, 
+    "name" : "rating_1", 
+    "ns" : "heroku_tp1ql3d8.opinions", 
+    "background" : true
+},
+{ 
+    "v" : NumberInt(2), 
+    "key" : {
+        "_id" : NumberInt(1)
+    }, 
+    "name" : "_id_", 
+    "ns" : "heroku_tp1ql3d8.wall"
+},
+{ 
+    "v" : NumberInt(2), 
+    "key" : {
+        "labels" : NumberInt(1)
+    }, 
+    "name" : "labels_1", 
+    "ns" : "heroku_tp1ql3d8.opinions", 
+    "background" : true
+}
+]

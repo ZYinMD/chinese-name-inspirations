@@ -1,0 +1,15 @@
+2020年从mLab重新export之前:
+	db里有4个collections:
+		1. characters:
+			包含所有的中文characters, 每个document一个, 总共6000多个。每个都被我手动添加了labels, 例如"多音字" "女孩用" "略生僻", 等等
+			这个collection是hardcoded的, 用来随机抽字来生成名字, 基本已经不再准备改动了, 除非下次准备把更多的词假如"略俗", 比如"语, 轩, 涵"之类的
+			这个collection的生成应该是我在Studio 3T里面辛苦hardcode出来的。在08年的时候我exported到了db/db-exports/characters.json
+			db/db-seeds/characters-labels-in-order.json应该也是同样的content, 只是格式略有不同?
+		2. opinions:
+			包含所有人记录下来的对display的名字的所有opinions, 这个是最重要的一个, 要随时更新。
+			在08年的时候我exported到了db/db-exports/opinions<date>.json
+		3. names:
+			这个是最大的一个collection, 导出的json有接近100M, 里面是所有预先construct好的名字。预先construct好有两个原因, 一类是带有出处的名字, 所以要把出处准备好。第二类是真的人名, 比较容易像真的。
+			这个collection应该是通过db/one-time-data和db/one-time-scripts一顿操作产生的, 然后再import到db
+		4. wall:
+			这是最不重要的, app内的留言板的内容。
