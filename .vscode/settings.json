@@ -1,0 +1,29 @@
+{
+  "files.exclude": {
+    "**/node_modules": true,
+    "somefile_that_I_want_to_hide": true,
+    "**/package-lock.json": true,
+    "**/yarn.lock": true,
+    "client/build": true
+  },
+  "search.exclude": {
+    "node_modules": true,
+    "package-lock.json": true,
+    "yarn.lock": true,
+    "somefile_that_I_dont_want_to_search": true,
+    "build": true
+  },
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": false // tried "true", can't stand it
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
