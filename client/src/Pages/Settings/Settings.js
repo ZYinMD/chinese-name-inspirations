@@ -113,7 +113,7 @@ class Settings extends Component {
           </ListSection>
           <ListSection>
             <Li>
-              <span className='label'>优先展示有出处的名字(<Link to='/settings/不推荐出处'>不推荐</Link>)</span>
+              <span className='label'>优先展示有出处的名字</span>
               <Toggle checked={window.settings.mandate出处} setting='mandate出处'/>
             </Li>
           </ListSection>

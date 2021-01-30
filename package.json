@@ -1,24 +1,17 @@
 {
   "name": "chinese-name-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "express server with mongodb for the backend of the Chinese name generator",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "client": "cd client && yarn start",
-    "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "server": "nodemon server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ZYinMD/chinese-name-generator.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ZYinMD/chinese-name-generator/issues"
-  },
-  "homepage": "https://github.com/ZYinMD/chinese-name-generator#readme",
+  "author": "Zee Y",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.3",

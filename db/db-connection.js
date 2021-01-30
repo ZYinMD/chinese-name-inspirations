@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const localDBName = "heroku_tp1ql3d8";
+const localDBName = "chinese-name-generator";
 const URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/' + localDBName;
 
 const connect = async function() {

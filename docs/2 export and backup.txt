@@ -1,0 +1,7 @@
+In 2020-8, I backed up the production db with Studio 3T. Stored in db/db-exports-2020.
+
+It's done by selecting the db (the container of all collections, called heroku_tp1ql3d8 before 2020), then clicking"export".
+
+Studio 3T offer different format to export, I tried 4 ways that looked the most reasonable. When it's time to re-import, try to create a new db, then import all collections in one go. Try the single file bson first, if fail then try the multi-file bson, then the mongo shell json, then the plain json (least ideal).
+
+Studio 3T may expire in 30 days. Hope I can use it again.
