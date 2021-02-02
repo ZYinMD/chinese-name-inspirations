@@ -1,35 +1,34 @@
-const MongoClient = require('mongodb').MongoClient;
-const localDBName = "chinese-name-generator";
-const URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/' + localDBName;
+const MongoClient = require("mongodb").MongoClient;
+const URI = require("./db-uri").GETdbURI();
 
-const connect = async function() {
+const connect = async function () {
   var connect = await MongoClient.connect(URI);
   return connect;
 };
 
-const namesCollection = async function() {
+const namesCollection = async function () {
   var connection = await connect();
-  return await connection.db().collection('names');
+  return await connection.db().collection("names");
 };
 
-const charsCollection = async function() {
+const charsCollection = async function () {
   var connection = await connect();
-  return await connection.db().collection('characters');
+  return await connection.db().collection("characters");
 };
 
-const opinionsCollection = async function() {
+const opinionsCollection = async function () {
   var connection = await connect();
-  return await connection.db().collection('opinions');
+  return await connection.db().collection("opinions");
 };
 
-const wallCollection = async function() {
+const wallCollection = async function () {
   var connection = await connect();
-  return await connection.db().collection('wall');
+  return await connection.db().collection("wall");
 };
 
 module.exports = {
   names: namesCollection(),
   chars: charsCollection(),
   opinions: opinionsCollection(),
-  wall: wallCollection()
+  wall: wallCollection(),
 };
