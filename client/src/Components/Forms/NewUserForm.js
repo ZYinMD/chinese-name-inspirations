@@ -9,8 +9,8 @@ class NewUserForm extends Component {
 
   submit = (event) => {
     event.preventDefault();
-    if (this.state.姓) window.settings.姓 = this.state.姓;
     if (this.state.username) window.settings.username = this.state.username;
+    if (this.state.姓) window.settings.姓 = this.state.姓.slice(-1);
     window.settings.newUser = false;
     window.updateLocalStorage();
     this.props.noLongerNewUser();
