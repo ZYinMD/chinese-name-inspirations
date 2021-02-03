@@ -31,13 +31,15 @@ form input,
 
 .welcome,
 .submit {
+  padding: 0;
+  margin: 3rem;
   color: #2bb;
+  display: block;
   border: none;
   background-color: transparent;
   font-size: 5rem;
   font-weight: 500;
   text-align: left;
-  margin: 3rem;
 }
 
 .wall dl {

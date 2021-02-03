@@ -7,7 +7,8 @@ class NewUserForm extends Component {
     username: "",
   };
 
-  submit = () => {
+  submit = (event) => {
+    event.preventDefault();
     if (this.state.姓) window.settings.姓 = this.state.姓;
     if (this.state.username) window.settings.username = this.state.username;
     window.settings.newUser = false;
@@ -46,16 +47,16 @@ class NewUserForm extends Component {
           />
         </form>
         <h4>宝宝的姓: </h4>
-        <form>
+        <form onSubmit={this.submit}>
           <input
             type="text"
             value={this.state.姓}
             onChange={this.handleInputChange姓}
           />
         </form>
-        <p className="submit" onClick={this.submit}>
+        <button className="submit" type="submit" onClick={this.submit}>
           开始
-        </p>
+        </button>
       </div>
     );
   }
