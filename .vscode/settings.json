@@ -3,14 +3,16 @@
     "**/node_modules": true,
     "somefile_that_I_want_to_hide": true,
     "**/package-lock.json": true,
-    "**/yarn.lock": true,
+    "**/yarn.lock": true
   },
   "search.exclude": {
     "node_modules": true,
     "package-lock.json": true,
     "yarn.lock": true,
     "somefile_that_I_dont_want_to_search": true,
-    "build": true
+    "/client/build": true,
+    "/db": true,
+    "/db/*.js": false
   },
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
