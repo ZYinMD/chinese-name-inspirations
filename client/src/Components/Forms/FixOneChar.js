@@ -14,7 +14,7 @@ class FixOneChar extends Component {
 
   handleInputChange = event => {
     const { value } = event.target;
-    this.setState({fixedChar: value.slice(-1)});
+    this.setState({fixedChar: value});
     window.settings.fixedChar = value.slice(-1);
     window.updateLocalStorage();
     window.settingsChange();
@@ -33,4 +33,3 @@ class FixOneChar extends Component {
   }
 }
 export default FixOneChar;
-
