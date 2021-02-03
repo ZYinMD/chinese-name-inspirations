@@ -4,7 +4,6 @@
     "somefile_that_I_want_to_hide": true,
     "**/package-lock.json": true,
     "**/yarn.lock": true,
-    "client/build": true
   },
   "search.exclude": {
     "node_modules": true,

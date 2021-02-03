@@ -2,7 +2,7 @@ const db = require('../../db/db-connection.js');
 module.exports = generateNames;
 
 async function generateNames(req, res) {
-  var nin = new Set(['不适用于人名', '很生僻', '多音字', '男孩用', '女孩用', '无趣', '略生僻', '很土', '很俗', '很难用', '略土', '略俗', '难用', '玉类', '否定', '不真实', '小气', '宽泛']);
+  var nin = new Set(['不适用于人名', '很生僻', '多音字', '男孩用', '女孩用', '无趣', '略生僻', '很土', '很俗', '很难用', '略土', '略俗', '难用', '玉类', '否定', '不真实', '小气', '宽泛']); // "nin" is a mongoDB term, meaning "not in array"
   if (req.query.autoMode == 'true')
     nin.add('不想用');
   if (req.query.allowed) {
@@ -35,6 +35,7 @@ async function generateNames(req, res) {
   }
   catch(error) {
     console.error(error);
+    res.status(599).send(`No response from db`);
   }
 
   async function getNamesWithFixedChar() {
@@ -166,4 +167,3 @@ function mixArray(array1, array2) {
   }
   return array1;
 }
-

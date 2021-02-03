@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "client": "cd client && yarn start",
-    "server": "node server.js"
+    "server": "node server.js",
+    "deploy": "gcloud app deploy",
+    "live": "gcloud app browse"
   },
   "repository": {
     "type": "git",
