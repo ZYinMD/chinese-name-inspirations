@@ -1,8 +1,8 @@
 const settings = {
-  useProductionDB: true,
+  useProductionDB: false,
   dbName: "chinese-name-inspirations",
-  productionUsername: "admin",
-  productionPassword: "v687",
+  productionUsername: process.env.DB_USERNAME || "",
+  productionPassword: process.env.DB_PASSWORD || "",
 };
 
 // if deployed to app engine:

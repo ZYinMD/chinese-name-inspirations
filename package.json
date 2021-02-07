@@ -6,6 +6,7 @@
   "scripts": {
     "client": "cd client && yarn start",
     "server": "node server.js",
+		"predeploy": "gcloud config set project chinese-name-inspirations",
     "deploy": "gcloud app deploy",
     "live": "gcloud app browse"
   },
