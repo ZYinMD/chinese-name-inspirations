@@ -1,5 +1,0 @@
-runtime: nodejs14
-entrypoint: 'node server.js'
-env_variables:
-  DB_USERNAME: admin
-  DB_PASSWORD: v687
