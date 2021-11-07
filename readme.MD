@@ -4,4 +4,4 @@ https://chinese-name-inspirations.app
 A generator of Chinese people's names with tons of configurable settings, can give you some inspirations if you're trying to name your child, or some fictional characters.
 
 
-Built in 2017, it has been used by several quite a few of my friends.
+Built in 2017, it has been used by quite a few of my friends.
